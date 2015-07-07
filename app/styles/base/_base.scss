@@ -9,3 +9,75 @@
 @import "lists";
 @import "tables";
 @import "typography";
+
+/*--------------------------------
+BODY
+--------------------------------*/
+
+body {
+  @include outer-container(980px);
+}
+
+
+.nav-button,
+.nav-input {
+  display: inline-block;
+}
+
+.nav-button-signup {
+  float: right;
+}
+
+/*--------------------------------
+HEADER
+--------------------------------*/
+
+.landing-header {
+  text-align: center;
+}
+
+/*--------------------------------
+LANDING INDEX
+--------------------------------*/
+
+.landing-index-heading {
+  text-align: center;
+}
+
+.problem-index-map {
+  @include span-columns(6);
+  text-align: center;
+  height: 400px;
+  border: 1px solid red;
+}
+
+.problem-index-container {
+  @include span-columns(6);
+  @include omega();
+  text-align: center;
+  height: 400px;
+  border: 1px solid red;
+}
+
+.problem-filter-heading {
+  text-align: center;
+}
+
+.category-filter-list {
+  @include span-columns(12);
+}
+
+.filter-list-item {
+  @include span-columns(2 of 12);
+  text-align: center;
+  border: 1px solid red;
+}
+
+.landing-search-form {
+  @include span-columns(4);
+  @include shift(4);
+}
+
+/*--------------------------------
+FOOTER
+--------------------------------*/

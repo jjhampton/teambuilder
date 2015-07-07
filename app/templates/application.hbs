@@ -1,15 +1,15 @@
-<nav class="top-nav">
-  <button class="nav-button nav-login">Login</button>
-  <input class="input-username" placeholder="username">
-  <input class="input-password" placeholder="password">
-  <button class="nav-button nav-signup">Signup</button>
+<nav class="primary-nav">
+  <button class="nav-button nav-button-login">Login</button>
+  <input class=" nav-input nav-input-username" placeholder="username">
+  <input class="nav-input nav-input-password" placeholder="password">
+  <button class="nav-button nav-button-signup">Signup</button>
 </nav>
 <header class="landing-header">
   <h1>Team Builder</h1>
   <button>Add a Problem You Need Help Solving</button>
 </header>
 <section class="landing-index">
-  <p>Explore problems submitted by others and volunteer to join a team to help solve them.</p>
+  <h2 class="landing-index-heading">Explore problems submitted by others and volunteer to join a team to help solve them.</h2>
   <div class="problem-index-map">Map</div>
   <div class="problem-index-container">Problems You Can Help With:
     <ul class="problems-index">
@@ -19,16 +19,18 @@
       <li class="problem-list-item">Community Garden Needs</li>
     </ul>
   </div>
-  <p>Filter by category</p>
+  <h2 class="problem-filter-heading">Filter by category</h2>
   <ul class="category-filter-list">
     <li class="filter-list-item">Home</li>
     <li class="filter-list-item">Civic</li>
     <li class="filter-list-item">Community</li>
     <li class="filter-list-item">Software</li>
     <li class="filter-list-item">Art & Music</li>
+    <li class="filter-list-item">Other</li>
   </ul>
-  <input class="search-problems" placeholder="Search problems by keyword"><button class="button-search">Search</button>
-  <input class="search-users" placeholder="Search our pool of volunteers by keyword or interests"><button class="button-search">Search</button>
+  <form class="landing-search-form">
+    <input class="landing-search-input" placeholder="Search for users or problems by keyword"><button class="button-search">Search</button>
+  </form>
 </section>
 
 
