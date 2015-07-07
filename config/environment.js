@@ -19,7 +19,7 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'self' ",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' ",
+      'script-src': "'self' 'unsafe-inline' ",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' ",
       'img-src': "'self' ",

@@ -1,7 +1,9 @@
 @import 'ember-paper';
 @import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
 /* $gutter: 0em; */
+@import "base/grid-settings";
 @import 'bower_components/neat/app/assets/stylesheets/neat';
+@import "base/base";
 
 
 // Typography
