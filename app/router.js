@@ -16,6 +16,10 @@ Router.map(function() {
     this.route('create');
     this.route('show');
   });
+
+  this.route('problems', function() {
+    this.route('create');
+  });
 });
 
 export default Router;
