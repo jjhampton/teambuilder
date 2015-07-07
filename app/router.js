@@ -19,6 +19,7 @@ Router.map(function() {
 
   this.route('problems', function() {
     this.route('create');
+    this.route('show');
   });
 });
 
