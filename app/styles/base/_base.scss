@@ -40,18 +40,18 @@ HEADER
 LANDING INDEX
 --------------------------------*/
 
-.landing-index-heading {
+.problems-main-heading {
   text-align: center;
 }
 
-.problem-index-map {
+.problems-index-map {
   @include span-columns(6);
   text-align: center;
   height: 400px;
   border: 1px solid red;
 }
 
-.problem-index-container {
+.problems-index-container {
   @include span-columns(6);
   @include omega();
   text-align: center;
@@ -59,7 +59,7 @@ LANDING INDEX
   border: 1px solid red;
 }
 
-.problem-filter-heading {
+.problems-filter-heading {
   text-align: center;
 }
 
@@ -73,16 +73,16 @@ LANDING INDEX
   border: 1px solid red;
 }
 
-.landing-search-form {
+.problems-search-form {
   @include span-columns(12);
   @include shift(3.5);
 }
 
-.landing-search-input {
+.problems-search-input {
   @include span-columns(4);
 }
 
-.landing-search-input,
+.problems-search-input,
 .button-search {
   display: inline-block;
 }

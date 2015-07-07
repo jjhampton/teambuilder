@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('problems', {path: '/'});
   this.route('sessions');
   this.route('users');
+  this.route('landing');
 });
 
 export default Router;
