@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('index', {path: '/'});
+
   this.route('sessions', function() {
     this.route('create');
   });
@@ -14,7 +16,6 @@ Router.map(function() {
     this.route('create');
     this.route('show');
   });
-  this.route('problems/index', {path: '/'});
 });
 
 export default Router;
