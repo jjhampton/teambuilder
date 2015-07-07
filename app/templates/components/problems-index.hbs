@@ -1,6 +1,4 @@
-<li class="problem-list-item">Jones Family Home</li>
-<li class="problem-list-item">Greenville Traffic Analysis</li>
-<li class="problem-list-item">Middle School Math Tutoring</li>
-<li class="problem-list-item">Community Garden Needs</li>
-
+{{#each problems as |problem|}}
+  <li class="problems-list-item">{{problem.name}}</li>
+{{/each}}
 {{yield}}
