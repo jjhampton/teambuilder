@@ -1,5 +1,8 @@
-<input class="nav-input nav-input-username" type="text" placeholder="username">
-<input class="nav-input nav-input-password" type="password" placeholder="password">
-<button class="nav-button nav-button-login">Login</button>
+<form {{action 'authenticate' on='submit'}}>
+  {{input class="nav-input nav-input-username" type="text" placeholder="username" value=identification}}
+  {{input class="nav-input nav-input-password" type="password" placeholder="password" value=password}}
+  <button class="nav-button nav-button-login">Login</button>
+</form>
+
 
 {{yield}}

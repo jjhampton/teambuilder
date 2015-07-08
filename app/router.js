@@ -15,13 +15,14 @@ Router.map(function() {
   this.route('users', function() {
     this.route('create');
     this.route('show');
+    this.route('current');
   });
 
   this.route('problems', function() {
     this.route('create');
-    this.route('show', {path: '/:problem_id'});
-    this.route('edit', {path: '/:problem_id/edit'});
-    this.route('manage', {path: '/:problem_id/manage'} );
+    this.route('show', {path: ':problem_id'});
+    this.route('edit', {path: ':problem_id/edit'});
+    this.route('manage', {path: ':problem_id/manage'} );
   });
 });
 

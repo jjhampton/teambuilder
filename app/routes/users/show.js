@@ -19,6 +19,6 @@ export default Ember.Route.extend({
       tags: ['coach', 'mentor', 'aware', 'resilient'],
       interests: ['soccer', 'sci-fi', 'design'],
       contributions: ['Home Construction Project', 'Greenville Traffic Analysis', 'Live Jazz Improv Set']
-    }
+    };
   }
 });
