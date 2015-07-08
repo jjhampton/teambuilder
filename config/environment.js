@@ -23,7 +23,7 @@ module.exports = function(environment) {
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' api.parse.com",
       'img-src': "'self' ",
-      'style-src': "'self' ",
+      'style-src': "'self' 'unsafe-inline' ",
       'media-src': "'self' "
     }
   };

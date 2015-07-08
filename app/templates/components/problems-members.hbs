@@ -1,0 +1,6 @@
+{{#each model.members as |member|}}
+  <li class="members-name">{{member}}</li>
+  <li class="members-role">Role</li>
+  <button class="members-button-remove">Remove</button>
+{{/each}}
+{{yield}}

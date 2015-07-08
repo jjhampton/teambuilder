@@ -15,16 +15,18 @@
 <p class="problem-members">Current Team Members: </p>
 <ul class="problem-members-list">
   {{#each model.members as |member|}}
-  <li class="problem-memmbers-list-item">{{member}}</li>
+  <li class="problem-members-list-item">{{member}}</li>
   {{/each}}
 </ul>
 <button class="problem-volunteer">Volunteer to Join This Team</button>
 <input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
 <p>Team Owner:</p>
 {{#link-to 'problems.edit' model}}
-  <button class="problem-button-edit-details">Edit Details</button>
+  <button class="problem-button-edit">Edit Details</button>
 {{/link-to}}
-<button class="problem-button-edit-team">Edit Team</button>
+{{#link-to 'problems.manage' model}}
+<button class="problem-button-manage">Edit Team</button>
+{{/link-to}}
 
 
 {{yield}}
