@@ -1,13 +1,14 @@
 <nav class="primary-nav">
-  {{sessions-create}}
+  {{#if session.isAuthenticated}}
+    <p>You are logged in!</p>
+  {{else}}
+    {{sessions-create}}
+  {{/if}}
   <div class="nav-buttons-group">
-    {{#link-to 'users.create'}}
-      <button class="nav-button nav-button-signup">Signup</button>
-    {{/link-to}}
     {{#link-to 'index'}}
       <button class="nav-button nav-button-home">Home</button>
     {{/link-to}}
-    {{#link-to users.current}}
+    {{#link-to 'users.show' session.currentUser}}
       <button class="nav-button nav-button-profile">Profile</button>
     {{/link-to}}
   </div>
