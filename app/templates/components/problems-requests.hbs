@@ -1,0 +1,7 @@
+{{#each model.members as |member|}}
+  <li class="requests-name">{{member}}</li>
+  <button class="requests-button-add">Add</button>
+  <button class="requests-button-remove">Remove</button>
+{{/each}}
+
+{{yield}}
