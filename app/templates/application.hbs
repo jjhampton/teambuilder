@@ -1,6 +1,7 @@
 <nav class="primary-nav">
   {{#if session.isAuthenticated}}
     {{sessions-current model=session.currentUser}}
+    <button {{ action 'invalidateSession' }}>Logout</button>
   {{else}}
     {{sessions-create}}
   {{/if}}
