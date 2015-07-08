@@ -20,5 +20,11 @@
 </ul>
 <button class="problem-volunteer">Volunteer to Join This Team</button>
 <input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
+<p>Team Owner:</p>
+{{#link-to 'problems.edit' model}}
+  <button class="problem-button-edit-details">Edit Details</button>
+{{/link-to}}
+<button class="problem-button-edit-team">Edit Team</button>
+
 
 {{yield}}
