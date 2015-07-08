@@ -14,9 +14,11 @@ Router.map(function() {
 
   this.route('users', function() {
     this.route('create');
-    this.route('show');
-    this.route('current');
+    this.route('show', {path: ':parse_user_id'});
   });
+
+  this.route('users.current', {path: 'me'});
+
 
   this.route('problems', function() {
     this.route('create');

@@ -16,7 +16,7 @@ module.exports = function(environment) {
     authorizer: 'authorizer:parse',
     authenticationRoute: 'sessions.create',
     crossOriginWhitelist: ['https://api.parse.com'],
-    routeAfterAuthentication: 'index',
+    routeAfterAuthentication: 'users.current',
     routeIfAlreadyAuthenticated: 'users.current'
     },
 

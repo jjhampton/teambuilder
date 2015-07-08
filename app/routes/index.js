@@ -1,12 +1,7 @@
 import Ember from 'ember';
+import UnauthenticatedRouteMixin from 'simple-auth/mixins/unauthenticated-route-mixin';
 
-export default Ember.Route.extend({
-  // beforeModel: function() {
-  //   if(this.get('session.isAuthenticated')) {
-  //     this.transitionTo('users.show', this.get('session.secureUserId'));
-  //   }
-  // },
-
+export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   model: function() {
     return this.store.findAll('problem');
   }
