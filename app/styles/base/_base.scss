@@ -37,7 +37,7 @@ HEADER
 }
 
 /*--------------------------------
-PROBLEMS 
+PROBLEMS-INDEX
 --------------------------------*/
 
 .problems-main-heading {
@@ -87,6 +87,15 @@ PROBLEMS
   display: inline-block;
 }
 
+/*--------------------------------
+PROBLEMS-SHOW
+--------------------------------*/
+.problem-show-map {
+  @include span-columns(6);
+  text-align: center;
+  height: 400px;
+  border: 1px solid red;
+}
 /*--------------------------------
 FOOTER
 --------------------------------*/

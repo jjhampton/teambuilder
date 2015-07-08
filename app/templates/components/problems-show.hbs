@@ -1,1 +1,24 @@
+<h1 class="primary-heading">{{model.name}}</h1>
+<p class="problem-description">Description: {{model.description}}</p>
+<p class="problem-created">Created: {{model.createdAt}}</p>
+<p class="problem-categories">Categories: {{model.categories}}</p>
+<p class="problem-tags">Tags: {{model.tags}}</p>
+<p class="problem-progress">Progress: {{model.progress}}%</p>
+<div class="trello-update">Trello API Data</div>
+<span class="problem-collaborations">We collaborate via: </span>
+<button class="problem-collab-button">Trello</button>
+<button class="problem-collab-button">Hangouts</button>
+<button class="problem-collab-button">Meetups</button>
+<p class="problem-deadline">Deadline: {{model.deadline}}</p>
+<p class="problem-location">Location: {{model.location}}</p>
+<div class="problem-show-map">Map</div>
+<p class="problem-members">Current Team Members: </p>
+<ul class="problem-members-list">
+  {{#each model.members as |member|}}
+  <li class="problem-memmbers-list-item">{{member}}</li>
+  {{/each}}
+</ul>
+<button class="problem-volunteer">Volunteer to Join This Team</button>
+<input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
+
 {{yield}}
