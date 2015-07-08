@@ -12,6 +12,10 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    'simple-auth': {
+    authorizer: 'authorizer:parse',
+    crossOriginWhitelist: ['https://api.parse.com']
+    },
 
     APP: {
       applicationId: '2LyY9FE22SGEpGNjywuiXAQd5mismhpxCcQAtzHX',
