@@ -1,6 +1,6 @@
 <nav class="primary-nav">
   {{#if session.isAuthenticated}}
-    <p>You are logged in!</p>
+    {{sessions-current model=session.currentUser}}
   {{else}}
     {{sessions-create}}
   {{/if}}
