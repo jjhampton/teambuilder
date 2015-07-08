@@ -2,6 +2,8 @@
   <button class="nav-button nav-button-login">Login</button>
   <input class=" nav-input nav-input-username" placeholder="username">
   <input class="nav-input nav-input-password" placeholder="password">
-  <button class="nav-button nav-button-signup">Signup</button>
+  {{#link-to 'users.create'}}
+    <button class="nav-button nav-button-signup">Signup</button>
+  {{/link-to}}
 </nav>
 {{outlet}}
