@@ -2,8 +2,16 @@
   <button class="nav-button nav-button-login">Login</button>
   <input class=" nav-input nav-input-username" placeholder="username">
   <input class="nav-input nav-input-password" placeholder="password">
-  {{#link-to 'users.create'}}
-    <button class="nav-button nav-button-signup">Signup</button>
-  {{/link-to}}
+  <div class="nav-buttons-group">
+    {{#link-to 'users.create'}}
+      <button class="nav-button nav-button-signup">Signup</button>
+    {{/link-to}}
+    {{#link-to 'index'}}
+      <button class="nav-button nav-button-home">Home</button>
+    {{/link-to}}
+    {{#link-to 'users.show'}}
+      <button class="nav-button nav-button-profile">Profile</button>
+    {{/link-to}}
+  </div>
 </nav>
 {{outlet}}
