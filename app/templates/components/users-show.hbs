@@ -1,1 +1,32 @@
+<h1 class="primary-heading">{{model.firstName}} {{model.lastName}}: User Profile</h1>
+<div class="users-show-chart">Skill Chart</div>
+<p class="user-points">Earned Points:</p>
+<p class="user-thinker">Thinker: {{model.thinker}}</p>
+<p class="user-enabler">Enabler: {{model.enabler}}</p>
+<p class="user-connector">Connector: {{model.connector}}</p>
+<p class="user-contributions">Contributions: {{model.contributions}}</p>
+{{!-- add sub-component to iterate --}}
+<div class="users-show-map">Map</div>
+<p class="user-gravatar">Gravatar: Need gravatar - see AJAX example</p>
+<p class="user-location">Location: {{model.city}}, {{model.state}}, {{model.country}}</p>
+<p class="user-age">Age: {{model.age}}</p>
+<p class="user-occupation">Occupation: {{model.occupation}}</p>
+<p class="user-tags">Tags from teammates: {{model.tags}}</p>
+{{!-- add sub-component to iterate --}}
+<p class="user-interests">Interests: {{model.interests}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{yield}}
