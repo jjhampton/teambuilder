@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('problems', function() {
     this.route('create');
     this.route('show', {path: '/:problem_id'});
+    this.route('edit');
   });
 });
 
