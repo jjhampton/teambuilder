@@ -18,7 +18,8 @@ export default Ember.Route.extend({
       occupation: 'architect',
       tags: ['coach', 'mentor', 'aware', 'resilient'],
       interests: ['soccer', 'sci-fi', 'design'],
-      contributions: ['Home Construction Project', 'Greenville Traffic Analysis', 'Live Jazz Improv Set']
+      contributions: ['Home Construction Project', 'Greenville Traffic Analysis', 'Live Jazz Improv Set'],
+      description: 'Hi, this is my description!'
     };
   }
 });
