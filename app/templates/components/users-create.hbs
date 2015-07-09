@@ -12,10 +12,6 @@
     Age:
     {{input class="users-create-age" type="text" placeholder="Enter your age here" value=model.age}}
   </label>
-  <label>
-    Describe yourself:
-    {{textarea class="users-create-description" placeholder="Enter a few words to introduce yourself to others." value=model.description}}
-  </label>
   <fieldset>
     <legend>Location</legend>
     <label>
@@ -33,14 +29,14 @@
     <span class="users-create-button-location">Use Current Location</span>
   </fieldset>
   <label>
+    Occupation:
+    {{input class="users-create-occupation" type="text" placeholder="Enter your occupation here" value=model.occupation}}
+  </label>
+  <label>
     Interests:
     {{input class="users-create-interest" type="text" placeholder="Enter some personal interests here" value=model.interests}}
     {{!-- <input class="users-create-interest" type="text" placeholder="Enter some personal interests here"><input class="users-create-interest" type="text" placeholder="Enter some personal interests here"> --}}
     <span>+</span>
-  </label>
-  <label>
-    Occupation:
-    {{input class="users-create-occupation" type="text" placeholder="Enter your occupation here" value=model.occupation}}
   </label>
   <label>
     Email:
