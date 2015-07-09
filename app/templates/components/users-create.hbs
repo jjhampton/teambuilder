@@ -34,9 +34,10 @@
   </label>
   <label>
     Interests:
-    {{input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest"}}
-    {{input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest"}}{{input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest"}}
-    <span><button>Add another interest</button></span>
+    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
+    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
+    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
+    <span><button class="button-interest-add"{{action 'addInterestInput'}}>Add another interest</button></span>
   </label>
   <label>
     Email:
@@ -46,7 +47,7 @@
     Password:
     {{input class="users-create-password" type="password" placeholder="Enter your password" value=model.password}}
   </label>
-  <button class="button-submit">Sign Up!</button>
+  <button class="button-user-submit">Sign Up!</button>
 </form>
 
 {{yield}}
