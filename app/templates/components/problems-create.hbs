@@ -1,1 +1,41 @@
+<h1 class="header problems-create-header">Add a Problem You Need Help Solving</h1>
+<form {{action 'createProblem' on='submit'}}>
+  <label>
+    Problem Name:
+    {{input class="problems-create-name" type="text" placeholder="Name of problem" value=model.name}}
+  </label>
+  <label>
+    Description:
+    {{textarea class="problems-create-description" placeholder="Short description of the problem" value=model.description}}
+  </label>
+  <label>
+    Deadline:
+    {{input class="problems-create-deadline" placeholder="When does the problem need to be solved?" value=model.deadline}}
+  </label>
+  <label>
+    Tags:
+    {{textarea class="problems-create-tags" placeholder="Enter in some tags describing your problem, separated by spaces" value=model.tags}}
+  </label>
+  <fieldset>
+    <legend>Location</legend>
+    <label>
+      City:
+      {{input class="problems-create-city" type="text" placeholder="Enter your city here" value=model.city}}
+    </label>
+    <label>
+      State/Province:
+      {{input class="problems-create-state" type="text" placeholder="Enter your state/province here" value=model.state}}
+    </label>
+    <label>
+      Country:
+      {{input class="problems-create-country" type="text" placeholder="Enter your country here" value=model.country}}
+    </label>
+    <span class="problems-create-button-location">Use Current Location</span>
+  </fieldset>
+  <label>Trello URL:
+    {{input class="problems-create-URL" placeholder="Trello URL" value=model.trelloURL}}
+  </label>
+  <button class="button-submit">Submit Problem!</button>
+</form>
+
 {{yield}}

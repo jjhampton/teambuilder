@@ -30,13 +30,13 @@
       Country:
       {{input class="users-create-country" type="text" placeholder="Enter your country here" value=model.country}}
     </label>
-    <button class="users-create-button-location">Use Current Location</button>
+    <span class="users-create-button-location">Use Current Location</span>
   </fieldset>
   <label>
     Interests:
     {{input class="users-create-interest" type="text" placeholder="Enter some personal interests here" value=model.interests}}
     {{!-- <input class="users-create-interest" type="text" placeholder="Enter some personal interests here"><input class="users-create-interest" type="text" placeholder="Enter some personal interests here"> --}}
-    <button>+</button>
+    <span>+</span>
   </label>
   <label>
     Occupation:
@@ -52,8 +52,5 @@
   </label>
   <button class="button-submit">Sign Up!</button>
 </form>
-
-{{outlet}}
-
 
 {{yield}}

@@ -12,6 +12,7 @@ export default Ember.Route.extend({
         this.get('session').authenticate('authenticator:parse-token', {
           sessionToken: user.get('sessionToken')
         });
+        this.transitionTo('index');
       }.bind(this));
     }
   }
