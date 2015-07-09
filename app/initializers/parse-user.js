@@ -16,10 +16,8 @@ export function initialize() {
     country: DS.attr('string'),
     age: DS.attr('number'),
     occupation: DS.attr('string'),
-    tags: DS.attr(),
     interests: DS.attr(),
     contributions: DS.attr(),
-    description: DS.attr('string')
   });
 }
 
