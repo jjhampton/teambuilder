@@ -1,9 +1,9 @@
 <h1 class="primary-heading">{{model.name}}</h1>
-<p class="problem-owner">Owner: {{model.owner}}</p>
+<p class="problem-owner">Owner: {{model.owner.firstName}} {{model.owner.lastName}}</p>
 <p class="problem-description">Description: {{model.description}}</p>
 <p class="problem-created">Created: {{model.createdAt}}</p>
 <p class="problem-deadline">Deadline: {{model.deadline}}</p>
-<p class="problem-tags">Tags: {{model.tags}}</p>
+<p class="problem-tags">Tags: {{#each model.tags as |tag|}}{{tag}} {{/each}}</p>
 <p class="problem-progress">Progress: {{model.progress}}%</p>
 <div class="trello-update">Trello API Data</div>
 <span class="problem-collaborations">We collaborate via Trello at: </span>
@@ -18,7 +18,7 @@
   <li class="problem-members-list-item">{{member}}</li>
   {{/each}}
 </ul>
-<button class="problem-volunteer">Volunteer to Join This Team</button>
+<button class="problem-volunteer">Volunteer - Join This Team</button>
 <input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
 <p>Team Owner:</p>
 {{#link-to 'problems.edit' model}}

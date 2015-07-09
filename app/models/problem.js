@@ -11,6 +11,6 @@ export default DS.Model.extend({
   country: DS.attr('string'),
   trelloURL: DS.attr('string'),
   owner: DS.belongsTo('parseUser'),
-  members: DS.attr(),
+  members: DS.hasMany('parseUser'),
   progress: DS.attr('number')
 });
