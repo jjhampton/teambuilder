@@ -15,7 +15,6 @@ BODY
 --------------------------------*/
 
 body {
-  @include outer-container(980px);
 }
 
 
@@ -26,7 +25,6 @@ body {
 
 .nav-buttons-group {
   display: inline-block;
-  float: right;
 }
 
 /*--------------------------------
