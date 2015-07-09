@@ -7,6 +7,12 @@ export default Ember.Route.extend({
 
   actions: {
     createProblem: function(problem) {
+      var tagArray = [];
+      $('input[name=tag]').each(function() {
+        tagArray.push($(this).val());
+      });
+
+      problem.set('tags', tagArray);
       problem.save().then(function() {
         this.transitionTo('index');
       }.bind(this));

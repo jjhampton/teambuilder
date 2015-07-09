@@ -14,7 +14,10 @@
   </label>
   <label>
     Tags:
-    {{textarea class="problems-create-tags" placeholder="Enter in some tags describing your problem, separated by spaces" value=model.tags}}
+    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
+    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
+    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
+    <span><button class="button-tag-add"{{action 'addTagInput'}}>Add another tag</button></span>
   </label>
   <fieldset>
     <legend>Location</legend>
