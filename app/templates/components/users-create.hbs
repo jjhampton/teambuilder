@@ -12,10 +12,6 @@
     Age:
     {{input class="users-create-age" type="text" placeholder="Enter your age here" value=model.age}}
   </label>
-  <label>
-    Describe yourself:
-    {{textarea class="users-create-description" placeholder="Enter a few words to introduce yourself to others." value=model.description}}
-  </label>
   <fieldset>
     <legend>Location</legend>
     <label>
@@ -33,14 +29,15 @@
     <span class="users-create-button-location">Use Current Location</span>
   </fieldset>
   <label>
-    Interests:
-    {{input class="users-create-interest" type="text" placeholder="Enter some personal interests here" value=model.interests}}
-    {{!-- <input class="users-create-interest" type="text" placeholder="Enter some personal interests here"><input class="users-create-interest" type="text" placeholder="Enter some personal interests here"> --}}
-    <span>+</span>
-  </label>
-  <label>
     Occupation:
     {{input class="users-create-occupation" type="text" placeholder="Enter your occupation here" value=model.occupation}}
+  </label>
+  <label>
+    Interests:
+    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
+    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
+    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
+    <span><button class="button-interest-add"{{action 'addInterestInput'}}>Add another interest</button></span>
   </label>
   <label>
     Email:
@@ -50,7 +47,7 @@
     Password:
     {{input class="users-create-password" type="password" placeholder="Enter your password" value=model.password}}
   </label>
-  <button class="button-submit">Sign Up!</button>
+  <button class="button-user-submit">Sign Up!</button>
 </form>
 
 {{yield}}
