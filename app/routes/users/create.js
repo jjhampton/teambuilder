@@ -7,11 +7,11 @@ export default Ember.Route.extend({
 
   actions: {
     createUser: function(user) {
-      var interestArray = new Array();
+      var interestArray = [];
       $('input[name=interest]').each(function() {
         interestArray.push($(this).val());
       });
-      
+
       user.set('email', user.get('username'));
       user.set('interests', interestArray);
       user.save().then(function() {
