@@ -12,8 +12,7 @@ export default Ember.Route.extend({
         tagArray.push($(this).val());
       });
 
-      console.log(this.session.currentUser);
-      // problem.set('owner', this.session.currentUser);
+      problem.set('owner', this.get('session.currentUser'));
       problem.set('tags', tagArray);
       problem.save().then(function() {
         this.transitionTo('index');
