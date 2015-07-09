@@ -1,55 +1,57 @@
 <h1 class="header user-create-header">New User Signup</h1>
-<label>
-  First Name:
-  <input class="users-create-firstname" type="text" placeholder="Enter your first name here">
-</label>
-<label>
-  Last Name:
-  <input class="users-create-lastname" type="text" placeholder="Enter your last name here">
-</label>
-<label>
-  Age:
-  <input class="users-create-age" type="text" placeholder="Enter your age here">
-</label>
-<label>
-  Describe yourself:
-  <textarea class="users-create-description" placeholder="Enter a few words to introduce yourself to others."></textarea>
-</label>
-<label>
-  Age:
-  <input class="users-create-age" type="text" placeholder="Enter your age here">
-</label>
-<fieldset>
-  <legend>Location</legend>
+<form {{action 'createUser' on='submit'}}>
   <label>
-    City:
-    <input class="users-create-city" type="text" placeholder="Enter your city here">
+    First Name:
+    {{input class="users-create-firstname" label="First Name" type="text" placeholder="Enter your first name here" value=model.firstName}}
   </label>
   <label>
-    State/Province:
-    <input class="users-create-state" type="text" placeholder="Enter your state/province here">
+    Last Name:
+    {{input class="users-create-lastname" type="text" placeholder="Enter your last name here" value=model.lastName}}
   </label>
   <label>
-    Country:
-    <input class="users-create-country" type="text" placeholder="Enter your country here">
+    Age:
+    {{input class="users-create-age" type="text" placeholder="Enter your age here" value=model.age}}
   </label>
-  <button class="users-create-button-location">Use Current Location</button>
-</fieldset>
-<label>
-  Interests:
-  <input class="users-create-interest" type="text" placeholder="Enter some personal interests here">
-  <input class="users-create-interest" type="text" placeholder="Enter some personal interests here"><input class="users-create-interest" type="text" placeholder="Enter some personal interests here">
-  <button>+</button>
-</label>
-<label>
-  Occupation:
-  <input class="users-create-occupation" type="text" placeholder="Enter your occupation here">
-</label>
-<label>
-  Email:
-  <input class="users-create-email" type="email" placeholder="Enter your email address here">
-</label>
-<button class="button-submit">Sign Up!</button>
+  <label>
+    Describe yourself:
+    {{textarea class="users-create-description" placeholder="Enter a few words to introduce yourself to others." value=model.description}}
+  </label>
+  <fieldset>
+    <legend>Location</legend>
+    <label>
+      City:
+      {{input class="users-create-city" type="text" placeholder="Enter your city here" value=model.city}}
+    </label>
+    <label>
+      State/Province:
+      {{input class="users-create-state" type="text" placeholder="Enter your state/province here" value=model.state}}
+    </label>
+    <label>
+      Country:
+      {{input class="users-create-country" type="text" placeholder="Enter your country here" value=model.country}}
+    </label>
+    <button class="users-create-button-location">Use Current Location</button>
+  </fieldset>
+  <label>
+    Interests:
+    {{input class="users-create-interest" type="text" placeholder="Enter some personal interests here" value=model.interests}}
+    {{!-- <input class="users-create-interest" type="text" placeholder="Enter some personal interests here"><input class="users-create-interest" type="text" placeholder="Enter some personal interests here"> --}}
+    <button>+</button>
+  </label>
+  <label>
+    Occupation:
+    {{input class="users-create-occupation" type="text" placeholder="Enter your occupation here" value=model.occupation}}
+  </label>
+  <label>
+    Email:
+    {{input class="users-create-email" type="email" placeholder="Enter your email address here" value=model.username}}
+  </label>
+  <label>
+    Password:
+    {{input class="users-create-password" type="password" placeholder="Enter your password" value=model.password}}
+  </label>
+  <button class="button-submit">Sign Up!</button>
+</form>
 
 {{outlet}}
 
