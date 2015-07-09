@@ -15,8 +15,16 @@ BODY
 --------------------------------*/
 
 body {
+  @include outer-container(980px);
 }
 
+/*--------------------------------
+BODY
+--------------------------------*/
+
+.primary-nav {
+  border-bottom: 1px solid red;
+}
 
 .nav-button,
 .nav-input {
