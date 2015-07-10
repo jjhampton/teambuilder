@@ -13,9 +13,9 @@ export default DS.Model.extend({
   progress: DS.attr('number'),
   owner: DS.belongsTo('parseUser', {async:true}),
   // member1: DS.hasMany('parseUser', {async:true}),
-  member1: DS.belongsTo('parseUser', {async:true}),
-  member2: DS.belongsTo('parseUser', {async:true}),
-  member3: DS.belongsTo('parseUser', {async:true}),
-  member4: DS.belongsTo('parseUser', {async:true}),
-  member5: DS.belongsTo('parseUser', {async:true})
+  member1: DS.belongsTo('parseUser'),
+  member2: DS.belongsTo('parseUser'),
+  member3: DS.belongsTo('parseUser'),
+  member4: DS.belongsTo('parseUser'),
+  member5: DS.belongsTo('parseUser')
 });
