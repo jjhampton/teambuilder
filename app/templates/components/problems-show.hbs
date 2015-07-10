@@ -14,18 +14,27 @@
 <div class="problem-show-map">Map</div>
 <p class="problem-members">Current Team Members: </p>
 <ul class="problem-members-list">
-  {{#each model.members as |member|}}
-  <li class="problem-members-list-item">{{member}}</li>
-  {{/each}}
+{{#if model.member1}}
+  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}} </li>
+{{/if}}
+{{#if model.member2}}
+  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}} </li>
+{{/if}}
+{{#if model.member3}}
+  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}} </li>
+{{/if}}
+{{#if model.member4}}
+  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}} </li>
+{{/if}}
+{{#if model.member5}}
+  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
+{{/if}}
 </ul>
-<button class="problem-volunteer">Volunteer - Join This Team</button>
+<button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
 <input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
 <p>Team Owner:</p>
-{{#link-to 'problems.edit' model}}
-  <button class="problem-button-edit">Edit Details</button>
-{{/link-to}}
 {{#link-to 'problems.manage' model}}
-<button class="problem-button-manage">Edit Team</button>
+<button class="problem-button-manage">Manage Team</button>
 {{/link-to}}
 
 
