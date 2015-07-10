@@ -15,7 +15,7 @@
 <p class="problem-members">Current Team Members: </p>
 <ul class="problem-members-list">
   {{#each model.members as |member|}}
-  <li class="problem-members-list-item">{{member}}</li>
+  <li class="problem-members-list-item">{{member.firstName}} {{member.lastName}}</li>
   {{/each}}
 </ul>
 <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>

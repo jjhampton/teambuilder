@@ -18,6 +18,10 @@ export function initialize() {
     occupation: DS.attr('string'),
     interests: DS.attr(),
     contributions: DS.attr(),
+
+    parseClassName: function(){
+      return "_User";
+    }
   });
 }
 
