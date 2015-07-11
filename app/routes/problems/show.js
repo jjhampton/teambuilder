@@ -3,24 +3,23 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     addUser: function(problem) {
-      console.log(problem.get('member5'));
-      if (problem.get('member1') === null) {
+      if (problem.get('member1.createdAt') === undefined) {
         problem.set('member1', this.get('session.currentUser'));
         problem.save();
       }
-      else if (problem.get('member2') === null) {
+      else if (problem.get('member2.createdAt') === undefined) {
         problem.set('member2', this.get('session.currentUser'));
         problem.save();
       }
-      else if (problem.get('member3') === null) {
+      else if (problem.get('member3.createdAt') === undefined) {
         problem.set('member3', this.get('session.currentUser'));
         problem.save();
       }
-      else if (problem.get('member4') === null) {
+      else if (problem.get('member4.createdAt') === undefined) {
         problem.set('member4', this.get('session.currentUser'));
         problem.save();
       }
-      else if (problem.get('member5') === null) {
+      else if (problem.get('member5.createdAt') === undefined) {
         problem.set('member5', this.get('session.currentUser'));
         problem.save();
       }
