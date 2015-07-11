@@ -36,9 +36,9 @@
 <input class="problem-email" placeholder="Email the owner w/o joining"><button>Send email</button>
 {{#if model.isComplete}}
 <p>Team Members:</p>
-{{!-- {{#link-to 'problems.review' model}} --}}
+{{#link-to 'problems.review' model}}
 <button class="problem-button-review">Review Teammates</button>
-{{!-- {{/link-to}} --}}
+{{/link-to}}
 {{/if}}
 <p>Team Owner:</p>
 {{#link-to 'problems.manage' model}}

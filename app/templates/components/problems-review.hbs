@@ -1,1 +1,21 @@
+<h1 class="header problems-create-header">Review Your Team's Performance</h1>
+<h1 class="primary-heading">{{model.name}}</h1>
+<ul class="problem-members-list">
+{{#if model.member1}}
+  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}} </li>
+  {{teammate-review model=model.member1}}
+{{/if}}
+{{#if model.member2}}
+  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}} </li>
+{{/if}}
+{{#if model.member3}}
+  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}} </li>
+{{/if}}
+{{#if model.member4}}
+  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}} </li>
+{{/if}}
+{{#if model.member5}}
+  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
+{{/if}}
+</ul>
 {{yield}}
