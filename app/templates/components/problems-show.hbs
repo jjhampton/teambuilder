@@ -13,6 +13,7 @@
 <p class="problem-country">Country: {{model.country}}</p>
 <div class="problem-show-map">Map</div>
 <p class="problem-members">Current Team Members: </p>
+
 <ul class="problem-members-list">
 {{#if model.member1}}
   <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}} </li>
@@ -30,8 +31,15 @@
   <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
 {{/if}}
 </ul>
+
 <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
 <input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
+{{#if model.isComplete}}
+<p>Team Members:</p>
+{{!-- {{#link-to 'problems.review' model}} --}}
+<button class="problem-button-review">Review Teammates</button>
+{{!-- {{/link-to}} --}}
+{{/if}}
 <p>Team Owner:</p>
 {{#link-to 'problems.manage' model}}
 <button class="problem-button-manage">Manage Team</button>

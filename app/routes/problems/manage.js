@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       var data = {};
       data[member] = {"__op":"Delete"};
       console.log(adapter);
-      console.log('member in route is', member)
+      console.log('member in route is', member);
       adapter.ajax("https://api.parse.com/1/classes/Problem/" + problem.id, 'PUT', {
         data: data
       }).then(function(){
