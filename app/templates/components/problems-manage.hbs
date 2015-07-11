@@ -1,6 +1,23 @@
 <h1 class="primary-heading">Manage Your Problem</h1>
 <h2>Problem Name:{{model.name}}</h2>
 <h2>Team Members:</h2>
+<ul class="problem-members-list">
+{{#if model.member1}}
+  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}}   <button {{action 'remove' model}}>Remove</button></li>
+{{/if}}
+{{#if model.member2}}
+  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}}   <button>Remove</button></li>
+{{/if}}
+{{#if model.member3}}
+  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}}   <button>Remove</button></li>
+{{/if}}
+{{#if model.member4}}
+  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}}   <button>Remove</button></li>
+{{/if}}
+{{#if model.member5}}
+  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}}   <button>Remove</button></li>
+{{/if}}
+</ul>
 <label>
   Update progress tracker:
   <input class="manage-input-progress" type="text" placeholder="Enter percent complete here">
