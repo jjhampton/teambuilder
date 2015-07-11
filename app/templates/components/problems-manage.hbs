@@ -3,19 +3,19 @@
 <h2>Team Members:</h2>
 <ul class="problem-members-list">
 {{#if model.member1}}
-  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}}   <button {{action 'removeMember' model}}>Remove</button></li>
+  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}}   <button {{action 'removeMember' model 'member1'}}>Remove</button></li>
 {{/if}}
 {{#if model.member2}}
-  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}}   <button>Remove</button></li>
+  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}}   <button {{action 'removeMember' model 'member2'}}>Remove</button></li>
 {{/if}}
 {{#if model.member3}}
-  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}}   <button>Remove</button></li>
+  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}}   <button {{action 'removeMember' model 'member3'}}>Remove</button></li>
 {{/if}}
 {{#if model.member4}}
-  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}}   <button>Remove</button></li>
+  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}}   <button {{action 'removeMember' model 'member4'}}>Remove</button></li>
 {{/if}}
 {{#if model.member5}}
-  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}}   <button>Remove</button></li>
+  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}}   <button {{action 'removeMember' model 'member5'}}>Remove</button></li>
 {{/if}}
 </ul>
 <label>
