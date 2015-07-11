@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  model: function() {
+    return this.store.findAll('problem');
+  },
   actions: {
     removeMember: function(problem) {
       var adapter = this.store.adapterFor('problem');
@@ -10,7 +13,7 @@ export default Ember.Route.extend({
           'member1': {"__op":"Delete"}
         }
       }).then(function(response){
-        console.log(response);
+        problem.set('member1', null);
       });
     }
   }
