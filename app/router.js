@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('show', {path: ':problem_id'});
     this.route('edit', {path: ':problem_id/edit'});
     this.route('manage', {path: ':problem_id/manage'} );
+    this.route('review');
   });
 });
 
