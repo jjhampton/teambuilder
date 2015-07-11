@@ -9,8 +9,8 @@
     {{textarea class="problems-create-description" placeholder="Short description of the problem" value=model.description}}
   </label>
   <label>
-    Deadline:
-    {{input class="problems-create-deadline" placeholder="When does the problem need to be solved?" value=model.deadline}}
+    Deadline for solving the problem (Choose date):
+    {{pikaday-input value=model.deadline}}
   </label>
   <label>
     Tags:
