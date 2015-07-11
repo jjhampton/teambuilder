@@ -7,21 +7,20 @@
 {{/if}}
 {{#if model.member2}}
   <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}} </li>
-  {{teammate-review model=model.member1}}
+  {{teammate-review model=model.member2}}
 {{/if}}
 {{#if model.member3}}
   <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}} </li>
-  {{teammate-review model=model.member1}}
+  {{teammate-review model=model.member3}}
 {{/if}}
 {{#if model.member4}}
   <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}} </li>
-  {{teammate-review model=model.member1}}
+  {{teammate-review model=model.member4}}
 {{/if}}
 {{#if model.member5}}
   <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
-  {{teammate-review model=model.member1}}
+  {{teammate-review model=model.member5}}
 {{/if}}
 </ul>
 
-<button>Submit teammate reviews!</button>
 {{yield}}
