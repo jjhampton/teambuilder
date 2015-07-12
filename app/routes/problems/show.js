@@ -3,6 +3,9 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     addUser: function(problem) {
+      var currentUser = this.get('session.currentUser.id');
+      console.log(currentUser === problem.get('member1.id'));
+
       if (problem.get('member1.createdAt') === undefined) {
         problem.set('member1', this.get('session.currentUser'));
         problem.save();
