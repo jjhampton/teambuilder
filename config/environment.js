@@ -24,7 +24,7 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'self' ",
-      'script-src': "'self' 'unsafe-inline' ",
+      'script-src': "'self' 'unsafe-inline' d3js.org",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' api.parse.com",
       'img-src': "'self' ",
