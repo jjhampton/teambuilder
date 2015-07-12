@@ -14,6 +14,10 @@
 UNIVERSAL
 --------------------------------*/
 
+* {
+  box-sizing: border-box;
+}
+
 img {
   max-width: 100%;
 }
@@ -24,6 +28,8 @@ BODY
 
 body {
   @include outer-container(980px);
+  border: 1px solid black;
+  padding: 1em;
 }
 
 /*--------------------------------
@@ -31,23 +37,23 @@ APPLICATION
 --------------------------------*/
 
 .primary-nav {
-  @include span-columns(12);
-  border-bottom: 1px solid red;
-}
-
-.nav-form-login {
-  @include span-columns(8 of 12);
-}
-
-.nav-input {
-  @include span-columns(3 of 12);
+ @include span-columns(12);
+ @include omega();
 }
 
 .nav-container-signup {
-  @include span-columns(4 of 12);
+  @include span-columns(6);
 }
 
-.nav-button-signup,
+.nav-form-login {
+  @include span-columns(6);
+}
+
+.nav-input,
+.nav-button-login {
+  @include span-columns(2 of 6);
+}
+
 .nav-button-logout {
   float: right;
 }
@@ -61,8 +67,11 @@ HEADER
 --------------------------------*/
 
 .header {
-  @include span-columns(12);
   text-align: center;
+}
+
+.primary-heading {
+  padding: 2em;
 }
 
 .header-button-add {
@@ -74,7 +83,6 @@ PROBLEMS-INDEX
 --------------------------------*/
 
 .problems-outer-container {
-  @include span-columns(12);
 }
 
 .problems-heading {
