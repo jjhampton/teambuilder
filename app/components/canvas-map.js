@@ -16,8 +16,14 @@ export default Ember.Component.extend({
     }));
     planet.projection.scale(250).translate([250, 250]);
 
+    // Planet drag plugin - allows modificatin of rotation w/ mouse
+    planet.loadPlugin(planetaryjs.plugins.drag());
+
+    // Planet zoom plugin
+    planet.loadPlugin(planetaryjs.plugins.zoom());
+
     // Planet autorotate
-    planet.loadPlugin(autorotate(10))
+    // planet.loadPlugin(autorotate(10))
 
     // Load planet ping plugin
     planet.loadPlugin(planetaryjs.plugins.pings());
@@ -33,11 +39,11 @@ export default Ember.Component.extend({
       var beiLat = 39.9167;
       var beiLong = 116.3833;
       var color = 'green'
-      planet.plugins.pings.add(wbdLong, wbdLat, {color: color, ttl: 2000, angle: 10});
-      planet.plugins.pings.add(gvlLong, gvlLat, {color: color, ttl: 2000, angle: 10});
-      planet.plugins.pings.add(naiLong, naiLat, {color: color, ttl: 2000, angle: 10});
-      planet.plugins.pings.add(beiLong, beiLat, {color: color, ttl: 2000, angle: 10});
-    }, 100);
+      planet.plugins.pings.add(wbdLong, wbdLat, {color: color, ttl: 1000, angle: 5});
+      planet.plugins.pings.add(gvlLong, gvlLat, {color: color, ttl: 1000, angle: 5});
+      planet.plugins.pings.add(naiLong, naiLat, {color: color, ttl: 1000, angle: 5});
+      planet.plugins.pings.add(beiLong, beiLat, {color: color, ttl: 1000, angle: 5});
+    }, 300);
 
     // Add planet to canvas
     var canvas = document.getElementById('globe');
