@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     addUser: function(problem) {
+      //initialize isMember as false before checking
       var isMember = false;
       var currentUser = this.get('session.currentUser.id');
       var membersArray = [
@@ -13,11 +14,12 @@ export default Ember.Route.extend({
         problem.get('member5.id')
       ];
 
-      //Checks if current user's id is in membersArray
+      //Checks if current user's id is in membersArray, if is, sets isMember true
       if (_.indexOf(membersArray, currentUser) !== -1) {
         isMember = true;
       }
 
+      // if not a member, allows to join team
       if (!isMember) {
         if (problem.get('member1.createdAt') === undefined) {
           problem.set('member1', this.get('session.currentUser'));
