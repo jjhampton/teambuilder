@@ -7,6 +7,7 @@ export default Ember.Route.extend({
       var isMember = false;
       var currentUser = this.get('session.currentUser.id');
       var membersArray = [
+        problem.get('owner.id'),
         problem.get('member1.id'),
         problem.get('member2.id'),
         problem.get('member3.id'),
