@@ -1,8 +1,12 @@
-{{#link-to 'users.create'}}
-  <div class="nav-container-signup">
+<div class="nav-buttons-container">
+  {{#link-to 'index'}}
+    <button class="nav-button-home">Home</button>
+  {{/link-to}}
+  {{#link-to 'users.create'}}
     <button class="nav-button-signup">Signup</button>
-  </div>
-{{/link-to}}
+  {{/link-to}}
+</div>
+
 
 <form class="nav-form-login" {{action 'authenticate' on='submit'}}>
   {{input class="nav-input" type="text" placeholder="Email" value=identification}}
