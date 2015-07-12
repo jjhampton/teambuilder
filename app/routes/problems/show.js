@@ -4,7 +4,15 @@ export default Ember.Route.extend({
   actions: {
     addUser: function(problem) {
       var currentUser = this.get('session.currentUser.id');
-      console.log(currentUser === problem.get('member1.id'));
+      var membersArray = [
+        problem.get('member1.id'),
+        problem.get('member2.id'),
+        problem.get('member3.id'),
+        problem.get('member4.id'),
+        problem.get('member5.id')
+      ];
+
+      console.log(_.indexOf(membersArray, currentUser));
 
       if (problem.get('member1.createdAt') === undefined) {
         problem.set('member1', this.get('session.currentUser'));
