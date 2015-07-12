@@ -31,7 +31,7 @@ APPLICATION
 --------------------------------*/
 
 .outer-container {
-  @include outer-container();
+  @include outer-container(100%);
   background-color: $very-light-gray;
   padding: 1em;
 }
@@ -103,8 +103,8 @@ PROBLEMS-INDEX
   text-align: center;
   padding: 2em;
   border: 1px solid black;
-  height: 31.250em;
-  width: 31.250em;
+  max-height: 31.250em;
+  max-width: 31.250em;
 }
 
 .globe {
