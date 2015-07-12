@@ -1,10 +1,12 @@
 <form class="nav-form-login" {{action 'authenticate' on='submit'}}>
-  {{input class="nav-input nav-input-username" type="text" placeholder="Email" value=identification}}
-  {{input class="nav-input nav-input-password" type="password" placeholder="Password" value=password}}
-  <button class="nav-button nav-button-login">Login</button>
+  {{input class="nav-input" type="text" placeholder="Email" value=identification}}
+  {{input class="nav-input" type="password" placeholder="Password" value=password}}
+  <button class="nav-button-login">Login</button>
 </form>
 {{#link-to 'users.create'}}
-  <button class="nav-button nav-button-signup">Signup</button>
+  <div class="nav-container-signup">
+    <button class="nav-button-signup">Signup</button>
+  </div>
 {{/link-to}}
 
 
