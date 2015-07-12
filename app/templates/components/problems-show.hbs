@@ -1,5 +1,5 @@
 <h1 class="primary-heading">{{model.name}}</h1>
-<p class="problem-owner">Owner: {{model.owner.firstName}} {{model.owner.lastName}}</p>
+<p class="problem-owner">Owner: {{model.owner.name}}</p>
 <p class="problem-description">Description: {{model.description}}</p>
 <p class="problem-created">Created: {{model.createdAt}}</p>
 <p class="problem-deadline">Deadline: {{model.deadline}}</p>
@@ -16,19 +16,19 @@
 
 <ul class="problem-members-list">
 {{#if model.member1}}
-  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}} </li>
+  <li class="problem-members-list-item">{{model.member1.name}}</li>
 {{/if}}
 {{#if model.member2}}
-  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}} </li>
+  <li class="problem-members-list-item">{{model.member2.name}}</li>
 {{/if}}
 {{#if model.member3}}
-  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}} </li>
+  <li class="problem-members-list-item">{{model.member3.name}}</li>
 {{/if}}
 {{#if model.member4}}
-  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}} </li>
+  <li class="problem-members-list-item">{{model.member4.name}}</li>
 {{/if}}
 {{#if model.member5}}
-  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
+  <li class="problem-members-list-item">{{model.member5.name}}</li>
 {{/if}}
 </ul>
 

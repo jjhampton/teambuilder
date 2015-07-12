@@ -1,16 +1,12 @@
-<h1 class="header user-create-header">New User Signup</h1>
-<form {{action 'createUser' on='submit'}}>
+<h1 class="header user-create-header">Sign up today to begin helping others.</h1>
+<form class="user-create-form "{{action 'createUser' on='submit'}}>
   <label>
-    First Name:
-    {{input class="users-create-firstname" label="First Name" type="text" placeholder="Enter your first name here" value=model.firstName}}
-  </label>
-  <label>
-    Last Name:
-    {{input class="users-create-lastname" type="text" placeholder="Enter your last name here" value=model.lastName}}
+    Full Name:
+    {{input class="users-create-name" type="text" placeholder="Full name" value=model.fullName}}
   </label>
   <label>
     Age:
-    {{input class="users-create-age" type="text" placeholder="Enter your age here" value=model.age}}
+    {{input class="users-create-age" type="text" placeholder="Age" value=model.age}}
   </label>
   <fieldset>
     <legend>Location</legend>
