@@ -9,9 +9,13 @@
         <button class="nav-button-profile">Profile</button>
       {{/link-to}}
     </span>
-    <button class="nav-button-logout" {{action 'invalidateSession'}}>Logout</button>
+    <span class="nav-container-logoout">
+      <button class="nav-button-logout" {{action 'invalidateSession'}}>Logout</button>
+    </span>
   {{else}}
     {{sessions-create}}
   {{/if}}
 </nav>
+<div class="outer-container">
 {{outlet}}
+</div>

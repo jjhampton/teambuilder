@@ -26,45 +26,50 @@ img {
 BODY
 --------------------------------*/
 
-body {
-  @include outer-container(980px);
-  border: 1px solid black;
-  padding: 1em;
-}
-
 /*--------------------------------
 APPLICATION
 --------------------------------*/
 
+.outer-container {
+  @include outer-container();
+  background-color: $very-light-gray;
+}
+
 .primary-nav {
- @include span-columns(12);
- @include omega();
+  width: 100%;
+  background-color: #fff;
+  padding: 1em;
+  border-bottom: 1px solid $medium-gray;
+  overflow: hidden;
 }
 
 .nav-container-signup {
-  @include span-columns(6);
-}
-
-.nav-form-login {
-  @include span-columns(6);
-}
-
-.nav-input,
-.nav-button-login {
-  @include span-columns(2 of 6);
-}
-
-.nav-input {
-  padding: 1em;
-}
-
-.nav-button-logout {
-  float: right;
+  display: inline-block;
+  float: left;
 }
 
 .nav-buttons-authenticated {
   display: inline-block;
+  float: left;
 }
+
+.nav-form-login {
+  display: inline-block;
+  float: right;
+}
+
+.nav-input,
+.nav-button-login {
+  display: inline;
+  padding: 1em;
+}
+
+.nav-button-logout {
+  display: inline-block;
+  float: right;
+}
+
+
 
 /*--------------------------------
 HEADER
