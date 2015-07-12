@@ -22,5 +22,6 @@ app.import('bower_components/pikaday/pikaday.js');
 app.import('bower_components/pikaday/css/pikaday.css');
 app.import('bower_components/underscore/underscore-min.js');
 app.import('bower_components/planetary.js/dist/planetaryjs.min.js');
+app.import('bower_components/gmaps/gmaps.min.js');
 
 module.exports = app.toTree();
