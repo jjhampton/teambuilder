@@ -7,6 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     removeMember: function(problem, member) {
+      console.log('clicked route');
       var adapter = this.store.adapterFor('problem');
       var data = {};
       data[member] = {"__op":"Delete"};
