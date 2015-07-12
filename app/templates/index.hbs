@@ -6,14 +6,11 @@
   {{/link-to}}
 </header>
 <section class="problems-outer-container">
-  {{!-- {{planetary-globe}} --}}
-  <div class="problems-index-container">Problems You Can Help With:
+  {{planetary-globe}}
+  <div class="problems-index-container">Current Problems You Can Help With:
     {{problems-index model=model}}
     <form class="problems-search-form">
-      <label>
-        Search for users or problems by keyword:
-        <input class="problems-search-input">
-      </label>
+      <input class="problems-search-input" type="text" placeholder="Search for users or problems by keyword">
       <button class="button-search">Search</button>
     </form>
   </div>

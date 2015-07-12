@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   tagName: 'div',
   classNames: ['problems-globe-container'],
 
-  didInsertElement: function() {
+  /* didInsertElement: function() {
     var planet = planetaryjs.planet();
 
     // Make the planet fit well in its canvas
@@ -38,7 +38,7 @@ export default Ember.Component.extend({
       var naiLong = 36.8167;
       var beiLat = 39.9167;
       var beiLong = 116.3833;
-      var color = 'green'
+      var color = 'green';
       planet.plugins.pings.add(wbdLong, wbdLat, {color: color, ttl: 1000, angle: 5});
       planet.plugins.pings.add(gvlLong, gvlLat, {color: color, ttl: 1000, angle: 5});
       planet.plugins.pings.add(naiLong, naiLat, {color: color, ttl: 1000, angle: 5});
@@ -73,12 +73,12 @@ export default Ember.Component.extend({
             // to rotate the globe each time we draw it.
             var rotation = planet.projection.rotate();
             rotation[0] += degPerSec * delta / 1000;
-            if (rotation[0] >= 180) rotation[0] -= 360;
+            if (rotation[0] >= 180) {rotation[0] -= 360;}
             planet.projection.rotate(rotation);
             lastTick = now;
           }
         });
       };
     }
-  }
+  } */
 });
