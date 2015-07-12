@@ -31,5 +31,6 @@
   "unused": true,
   "globals": {
     "$": false
+    "_": false
   }
 }
