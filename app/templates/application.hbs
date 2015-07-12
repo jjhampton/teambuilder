@@ -1,7 +1,7 @@
 <nav class="primary-nav">
   {{#if session.isAuthenticated}}
     <span class="nav-buttons-authenticated">
-      <span>Welcome {{session.currentUser.firstName}} {{session.currentUser.lastName}}</span>
+      <span>Welcome, {{session.currentUser.firstName}} {{session.currentUser.lastName}}</span>
       {{#link-to 'index'}}
         <button class="nav-button-home">Home</button>
       {{/link-to}}

@@ -54,6 +54,10 @@ APPLICATION
   @include span-columns(2 of 6);
 }
 
+.nav-input {
+  padding: 1em;
+}
+
 .nav-button-logout {
   float: right;
 }
@@ -71,7 +75,6 @@ HEADER
 }
 
 .primary-heading {
-  padding: 2em;
 }
 
 .header-button-add {
