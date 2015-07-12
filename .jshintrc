@@ -32,6 +32,6 @@
   "globals": {
     "$": false,
     "_": false,
-    "GMaps": false
+    "L": false
   }
 }
