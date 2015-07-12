@@ -38,7 +38,7 @@ APPLICATION
 .primary-nav {
   width: 100%;
   background-color: #fff;
-  padding: 1em;
+  padding: 0.5em;
   border-bottom: 1px solid $medium-gray;
   overflow: hidden;
 }
@@ -61,7 +61,7 @@ APPLICATION
 .nav-input,
 .nav-button-login {
   display: inline;
-  padding: 1em;
+  margin-bottom: 0;
 }
 
 .nav-button-logout {

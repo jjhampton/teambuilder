@@ -1,12 +1,11 @@
 <nav class="primary-nav">
   {{#if session.isAuthenticated}}
     <span class="nav-buttons-authenticated">
-      <span>Welcome, {{session.currentUser.firstName}} {{session.currentUser.lastName}}</span>
       {{#link-to 'index'}}
         <button class="nav-button-home">Home</button>
       {{/link-to}}
       {{#link-to 'users.show' session.currentUser}}
-        <button class="nav-button-profile">Profile</button>
+        <button class="nav-button-profile">{{session.currentUser.firstName}} {{session.currentUser.lastName}}'s Profile</button>
       {{/link-to}}
     </span>
     <span class="nav-container-logoout">
