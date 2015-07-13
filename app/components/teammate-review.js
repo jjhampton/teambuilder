@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'li',
+  classNames: ['teammate-review'],
   actions: {
     reviewTeammate: function(user) {
       console.log('component tr > reviewTeammate');

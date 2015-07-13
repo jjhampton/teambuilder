@@ -289,6 +289,46 @@ PROBLEMS-MANAGE
 --------------------------------*/
 
 /*--------------------------------
+PROBLEMS-REVIEW
+--------------------------------*/
+.review-members-list {
+  @include span-columns(9);
+  @include shift(1.5);
+}
+
+.review-input-label {
+  @include span-columns(3 of 9);
+}
+
+.teammate-review {
+  margin-bottom: 1em;
+}
+
+.review-member-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.review-instructions {
+  text-align: center;
+}
+
+.review-input-label {
+  text-align: center;
+}
+
+.review-input {
+  margin: 0 auto;
+}
+
+.review-button-submit {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/*--------------------------------
 USERS-CREATE
 --------------------------------*/
 
