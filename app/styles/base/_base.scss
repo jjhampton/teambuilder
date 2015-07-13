@@ -22,10 +22,22 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin-bottom: 1em;
+}
+
 .primary-heading,
 .secondary-heading {
   font-weight: bold;
   text-align: center;
+}
+
+.key-title {
+  font-weight: bold;
+}
+
+.list-item-title {
+  font-weight: bold;
 }
 
 /*--------------------------------
@@ -178,12 +190,62 @@ PROBLEMS-CREATE
 /*--------------------------------
 PROBLEMS-SHOW
 --------------------------------*/
-.problem-show-map {
-  @include span-columns(6);
-  text-align: center;
-  height: 400px;
-  border: 1px solid red;
+
+.problem-info-container {
+  @include span-columns(5);
+  @include shift(1);
 }
+
+.problem-location-container {
+  @include span-columns(5);
+  @include omega();
+  text-align: center;
+}
+
+.problem-users-container {
+  @include span-columns(5);
+  @include shift(1);
+}
+
+.problem-options-container {
+  @include span-columns(5);
+  @include omega();
+  text-align: center;
+}
+
+.problem-tags-list {
+  margin-bottom: 0.75em;
+}
+
+.problem-tag {
+  display: inline;
+}
+
+.problem-tag:after {
+  content: ', ';
+}
+
+.problem-tag:first-child:after,
+.problem-tag:last-child:after {
+  content: '';
+}
+
+.problem-members-list,
+.problem-volunteer {
+  margin-bottom: 1em;
+}
+
+.problem-email {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.problem-button-review {
+  margin-bottom: 1em;
+}
+
+
 
 /*--------------------------------
 PROBLEMS-MANAGE
@@ -269,10 +331,6 @@ USERS-SHOW
 .users-show-section-heading,
 .user-skillchart-heading {
   text-align: center;
-}
-
-.list-item-title {
-  font-weight: bold;
 }
 
 .user-skills-list,
