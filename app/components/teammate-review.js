@@ -7,10 +7,10 @@ export default Ember.Component.extend({
     reviewTeammate: function(user) {
       console.log('component tr > reviewTeammate');
       var thinkerReview = Number(this.get('thinkerReview'));
-      var thinkerCurrent = user.get('thinker');
+      // var thinkerCurrent = user.get('thinker');
       console.log('thinkerReview', thinkerReview);
-      console.log('thinkerCurrent', thinkerCurrent);
-      this.sendAction('action', user, thinkerReview, thinkerCurrent);
+      // console.log('thinkerCurrent', thinkerCurrent);
+      this.sendAction('action', user, thinkerReview);
     }
   }
 });
