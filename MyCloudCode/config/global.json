@@ -3,12 +3,12 @@
     "parseVersion": "1.4.2"
   },
   "applications": {
-    "_default": {
-      "link": "teambuilder"
+    "Team Builder": {
+      "applicationId": "2LyY9FE22SGEpGNjywuiXAQd5mismhpxCcQAtzHX",
+      "masterKey": "9oO05o8k3Mh102QcZewZ15PnyeZQOPhxsK34u7Hs"
     },
-    "teambuilder": {
-      "applicationId": "Ylyjr2ggcfaPIbVCIiVgt6xIYijYG4DbshJoEjZe",
-      "masterKey": "c80ilg03Sa5IschtOc2YkP7m4yum9MbgKSVNfVl7"
+    "_default": {
+      "link": "Team Builder"
     }
   }
 }
