@@ -83,6 +83,11 @@ APPLICATION
   margin-bottom: 0;
 }
 
+input.nav-input {
+  line-height: inherit;
+  margin-bottom: 0;
+}
+
 .nav-button-logout {
   display: inline-block;
   float: right;
@@ -342,6 +347,7 @@ USERS-CREATE
 .users-create-optional {
   width: 100%;
 }
+
 
 #map {
   @include span-columns(8);
