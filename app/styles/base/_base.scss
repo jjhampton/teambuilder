@@ -11,7 +11,7 @@
 @import "typography";
 
 /*--------------------------------
-UNIVERSAL
+UNIVERSAL / BASE
 --------------------------------*/
 
 * {
@@ -20,6 +20,12 @@ UNIVERSAL
 
 img {
   max-width: 100%;
+}
+
+.primary-heading,
+.secondary-heading {
+  font-weight: bold;
+  text-align: center;
 }
 
 /*--------------------------------
@@ -80,9 +86,6 @@ HEADER
   text-align: center;
 }
 
-.primary-heading {
-}
-
 .header-button-add {
   margin-bottom: 2em;
 }
@@ -96,6 +99,7 @@ PROBLEMS-INDEX
 }
 
 .problems-heading {
+  font-weight: bold;
   text-align: center;
 }
 
@@ -227,19 +231,86 @@ USERS-CREATE
 /*--------------------------------
 USERS-SHOW
 --------------------------------*/
-.users-show-chart {
+.user-info-container {
+  @include span-columns(4);
+  @include shift(2);
+}
+
+.user-achievements-container {
+  @include span-columns(4);
+  @include omega();
+}
+
+.user-contributions-container {
+  @include span-columns(10);
+  @include shift(1)
+}
+
+.user-contributions-list {
+  @include span-columns(4 of 10);
+  list-style-type: circle;
+}
+
+.user-contributions-map {
+  @include span-columns(6 of 10);
+  @include omega();
+}
+
+.users-show-section-heading {
   text-align: center;
+}
+
+.list-item-title {
+  font-weight: bold;
+}
+
+.user-info-gravatar {
+  padding-left: 1em;
+  vertical-align:middle;
+}
+
+.user-info-item,
+.user-achievement,
+.user-contribution {
+  margin-bottom: 1em;
+}
+
+.user-info-button-email {
+  display: block;
+  margin: 0 auto;
+}
+
+.user-chart {
+  display: block;
+  margin: 0 auto 1em auto;
+}
+
+.user-points {
+  text-align: center;
+}
+
+.user-map {
+  display: block;
+  margin: 0 auto;
   height: 200px;
   width: 200px;
   border: 1px solid red;
 }
 
-.users-show-map {
-  text-align: center;
-  height: 200px;
-  width: 200px;
-  border: 1px solid red;
+.user-interest {
+  display: inline;
 }
+
+.user-interest:after {
+  content: ', ';
+}
+
+.user-interest:first-child:after,
+.user-interest:last-child:after {
+  content: '';
+}
+
+
 
 /*--------------------------------
 FOOTER
