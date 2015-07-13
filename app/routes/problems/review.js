@@ -17,7 +17,8 @@ export default Ember.Route.extend({
         }
       }).then(function(response) {
         console.log('adapter.ajax response:', response);
-      });
+        this.transitionTo('index');
+      }.bind(this));
     }
   }
 

@@ -8,16 +8,28 @@ export default Ember.Component.extend({
       var problemId = problem.id;
       var currentUserId = this.get('session.currentUser').id;
 
+      // Unique identifier that is generated when a review is submitted and saved in array on Parse user object
       var reviewKey = problemId + currentUserId;
-      console.log(reviewKey);
+      var reviewKeys = user.get('reviewKeys'); //user's current reviewKeys array
 
-      var review = {
-        thinkerReview: Number(this.get('thinkerReview')),
-        enablerReview: Number(this.get('enablerReview')),
-        connectorReview: Number(this.get('connectorReview'))
-      };
+      console.log('this reviewKey is ', reviewKey);
+      console.log('user current review keys are: ', user.get('reviewKeys'));
 
-      this.sendAction('action', user, review, reviewKey);
+      var isAlreadyReviewed = _.contains(reviewKeys, reviewKey);
+      console.log(isAlreadyReviewed);
+
+      if (isAlreadyReviewed) {
+        alert("You have already reviewed this team member for this problem.");
+      }
+      else {
+        var review = {
+          thinkerReview: Number(this.get('thinkerReview')),
+          enablerReview: Number(this.get('enablerReview')),
+          connectorReview: Number(this.get('connectorReview'))
+        };
+
+        this.sendAction('action', user, review, reviewKey);
+      }
     }
   }
 });
