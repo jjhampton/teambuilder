@@ -19,6 +19,7 @@ Parse.Cloud.define("reviewTeammate", function(request, response) {
     user.increment("thinker", thinkerReview);
     user.increment("enabler", enablerReview);
     user.increment("connector", connectorReview);
+    user.add("reviewKeys", reviewKey);
     return user.save();
   }).then(function(user) {
     response.success({
