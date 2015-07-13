@@ -9,7 +9,10 @@
       <li class="problem-tag">{{tag}}</li>
     {{/each}}
   </ul>
-  <p class="problem-progress"><b>Progress:</b> {{model.progress}}%</p>
+  <p class="problem-progress-text"><b>Progress:</b> {{model.progress}}%
+    <progress class="problem-progress-bar" value="{{model.progress}}" max="100"></progress>
+  </p>
+
   <p class="trello-update"><b>Trello API Data:</b></p>
   <p class="problem-collaborations"><b>We collaborate via Trello:</b> <a href="{{model.trelloURL}}">{{model.name}} Trello Board</a></p>
 </section>

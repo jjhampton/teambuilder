@@ -230,6 +230,38 @@ PROBLEMS-SHOW
   content: '';
 }
 
+.problem-progress-bar {
+  display: inline-block;
+}
+
+/* progress bar code credit: https://css-tricks.com/html5-progress-element/
+*/
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(top,
+	                           rgba(255, 255, 255, .25),
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+
+
 .problem-members-list,
 .problem-volunteer {
   margin-bottom: 1em;
