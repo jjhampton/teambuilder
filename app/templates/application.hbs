@@ -1,17 +1,20 @@
 <nav class="primary-nav">
   {{#if session.isAuthenticated}}
-    <span class="nav-buttons-group">
-      <span>Welcome {{session.currentUser.firstName}} {{session.currentUser.lastName}}</span>
+    <span class="nav-buttons-container">
       {{#link-to 'index'}}
-        <button class="nav-button nav-button-home">Home</button>
+        <button class="nav-button-home">Home</button>
       {{/link-to}}
       {{#link-to 'users.show' session.currentUser}}
-        <button class="nav-button nav-button-profile">Profile</button>
+        <button class="nav-button-profile">{{session.currentUser.name}}'s Profile</button>
       {{/link-to}}
-      <button {{action 'invalidateSession'}}>Logout</button>
+    </span>
+    <span class="nav-container-logoout">
+      <button class="nav-button-logout" {{action 'invalidateSession'}}>Logout</button>
     </span>
   {{else}}
     {{sessions-create}}
   {{/if}}
 </nav>
+<div class="outer-container">
 {{outlet}}
+</div>

@@ -1,44 +1,41 @@
-<h1 class="header problems-create-header">Add a Problem You Need Help Solving</h1>
-<form {{action 'createProblem' on='submit'}}>
-  <label>
-    Problem Name:
-    {{input class="problems-create-name" type="text" placeholder="Name of problem" value=model.name}}
-  </label>
-  <label>
-    Description:
-    {{textarea class="problems-create-description" placeholder="Short description of the problem" value=model.description}}
-  </label>
-  <label>
-    Deadline for solving the problem (Choose date):
-    {{pikaday-input value=model.deadline}}
-  </label>
-  <label>
-    Tags:
-    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
-    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
-    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
-    <span><button class="button-tag-add"{{action 'addTagInput'}}>Add another tag</button></span>
-  </label>
-  <fieldset>
-    <legend>Location</legend>
-    <label>
-      City:
-      {{input class="problems-create-city" type="text" placeholder="Enter your city here" value=model.city}}
-    </label>
-    <label>
-      State/Province:
-      {{input class="problems-create-state" type="text" placeholder="Enter your state/province here" value=model.state}}
-    </label>
-    <label>
-      Country:
-      {{input class="problems-create-country" type="text" placeholder="Enter your country here" value=model.country}}
-    </label>
-    <span class="problems-create-button-location">Use Current Location</span>
+<h1 class="primary-heading">Add a problem that you need help solving.</h1>
+<form class="problems-create-form"{{action 'createProblem' on='submit'}}>
+  <fieldset class="problems-create-fieldset">
+    <legend>Problem Information</legend>
+
+    {{input class="problems-create-info" type="text" placeholder="Name of problem" value=model.name}}
+    {{textarea class="problems-create-info" placeholder="Short description of the problem" value=model.description}}
+    {{input class="problems-create-info" type="url" placeholder="Trello Project URL" value=model.trelloURL}}
   </fieldset>
-  <label>Trello URL:
-    {{input class="problems-create-URL" type="url" placeholder="Trello URL" value=model.trelloURL}}
-  </label>
-  <button class="button-submit">Submit Problem!</button>
+
+  <fieldset class="problems-create-fieldset">
+    <legend>Deadline for solving the problem</legend>
+    {{pikaday-input class="problems-create-datepicker" placeholder="Enter date" type="date" value=model.deadline}}
+  </fieldset>
+
+  <fieldset class="problems-create-fieldset">
+    <legend>Tags</legend>
+    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
+    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
+    <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
+    <button class="problems-create-button-addtag"{{action 'addTagInput'}}>Add another tag</button>
+  </fieldset>
+
+  <fieldset class="problems-create-fieldset">
+    <legend>Location</legend>
+
+    {{input class="problems-create-location" type="text" placeholder="City" value=model.city}}
+
+    {{input class="problems-create-location" type="text" placeholder="State/Province" value=model.state}}
+
+    {{input class="problems-create-location" type="text" placeholder="Country" value=model.country}}
+
+    <button class="problems-create-button-location">Use Current Location</button>
+  </fieldset>
+
+  {{leaflet-map}}
+
+  <button class="problems-create-button-submit">You're finished filling out info.  Submit the Problem!</button>
 </form>
 
 {{yield}}

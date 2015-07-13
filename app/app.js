@@ -15,4 +15,9 @@ App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
+Ember.Handlebars.registerBoundHelper('momentDate', function(date) {
+  return moment(date).format('MM/DD/YYYY');
+});
+
+
 export default App;

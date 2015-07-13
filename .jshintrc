@@ -32,6 +32,8 @@
   "globals": {
     "$": false,
     "_": false,
-    "L": false
+    "L": false,
+    "planetaryjs": false,
+    "moment": false
   }
 }

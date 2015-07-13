@@ -1,49 +1,64 @@
 <h1 class="primary-heading">{{model.name}}</h1>
-<p class="problem-owner">Owner: {{model.owner.firstName}} {{model.owner.lastName}}</p>
-<p class="problem-description">Description: {{model.description}}</p>
-<p class="problem-created">Created: {{model.createdAt}}</p>
-<p class="problem-deadline">Deadline: {{model.deadline}}</p>
-<p class="problem-tags">Tags: {{#each model.tags as |tag|}}{{tag}} {{/each}}</p>
-<p class="problem-progress">Progress: {{model.progress}}%</p>
-<div class="trello-update">Trello API Data</div>
-<span class="problem-collaborations">We collaborate via Trello at: </span>
-<p class="problem-trelloURL">{{model.trelloURL}}</p>
-<p class="problem-city">City: {{model.city}}</p>
-<p class="problem-state">State/Province: {{model.state}}</p>
-<p class="problem-country">Country: {{model.country}}</p>
-<div class="problem-show-map">Map</div>
-<p class="problem-members">Current Team Members: </p>
+<section class="problem-info-container">
+  <p class="problem-description"><b>Description:</b> {{model.description}}</p>
+  <p class="problem-created"><b>Created:</b> {{momentDate model.createdAt}}</p>
+  <p class="problem-deadline"><b>Deadline:</b> {{momentDate model.deadline}}</p>
+  <ul class="problem-tags-list">
+    <li class="problem-tag"><b>Tags:</b></li>
+    {{#each model.tags as |tag|}}
+      <li class="problem-tag">{{tag}}</li>
+    {{/each}}
+  </ul>
+  <p class="problem-progress-text"><b>Progress:</b> {{model.progress}}%
+    <progress class="problem-progress-bar" value="{{model.progress}}" max="100"></progress>
+  </p>
 
-<ul class="problem-members-list">
-{{#if model.member1}}
-  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}} </li>
-{{/if}}
-{{#if model.member2}}
-  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}} </li>
-{{/if}}
-{{#if model.member3}}
-  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}} </li>
-{{/if}}
-{{#if model.member4}}
-  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}} </li>
-{{/if}}
-{{#if model.member5}}
-  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
-{{/if}}
-</ul>
+  <p class="trello-update"><b>Trello API Data:</b></p>
+  <p class="problem-collaborations"><b>We collaborate via Trello:</b> <a href="{{model.trelloURL}}">{{model.name}} Trello Board</a></p>
+</section>
+<section class="problem-location-container">
+  <h3 class="secondary-heading">Location: {{model.city}}, {{model.state}}, {{model.country}}</h3>
+  {{leaflet-map}}
+</section>
+<section class="problem-users-container">
+  <h3 class="problem-members">Current Team Members:</h3>
 
-<button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
-<input class="problem-email" placeholder="Email the owner w/o joining"><button>Send email</button>
-{{#if model.isComplete}}
-<p>Team Members:</p>
-{{#link-to 'problems.review' model}}
-<button class="problem-button-review">Review Teammates</button>
-{{/link-to}}
-{{/if}}
-<p>Team Owner:</p>
-{{#link-to 'problems.manage' model}}
-<button class="problem-button-manage">Manage Team</button>
-{{/link-to}}
+  <ul class="problem-members-list">
+    <li class="problem-members-list-item">{{#link-to 'users.show' model.owner.id}}{{model.owner.name}} (Owner){{/link-to}}</li>
+    {{#if model.member1}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' model.member1.id}}{{model.member1.name}}{{/link-to}}</li>
+    {{/if}}
+    {{#if model.member2}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' model.member2.id}}{{model.member2.name}}{{/link-to}}</li>
+    {{/if}}
+    {{#if model.member3}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' model.member3.id}}{{model.member3.name}}{{/link-to}}</li>
+    {{/if}}
+    {{#if model.member4}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' model.member4.id}}{{model.member4.name}}{{/link-to}}</li>
+    {{/if}}
+    {{#if model.member5}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' model.member5.id}}{{model.member5.name}}{{/link-to}}</li>
+    {{/if}}
+  </ul>
+
+  <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
+  <p class="problem-email-label">Don't want to join but still want to provide input? Send the owner your comments and suggestions.</p>
+  <textarea class="problem-email" placeholder="Enter your comment or message here."></textarea>
+  <button>Send crowdsourced input</button>
+</section>
+<section class="problem-options-container">
+  {{#if model.isComplete}}
+  <h3>If you were on this team: </h3>
+  {{#link-to 'problems.review' model}}
+  <button class="problem-button-review">Review Teammates</button>
+  {{/link-to}}
+  {{/if}}
+  <h3>Team Owner:</h3>
+  {{#link-to 'problems.manage' model}}
+  <button class="problem-button-manage">Manage Team</button>
+  {{/link-to}}
+</section>
 
 
 {{yield}}
