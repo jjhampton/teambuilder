@@ -5,12 +5,13 @@ export default Ember.Component.extend({
   classNames: ['teammate-review'],
   actions: {
     reviewTeammate: function(user) {
-      console.log('component tr > reviewTeammate');
+
       var review = {
         thinkerReview: Number(this.get('thinkerReview')),
         enablerReview: Number(this.get('enablerReview')),
         connectorReview: Number(this.get('connectorReview'))
       };
+      
       this.sendAction('action', user, review);
     }
   }

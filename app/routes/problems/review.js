@@ -1,16 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('problem', params.problem_id);
+  },
 
   actions: {
-    // reviewTeammate: function(user, thinkerReview, thinkerCurrent) {
-    //   console.log('router > reviewTeammate');
-    //   user.set('thinker', thinkerCurrent + thinkerReview);
-    //   console.log(user.get('thinker'));
-    //   user.save();
-    // }
-
     reviewTeammate: function(user, review) {
+      console.log(this.get('model'));
       console.log('route > reviewTeammate ', review);
 
       var adapter = this.store.adapterFor('application');
@@ -23,7 +20,7 @@ export default Ember.Route.extend({
       }).then(function(response) {
         console.log('adapter.ajax response:', response);
       });
-    }
+    }.bind(this)
   }
 
 });
