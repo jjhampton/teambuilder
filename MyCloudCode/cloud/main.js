@@ -4,9 +4,7 @@
 
 Parse.Cloud.define("hello", function(request, response) {
   response.success("Hello world!");
-});
-
-Parse.Cloud.define("reviewTeammate", function(request, response) {
+});se.Cloud.define("reviewTeammate", function(request, response) {
   Parse.Cloud.useMasterKey();
   var userId = request.params.userId;
   var thinkerReview = request.params.review.thinkerReview;
