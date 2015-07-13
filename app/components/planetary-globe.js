@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'div',
   classNames: ['problems-globe-container']
-  //
+
   //  didInsertElement: function() {
   //   var planet = planetaryjs.planet();
   //
@@ -23,7 +23,7 @@ export default Ember.Component.extend({
   //   planet.loadPlugin(planetaryjs.plugins.zoom());
   //
   //   // Planet autorotate
-  //   // planet.loadPlugin(autorotate(10))
+  //   planet.loadPlugin(autorotate(10))
   //
   //   // Load planet ping plugin
   //   planet.loadPlugin(planetaryjs.plugins.pings());
@@ -80,5 +80,5 @@ export default Ember.Component.extend({
   //       });
   //     };
   //   }
-  //}
+  // }
 });

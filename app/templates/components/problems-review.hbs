@@ -1,30 +1,22 @@
-<h1 class="header problems-create-header">Review the Team's Performance</h1>
-<h1 class="primary-heading">{{model.name}}</h1>
-<ul class="problem-members-list">
-  <li class="problem-members-list-item">{{model.owner.name}} </li>
+<h1 class="primary-heading">Review Your Team's Performance</h1>
+<h2 class="secondary-heading">{{model.name}}</h2>
+<ul class="review-members-list">
   {{teammate-review model=model.owner action="reviewTeammate"}}
-
   {{#if model.member1}}
-    <li class="problem-members-list-item">{{model.member1.name}} </li>
     {{teammate-review model=model.member1 action="reviewTeammate"}}
   {{/if}}
   {{#if model.member2}}
-    <li class="problem-members-list-item">{{model.member2.name}} </li>
     {{teammate-review model=model.member2}}
   {{/if}}
   {{#if model.member3}}
-    <li class="problem-members-list-item">{{model.member3.name}} </li>
     {{teammate-review model=model.member3}}
   {{/if}}
   {{#if model.member4}}
-    <li class="problem-members-list-item">{{model.member4.name}} </li>
     {{teammate-review model=model.member4}}
   {{/if}}
   {{#if model.member5}}
-    <li class="problem-members-list-item">{{model.member5.name}} </li>
     {{teammate-review model=model.member5}}
   {{/if}}
-
 </ul>
 
 {{yield}}
