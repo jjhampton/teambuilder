@@ -16,7 +16,8 @@ export function initialize() {
     age: DS.attr('number'),
     occupation: DS.attr('string'),
     interests: DS.attr(),
-    contributions: DS.attr()
+    contributions: DS.attr(),
+    reviewKeys: DS.attr()
     //
     // parseClassName: function(){
     //   return "_User";
