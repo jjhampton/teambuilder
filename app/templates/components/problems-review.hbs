@@ -1,0 +1,22 @@
+<h1 class="primary-heading">Review Your Team's Performance</h1>
+<h2 class="secondary-heading">{{model.name}}</h2>
+<ul class="review-members-list">
+  {{teammate-review model=model.owner action="reviewTeammate"}}
+  {{#if model.member1}}
+    {{teammate-review model=model.member1 action="reviewTeammate"}}
+  {{/if}}
+  {{#if model.member2}}
+    {{teammate-review model=model.member2}}
+  {{/if}}
+  {{#if model.member3}}
+    {{teammate-review model=model.member3}}
+  {{/if}}
+  {{#if model.member4}}
+    {{teammate-review model=model.member4}}
+  {{/if}}
+  {{#if model.member5}}
+    {{teammate-review model=model.member5}}
+  {{/if}}
+</ul>
+
+{{yield}}

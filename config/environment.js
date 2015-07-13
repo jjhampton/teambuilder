@@ -24,10 +24,10 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'self' ",
-      'script-src': "'self' 'unsafe-inline' ",
+      'script-src': "'self' 'unsafe-inline' d3js.org maps.gstatic.com ",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' api.parse.com",
-      'img-src': "'self' ",
+      'img-src': "'self' api.tiles.mapbox.com ",
       'style-src': "'self' 'unsafe-inline' ",
       'media-src': "'self' "
     }

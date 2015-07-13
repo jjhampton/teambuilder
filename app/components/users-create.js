@@ -6,8 +6,8 @@ export default Ember.Component.extend({
       this.sendAction('action', this.get('model'));
     },
     addInterestInput: function() {
-      var interestInput = '<input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">';
-      $('.button-interest-add').before(interestInput);
+      var interestInput = '<input class="users-create-optional" type="text" placeholder="Enter a personal interest of yours" name="interest">';
+      $('.users-create-button-addinterest').before(interestInput);
     }
   }
 });

@@ -11,119 +11,452 @@
 @import "typography";
 
 /*--------------------------------
-BODY
+UNIVERSAL / BASE
 --------------------------------*/
 
-body {
-  @include outer-container(980px);
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.primary-heading,
+.secondary-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.key-title {
+  font-weight: bold;
+}
+
+.list-item-title {
+  font-weight: bold;
 }
 
 /*--------------------------------
 BODY
 --------------------------------*/
 
+/*--------------------------------
+APPLICATION
+--------------------------------*/
+
+.outer-container {
+  @include outer-container(100%);
+  background-color: $very-light-gray;
+  padding: 1em;
+}
+
 .primary-nav {
-  border-bottom: 1px solid red;
+  width: 100%;
+  background-color: #fff;
+  padding: 0.5em;
+  border-bottom: 1px solid $medium-gray;
+  overflow: hidden;
 }
 
-.nav-button,
-.nav-input {
+.nav-buttons-container {
   display: inline-block;
+  float: left;
 }
 
-.nav-buttons-group {
+.nav-buttons-container {
   display: inline-block;
+  float: left;
 }
+
+.nav-form-login {
+  display: inline-block;
+  float: right;
+}
+
+.nav-input,
+.nav-button-login {
+  display: inline;
+  margin-bottom: 0;
+}
+
+input.nav-input {
+  line-height: inherit;
+  margin-bottom: 0;
+}
+
+.nav-button-logout {
+  display: inline-block;
+  float: right;
+}
+
+
 
 /*--------------------------------
 HEADER
 --------------------------------*/
 
-.index-hero-header {
+.header {
   text-align: center;
+}
+
+.header-button-add {
+  margin-bottom: 2em;
 }
 
 /*--------------------------------
 PROBLEMS-INDEX
 --------------------------------*/
 
-.problems-main-heading {
+.problems-outer-container {
+  @include span-columns(12);
+}
+
+.problems-heading {
+  font-weight: bold;
   text-align: center;
 }
 
-.problems-index-map {
-  @include span-columns(6);
+.problems-globe-container {
+  @include span-columns(6 of 12);
   text-align: center;
-  height: 400px;
-  border: 1px solid red;
+  border: 1px solid black;
+}
+
+.globe {
+  max-width: 100%;
+  cursor: move;
 }
 
 .problems-index-container {
-  @include span-columns(6);
+  @include span-columns(6 of 12);
   @include omega();
   text-align: center;
-  height: 400px;
-  border: 1px solid red;
+  padding: 2em;
 }
 
-.problems-filter-heading {
-  text-align: center;
-}
-
-.category-filter-list {
-  @include span-columns(12);
-}
-
-.filter-list-item {
-  @include span-columns(2 of 12);
-  text-align: center;
-  border: 1px solid red;
+.problems-index {
+  margin-top: 2em;
 }
 
 .problems-search-form {
-  @include span-columns(12);
-  @include shift(3.5);
+  margin-top: 2em;
 }
 
 .problems-search-input {
-  @include span-columns(4);
+  width: 100%;
 }
 
-.problems-search-input,
-.button-search {
-  display: inline-block;
+/*--------------------------------
+PROBLEMS-CREATE
+--------------------------------*/
+
+.problems-create-fieldset {
+ @include span-columns(8);
+ @include shift(2);
+ @include omega();
+ padding: 1em;
+ margin-bottom: 1em;
+}
+
+.problems-create-info,
+.problems-create-location,
+.problems-create-tag {
+  width: 100%;
+}
+
+#map {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+  padding: 1em;
+  height: 31em;
+  margin-bottom: 1em;
+}
+
+.problems-create-button-location,
+.problems-create-button-addinterest {
+  display: block;
+  margin: 0 auto;
+}
+
+.problems-create-button-submit {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
 }
 
 /*--------------------------------
 PROBLEMS-SHOW
 --------------------------------*/
-.problem-show-map {
-  @include span-columns(6);
-  text-align: center;
-  height: 400px;
-  border: 1px solid red;
+
+.problem-info-container {
+  @include span-columns(5);
+  @include shift(1);
 }
+
+.problem-location-container {
+  @include span-columns(5);
+  @include omega();
+  text-align: center;
+}
+
+.problem-users-container {
+  @include span-columns(5);
+  @include shift(1);
+}
+
+.problem-options-container {
+  @include span-columns(5);
+  @include omega();
+  text-align: center;
+}
+
+.problem-tags-list {
+  margin-bottom: 0.75em;
+}
+
+.problem-tag {
+  display: inline;
+}
+
+.problem-tag:after {
+  content: ', ';
+}
+
+.problem-tag:first-child:after,
+.problem-tag:last-child:after {
+  content: '';
+}
+
+.problem-progress-bar {
+  display: inline-block;
+}
+
+/* progress bar code credit: https://css-tricks.com/html5-progress-element/
+*/
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(top,
+	                           rgba(255, 255, 255, .25),
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+
+
+.problem-members-list,
+.problem-volunteer {
+  margin-bottom: 1em;
+}
+
+.problem-members-list {
+  padding-left: 1em;
+  list-style-type: circle;
+}
+
+.problem-email {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.problem-button-review {
+  margin-bottom: 1em;
+}
+
+
 
 /*--------------------------------
 PROBLEMS-MANAGE
 --------------------------------*/
 
 /*--------------------------------
+PROBLEMS-REVIEW
+--------------------------------*/
+.review-members-list {
+  @include span-columns(9);
+  @include shift(1.5);
+}
+
+.review-input-label {
+  @include span-columns(3 of 9);
+}
+
+.teammate-review {
+  margin-bottom: 1em;
+}
+
+.review-member-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.review-instructions {
+  text-align: center;
+}
+
+.review-input-label {
+  text-align: center;
+}
+
+.review-input {
+  margin: 0 auto;
+}
+
+.review-button-submit {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/*--------------------------------
+USERS-CREATE
+--------------------------------*/
+
+.users-create-fieldset {
+ @include span-columns(8);
+ @include shift(2);
+ @include omega();
+ padding: 1em;
+ margin-bottom: 1em;
+}
+
+.users-create-info,
+.users-create-location,
+.users-create-optional {
+  width: 100%;
+}
+
+
+#map {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+  padding: 1em;
+  height: 31em;
+  margin-bottom: 1em;
+}
+
+.users-create-button-location,
+.users-create-button-addinterest {
+  display: block;
+  margin: 0 auto;
+}
+
+.users-create-button-submit {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+}
+
+/*--------------------------------
 USERS-SHOW
 --------------------------------*/
-.users-show-chart {
+
+.user-info-gravatar {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.user-info-container {
+  @include span-columns(4);
+}
+
+.user-skillchart-container {
+  @include span-columns(4);
+}
+
+.user-skillpoints-container {
+  @include span-columns(4);
+  @include omega();
+}
+
+.user-contributions-container {
+  @include span-columns(10);
+  @include shift(1)
+}
+
+.user-contributions-list {
+  @include span-columns(4 of 10);
+  list-style-type: circle;
+}
+
+.user-contributions-map {
+  @include span-columns(6 of 10);
+  @include omega();
+}
+
+.users-show-section-heading,
+.user-skillchart-heading {
   text-align: center;
+}
+
+.user-skills-list,
+.user-info-list {
+  text-align: center;
+}
+
+.user-info-item,
+.user-skill,
+.user-contribution {
+  margin-bottom: 1em;
+}
+
+.user-info-button-email {
+  display: block;
+  margin: 0 auto;
+}
+
+.user-chart {
+  display: block;
+  max-width: 75%;
+  margin: 0 auto 1em auto;
+}
+
+.user-map {
+  display: block;
+  margin: 0 auto;
   height: 200px;
   width: 200px;
   border: 1px solid red;
 }
 
-.users-show-map {
-  text-align: center;
-  height: 200px;
-  width: 200px;
-  border: 1px solid red;
+.user-interest {
+  display: inline;
 }
+
+.user-interest:after {
+  content: ', ';
+}
+
+.user-interest:first-child:after,
+.user-interest:last-child:after {
+  content: '';
+}
+
+
 
 /*--------------------------------
 FOOTER

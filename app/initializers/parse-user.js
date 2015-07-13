@@ -3,8 +3,7 @@ import ParseUser from 'ember-parse-adapter/models/parse-user';
 
 export function initialize() {
   ParseUser.reopen({
-    firstName: DS.attr('string'),
-    lastName: DS.attr('string'),
+    name: DS.attr('string'),
     thinker: DS.attr('number'),
     enabler: DS.attr('number'),
     connector: DS.attr('number'),
@@ -17,11 +16,11 @@ export function initialize() {
     age: DS.attr('number'),
     occupation: DS.attr('string'),
     interests: DS.attr(),
-    contributions: DS.attr(),
-
-    parseClassName: function(){
-      return "_User";
-    }
+    contributions: DS.attr()
+    //
+    // parseClassName: function(){
+    //   return "_User";
+    // }
   });
 }
 
