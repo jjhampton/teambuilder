@@ -10,16 +10,15 @@ export default Ember.Route.extend({
     //   user.save();
     // }
 
-    reviewTeammate: function(user, thinkerReview) {
-      console.log('route > reviewTeammate');
-      console.log('route user name is', user.get('name'));
-      console.log('route user id is', user.get('id'));
+    reviewTeammate: function(user, review) {
+      console.log('route > reviewTeammate ', review);
+
       var adapter = this.store.adapterFor('application');
 
       adapter.ajax("https://api.parse.com/1/functions/reviewTeammate", "POST", {
         data: {
           userId: user.get('id'),
-          thinkerReview: thinkerReview
+          review: review
         }
       }).then(function(response) {
         console.log('adapter.ajax response:', response);

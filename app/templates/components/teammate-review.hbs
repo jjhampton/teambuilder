@@ -6,11 +6,11 @@
 </label>
 <label class="review-input-label">
   Enabler:
-  {{input class="review-input" type="number" value=model.enabler}}
+  {{input class="review-input" type="number" value=enablerReview}}
 </label>
 <label class="review-input-label">
   Connector:
-  {{input class="review-input" type="number" value=model.connector}}
+  {{input class="review-input" type="number" value=connectorReview}}
 </label>
 <button class="review-button-submit" {{action 'reviewTeammate' model}}>Submit teammate review!</button>
 {{yield}}
