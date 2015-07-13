@@ -1,8 +1,9 @@
 <h1 class="primary-heading">{{model.name}}</h1>
+<img class="user-info-gravatar" src="http://lorempixel.com/100/100/">
+
 <section class="user-info-container">
   <h2 class="users-show-section-heading">About</h2>
-  <ul>
-    <li class="user-info-item"><span class="list-item-title">Gravatar:</span> <img class="user-info-gravatar" src="http://lorempixel.com/output/nature-q-c-100-100-7.jpg"></li>
+  <ul class="user-info-list">
     <li class="user-info-item"><span class="list-item-title">Age:</span> {{model.age}}</li>
     <li class="user-info-item"><span class="list-item-title">Location:</span> {{model.city}}, {{model.state}}, {{model.country}}</li>
     <li class="user-info-item"><span class="list-item-title">Occupation:</span> {{model.occupation}}</li>
@@ -15,15 +16,16 @@
   </ul>
   <button class="user-info-button-email">Email user</button>
 </section>
-<section class="user-achievements-container">
-  <h2 class="users-show-section-heading">Achievements</h2>
-  <h3 class="user-achievement user-skillchart-heading">Skill Chart</h3>
-  <img class="user-achievement user-chart" src="assets/skills-chart-example.gif">
-  <h3 class="user-achievement user-skillchart-heading">Earned Skill Points</h3>
-  <ul class="user-achievement user-points">
-    <li class="user-thinker"><span class="list-item-title">Thinker:</span> {{model.thinker}}</li>
-    <li class="user-enabler"><span class="list-item-title">Enabler:</span> {{model.enabler}}</li>
-    <li class="user-connector"><span class="list-item-title">Connector:</span> {{model.connector}}</li>
+<section class="user-skillchart-container">
+  <h2 class="user-skillchart-heading">Skills Chart</h2>
+  <img class="user-chart" src="assets/skills-chart-example.gif">
+</section>
+<section class="user-skillpoints-container">
+  <h2 class="user-skillchart-heading">Earned Skill Points</h2>
+  <ul class="user-skills-list">
+    <li class="user-skill"><span class="list-item-title">Thinker:</span> {{model.thinker}}</li>
+    <li class="user-skill"><span class="list-item-title">Enabler:</span> {{model.enabler}}</li>
+    <li class="user-skill"><span class="list-item-title">Connector:</span> {{model.connector}}</li>
   </ul>
 </section>
 <section class="user-contributions-container">

@@ -231,12 +231,22 @@ USERS-CREATE
 /*--------------------------------
 USERS-SHOW
 --------------------------------*/
-.user-info-container {
-  @include span-columns(4);
-  @include shift(2);
+
+.user-info-gravatar {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
-.user-achievements-container {
+.user-info-container {
+  @include span-columns(4);
+}
+
+.user-skillchart-container {
+  @include span-columns(4);
+}
+
+.user-skillpoints-container {
   @include span-columns(4);
   @include omega();
 }
@@ -256,7 +266,8 @@ USERS-SHOW
   @include omega();
 }
 
-.users-show-section-heading {
+.users-show-section-heading,
+.user-skillchart-heading {
   text-align: center;
 }
 
@@ -264,13 +275,13 @@ USERS-SHOW
   font-weight: bold;
 }
 
-.user-info-gravatar {
-  padding-left: 1em;
-  vertical-align:middle;
+.user-skills-list,
+.user-info-list {
+  text-align: center;
 }
 
 .user-info-item,
-.user-achievement,
+.user-skill,
 .user-contribution {
   margin-bottom: 1em;
 }
@@ -282,11 +293,8 @@ USERS-SHOW
 
 .user-chart {
   display: block;
+  max-width: 75%;
   margin: 0 auto 1em auto;
-}
-
-.user-points {
-  text-align: center;
 }
 
 .user-map {
