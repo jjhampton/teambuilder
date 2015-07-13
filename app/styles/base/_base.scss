@@ -118,13 +118,10 @@ PROBLEMS-INDEX
 .problems-globe-container {
   @include span-columns(6 of 12);
   text-align: center;
-  padding: 2em;
   border: 1px solid black;
-  height: 31.125em;
 }
 
 .globe {
-  margin-top: 2em;
   max-width: 100%;
   cursor: move;
 }
