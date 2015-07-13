@@ -3,19 +3,19 @@
 <ul class="review-members-list">
   {{teammate-review model=model.owner problem=model action="reviewTeammate"}}
   {{#if model.member1}}
-    {{teammate-review model=model.member1  action="reviewTeammate"}}
+    {{teammate-review model=model.member1  problem=model action="reviewTeammate"}}
   {{/if}}
   {{#if model.member2}}
-    {{teammate-review model=model.member2 action="reviewTeammate"}}
+    {{teammate-review model=model.member2 problem=model action="reviewTeammate"}}
   {{/if}}
   {{#if model.member3}}
-    {{teammate-review model=model.member3 action="reviewTeammate"}}
+    {{teammate-review model=model.member3 problem=model action="reviewTeammate"}}
   {{/if}}
   {{#if model.member4}}
-    {{teammate-review model=model.member4 action="reviewTeammate"}}
+    {{teammate-review model=model.member4 problem=model action="reviewTeammate"}}
   {{/if}}
   {{#if model.member5}}
-    {{teammate-review model=model.member5 action="reviewTeammate"}}
+    {{teammate-review model=model.member5 problem=model action="reviewTeammate"}}
   {{/if}}
 </ul>
 
