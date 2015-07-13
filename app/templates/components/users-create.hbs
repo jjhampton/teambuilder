@@ -1,5 +1,5 @@
 <h1 class="header user-create-header">Sign up today to begin helping others.</h1>
-<form class="user-create-form "{{action 'createUser' on='submit'}}>
+<form class="users-create-form "{{action 'createUser' on='submit'}}>
   <fieldset class="users-create-fieldset">
     <legend>User Information</legend>
 
@@ -29,17 +29,14 @@
 
     {{input class="users-create-location" type="text" placeholder="City" value=model.city}}
 
-    {{input class="users-create-location" type="text" placeholder="Enter your state/province here" value=model.state}}
+    {{input class="users-create-location" type="text" placeholder="State/Province" value=model.state}}
 
-    {{input class="users-create-location" type="text" placeholder="Enter your country here" value=model.country}}
+    {{input class="users-create-location" type="text" placeholder="Country" value=model.country}}
 
     <button class="users-create-button-location">Use Current Location</button>
   </fieldset>
 
   {{leaflet-map}}
-
-
-
 
   <button class="users-create-button-submit">You're finished filling out info.  Sign Up!</button>
 </form>

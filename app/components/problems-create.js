@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     },
     addTagInput: function() {
       var tagInput = '<input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">';
-      $('.button-tag-add').before(tagInput);
+      $('.problems-create-button-addtag').before(tagInput);
     }
   }
 });

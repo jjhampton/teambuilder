@@ -28,6 +28,7 @@ label {
 
 #{$all-text-inputs},
 select[multiple=multiple],
+.problems-create-datepicker,
 textarea {
   background-color: $base-background-color;
   border: $base-border;

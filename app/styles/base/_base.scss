@@ -103,7 +103,6 @@ PROBLEMS-INDEX
   text-align: center;
   padding: 2em;
   border: 1px solid black;
-  max-height: 31.250em;
   max-width: 31.250em;
 }
 
@@ -129,6 +128,45 @@ PROBLEMS-INDEX
 
 .problems-search-input {
   width: 100%;
+}
+
+/*--------------------------------
+PROBLEMS-CREATE
+--------------------------------*/
+
+.problems-create-fieldset {
+ @include span-columns(8);
+ @include shift(2);
+ @include omega();
+ padding: 1em;
+ margin-bottom: 1em;
+}
+
+.problems-create-info,
+.problems-create-location,
+.problems-create-tag {
+  width: 100%;
+}
+
+#map {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+  padding: 1em;
+  height: 31em;
+  margin-bottom: 1em;
+}
+
+.problems-create-button-location,
+.problems-create-button-addinterest {
+  display: block;
+  margin: 0 auto;
+}
+
+.problems-create-button-submit {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
 }
 
 /*--------------------------------
