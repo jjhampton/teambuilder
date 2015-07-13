@@ -92,6 +92,7 @@ PROBLEMS-INDEX
 --------------------------------*/
 
 .problems-outer-container {
+  @include span-columns(12);
 }
 
 .problems-heading {
@@ -99,11 +100,11 @@ PROBLEMS-INDEX
 }
 
 .problems-globe-container {
-  @include span-columns(6);
+  @include span-columns(6 of 12);
   text-align: center;
   padding: 2em;
   border: 1px solid black;
-  max-width: 31.250em;
+  height: 31.125em;
 }
 
 .globe {
@@ -113,7 +114,8 @@ PROBLEMS-INDEX
 }
 
 .problems-index-container {
-  @include span-columns(6);
+  @include span-columns(6 of 12);
+  @include omega();
   text-align: center;
   padding: 2em;
 }
