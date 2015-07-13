@@ -33,6 +33,7 @@
     "$": false,
     "_": false,
     "L": false,
-    "planetaryjs": false
+    "planetaryjs": false,
+    "moment": false
   }
 }

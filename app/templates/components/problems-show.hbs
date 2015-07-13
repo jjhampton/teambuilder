@@ -1,8 +1,8 @@
 <h1 class="primary-heading">{{model.name}}</h1>
 <p class="problem-owner">Owner: {{model.owner.name}}</p>
 <p class="problem-description">Description: {{model.description}}</p>
-<p class="problem-created">Created: {{model.createdAt}}</p>
-<p class="problem-deadline">Deadline: {{model.deadline}}</p>
+<p class="problem-created">Created: {{momentDate model.createdAt}}</p>
+<p class="problem-deadline">Deadline: {{momentDate model.deadline}}</p>
 <p class="problem-tags">Tags: {{#each model.tags as |tag|}}{{tag}} {{/each}}</p>
 <p class="problem-progress">Progress: {{model.progress}}%</p>
 <div class="trello-update">Trello API Data</div>
