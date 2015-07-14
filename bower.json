@@ -21,8 +21,8 @@
     "underscore": "~1.8.3",
     "planetary.js": "~1.1.1",
     "leaflet-control-osm-geocoder": "*",
-    "leaflet-providers": "~1.1.1",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "~4.3.0",
+    "leaflet-awesome-markers": "~2.0.2"
   },
   "resolutions": {
     "ember": "~1.13.0",
