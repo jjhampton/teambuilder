@@ -11,7 +11,6 @@ export default Ember.Route.extend({
       $('input[name=tag]').each(function() {
         tagArray.push($(this).val());
       });
-
       problem.set('owner', this.get('session.currentUser'));
       problem.set('tags', tagArray);
       problem.save().then(function() {

@@ -6,6 +6,8 @@ export default DS.Model.extend({
   deadline: DS.attr('date'),
   createdAt: DS.attr('date'),
   tags: DS.attr(),
+  latitude: DS.attr('number'),
+  longitude: DS.attr('number'),
   city: DS.attr('string'),
   state: DS.attr('string'),
   country: DS.attr('string'),

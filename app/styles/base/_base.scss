@@ -51,7 +51,7 @@ APPLICATION
 .outer-container {
   @include outer-container(100%);
   background-color: $very-light-gray;
-  padding: 1em;
+  padding: 1.2em;
 }
 
 .primary-nav {
@@ -163,24 +163,23 @@ PROBLEMS-CREATE
 }
 
 .problems-create-info,
-.problems-create-location,
 .problems-create-tag {
   width: 100%;
 }
 
-#map {
-  @include span-columns(8);
-  @include shift(2);
-  @include omega();
-  padding: 1em;
+#createmap {
   height: 31em;
+  padding: 1em;
   margin-bottom: 1em;
 }
 
-.problems-create-button-location,
 .problems-create-button-addinterest {
   display: block;
   margin: 0 auto;
+}
+
+.problems-create-location-text {
+  text-align: center;
 }
 
 .problems-create-button-submit {
