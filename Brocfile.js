@@ -25,5 +25,7 @@ app.import('bower_components/planetary.js/dist/planetaryjs.min.js');
 app.import('bower_components/leaflet/dist/leaflet.js');
 app.import('bower_components/leaflet/dist/leaflet-src.js');
 app.import('bower_components/leaflet/dist/leaflet.css');
+app.import('bower_components/leaflet-control-osm-geocoder/Control.OSMGeocoder.js');
+app.import('bower_components/leaflet-control-osm-geocoder/Control.OSMGeocoder.css');
 
 module.exports = app.toTree();

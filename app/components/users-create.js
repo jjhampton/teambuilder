@@ -12,7 +12,7 @@ export default Ember.Component.extend({
     },
 
     useCurrentLocation: function() {
-      
+
     }
 
   }
