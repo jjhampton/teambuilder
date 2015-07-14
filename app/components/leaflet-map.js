@@ -15,13 +15,14 @@ export default Ember.Component.extend({
     	ext: 'png'
     });
 
-    var osmGeocoder = new L.Control.OSMGeocoder();
-
     var map = L.map('map',{attributionControl: false, zoom: 5}).locate({setView: true});
-
-    Stamen_TonerBackground.addTo(map);
+    var osmGeocoder = new L.Control.OSMGeocoder({
+            collapsed: false,
+            text: 'Enter location',
+			});
 
     map.addControl(osmGeocoder);
+    Stamen_TonerBackground.addTo(map);
 
     map.on('locationfound', onLocationFound);
 
@@ -29,6 +30,8 @@ export default Ember.Component.extend({
         // create a marker at the users "latlng" and add it to the map
         L.marker(e.latlng, {icon: redMarker}, {draggable: true}).addTo(map);
     }
+
+
 
   }.on('didInsertElement')
 });
