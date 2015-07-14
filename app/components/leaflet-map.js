@@ -10,5 +10,7 @@ export default Ember.Component.extend({
     id: 'jjhampton.f68b0cad',
     accessToken: 'pk.eyJ1IjoiampoYW1wdG9uIiwiYSI6ImEwM2Y0NWRjYTMxYTYzNGZlYzgxOGNmMzBhZmE3MDUzIn0.SN40uu8Q9bCtOf6stNTjZA'
     }).addTo(map);
+
+    L.marker([51.5, -0.09]).addTo(map);
   }.on('didInsertElement')
 });

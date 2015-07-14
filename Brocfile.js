@@ -23,6 +23,7 @@ app.import('bower_components/pikaday/css/pikaday.css');
 app.import('bower_components/underscore/underscore-min.js');
 app.import('bower_components/planetary.js/dist/planetaryjs.min.js');
 app.import('bower_components/leaflet/dist/leaflet.js');
+app.import('bower_components/leaflet/dist/leaflet-src.js');
 app.import('bower_components/leaflet/dist/leaflet.css');
 
 module.exports = app.toTree();
