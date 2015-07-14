@@ -155,8 +155,8 @@ PROBLEMS-CREATE
 --------------------------------*/
 
 .problems-create-fieldset {
- @include span-columns(8);
- @include shift(2);
+ @include span-columns(10);
+ @include shift(1);
  @include omega();
  padding: 1em;
  margin-bottom: 1em;
@@ -334,8 +334,8 @@ USERS-CREATE
 --------------------------------*/
 
 .users-create-fieldset {
- @include span-columns(8);
- @include shift(2);
+ @include span-columns(10);
+ @include shift(1);
  @include omega();
  padding: 1em;
  margin-bottom: 1em;
@@ -348,14 +348,14 @@ USERS-CREATE
 }
 
 
-#map {
+/* #map {
   @include span-columns(8);
   @include shift(2);
   @include omega();
   padding: 1em;
   height: 31em;
   margin-bottom: 1em;
-}
+} */
 
 .users-create-button-location,
 .users-create-button-addinterest {
@@ -364,7 +364,7 @@ USERS-CREATE
 }
 
 .users-create-button-submit {
-  @include span-columns(8);
+  @include span-columns(9);
   @include shift(2);
   @include omega();
 }
