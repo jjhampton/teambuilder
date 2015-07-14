@@ -1,7 +1,7 @@
-<h1 class="primary-heading">Sign up today to begin helping others.</h1>
+<h1 class="primary-heading">Sign up today to begin helping others solve problems.</h1>
 <form class="users-create-form">
   <fieldset class="users-create-fieldset">
-    <legend>User Information</legend>
+    <legend><b>User Information</b></legend>
 
     {{input class="users-create-info"  type="text" placeholder="Full name" value=model.name}}
 
@@ -11,13 +11,13 @@
   </fieldset>
 
   <fieldset class="users-create-fieldset users-create-fieldset-optional">
-    <legend>Optional Information</legend>
+    <legend><b>Optional Information</b></legend>
 
     {{input class="users-create-optional" type="text" placeholder="Occupation" value=model.occupation}}
 
     {{input class="users-create-info" type="text" placeholder="Age" value=model.age}}
 
-    <legend>Interests</legend>
+    <legend><b>Interests</b></legend>
     <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest">
     <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest">
     <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest">
@@ -25,20 +25,12 @@
   </fieldset>
 
   <fieldset class="users-create-fieldset">
-    <legend>Location</legend>
-
-    {{input class="users-create-location" type="text" placeholder="City" value=model.city}}
-
-    {{input class="users-create-location" type="text" placeholder="State/Province" value=model.state}}
-
-    {{input class="users-create-location" type="text" placeholder="Country" value=model.country}}
-
-    <button class="users-create-button-location" {{action 'useCurrentLocation'}}>Use Current Location</button>
+    <legend><b>Location</b></legend>
+    <p class="users-create-location-text">Use this location or search the map to set another.</p>
+    {{leaflet-userscreate model=model}}
   </fieldset>
 
-  {{leaflet-map}}
-
-  <button class="users-create-button-submit" {{action 'createUser'}}>You're finished filling out info.  Sign Up!</button>
+  <button class="users-create-button-submit" {{action 'createUser'}}>Sign Up!</button>
 </form>
 
 {{yield}}

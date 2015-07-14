@@ -49,7 +49,6 @@ export default Ember.Component.extend({
       // Sets latitude and longitude on current problem model that is being created
       currentProblem.set('latitude', map.getCenter().lat);
       currentProblem.set('longitude', map.getCenter().lng);
-      console.log(currentProblem.get('latitude'));
     }
 
   }.on('didInsertElement')

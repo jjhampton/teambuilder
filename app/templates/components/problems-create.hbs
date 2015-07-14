@@ -1,20 +1,22 @@
-<h1 class="primary-heading">Add a problem that you need help solving.</h1>
+<h1 class="primary-heading">Add a problem today that you need help solving.</h1>
 <form class="problems-create-form">
   <fieldset class="problems-create-fieldset">
-    <legend>Problem Information</legend>
+    <legend><b>Problem Information</b></legend>
 
     {{input class="problems-create-info" type="text" placeholder="Name of problem" value=model.name}}
+
     {{textarea class="problems-create-info" placeholder="Short description of the problem" value=model.description}}
+
     {{input class="problems-create-info" type="url" placeholder="Trello Project URL" value=model.trelloURL}}
   </fieldset>
 
   <fieldset class="problems-create-fieldset">
-    <legend>Deadline for solving the problem</legend>
+    <legend><b>Deadline for solving the problem</b></legend>
     {{pikaday-input class="problems-create-datepicker" placeholder="Enter date" type="date" value=model.deadline}}
   </fieldset>
 
   <fieldset class="problems-create-fieldset">
-    <legend>Tags</legend>
+    <legend><b>Tags</b></legend>
     <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
     <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
     <input class="problems-create-tag" type="text" placeholder="Enter in a tag describing your problem" name="tag">
@@ -22,7 +24,7 @@
   </fieldset>
 
   <fieldset class="problems-create-fieldset">
-    <legend>Location</legend>
+    <legend><b>Location</b></legend>
     <p class="problems-create-location-text">Use this location or search the map to set another.</p>
     {{leaflet-problemscreate model=model}}
   </fieldset>

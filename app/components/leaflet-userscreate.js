@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
   insertMap: function() {
-    var currentProblem = this.get('model');
-    console.log(currentProblem);
+    var currentUser = this.get('model');
+    console.log(currentUser);
 
     // marker that will be centered on map
     var marker = null;
@@ -47,9 +47,9 @@ export default Ember.Component.extend({
       marker = L.marker(map.getCenter(),{icon: redMarker}, {draggable: true}).addTo(map);
 
       // Sets latitude and longitude on current problem model that is being created
-      currentProblem.set('latitude', map.getCenter().lat);
-      currentProblem.set('longitude', map.getCenter().lng);
-      console.log(currentProblem.get('latitude'));
+      currentUser.set('latitude', map.getCenter().lat);
+      currentUser.set('longitude', map.getCenter().lng);
+      console.log(currentUser.get('latitude'));
     }
 
   }.on('didInsertElement')
