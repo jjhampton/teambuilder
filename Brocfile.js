@@ -27,5 +27,5 @@ app.import('bower_components/leaflet/dist/leaflet-src.js');
 app.import('bower_components/leaflet/dist/leaflet.css');
 app.import('bower_components/leaflet-control-osm-geocoder/Control.OSMGeocoder.js');
 app.import('bower_components/leaflet-control-osm-geocoder/Control.OSMGeocoder.css');
-
+app.import('bower_components/leaflet-providers/leaflet-providers.js');
 module.exports = app.toTree();
