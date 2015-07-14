@@ -1,14 +1,16 @@
-<p>You have up to 100 skill points to divide between the three categories:</p>
-<label>
+<p class="review-member-name">{{model.name}}</p>
+<p class="review-instructions">You have up to 100 skill points to divide between the three categories:</p>
+<label class="review-input-label">
   Thinker:
-  {{input class="problems-review-thinker" type="number" value=thinkerReview}}
+  {{input class="review-input" type="number" value=thinkerReview}}
 </label>
-<label>
+<label class="review-input-label">
   Enabler:
-  {{input class="problems-review-enabler" type="number" value=model.enabler}}
-</label><label>
-  Connector:
-  {{input class="problems-review-connector" type="number" value=model.connector}}
+  {{input class="review-input" type="number" value=enablerReview}}
 </label>
-<button {{action 'reviewTeammate' model}}>Submit teammate review!</button>
+<label class="review-input-label">
+  Connector:
+  {{input class="review-input" type="number" value=connectorReview}}
+</label>
+<button class="review-button-submit" {{action 'reviewTeammate' model problem}}>Submit teammate review!</button>
 {{yield}}

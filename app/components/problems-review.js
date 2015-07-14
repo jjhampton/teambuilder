@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    reviewTeammate: function(user, thinkerReview, thinkerCurrent) {
-      console.log('component pr > reviewTeammate');
-      this.sendAction('action', user, thinkerReview, thinkerCurrent);
+
+    reviewTeammate: function(user, review, reviewKey) {
+      this.sendAction('action', user, review, reviewKey);
     }
   }
 });

@@ -83,6 +83,11 @@ APPLICATION
   margin-bottom: 0;
 }
 
+input.nav-input {
+  line-height: inherit;
+  margin-bottom: 0;
+}
+
 .nav-button-logout {
   display: inline-block;
   float: right;
@@ -118,13 +123,10 @@ PROBLEMS-INDEX
 .problems-globe-container {
   @include span-columns(6 of 12);
   text-align: center;
-  padding: 2em;
   border: 1px solid black;
-  height: 31.125em;
 }
 
 .globe {
-  margin-top: 2em;
   max-width: 100%;
   cursor: move;
 }
@@ -289,6 +291,46 @@ PROBLEMS-MANAGE
 --------------------------------*/
 
 /*--------------------------------
+PROBLEMS-REVIEW
+--------------------------------*/
+.review-members-list {
+  @include span-columns(9);
+  @include shift(1.5);
+}
+
+.review-input-label {
+  @include span-columns(3 of 9);
+}
+
+.teammate-review {
+  margin-bottom: 1em;
+}
+
+.review-member-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.review-instructions {
+  text-align: center;
+}
+
+.review-input-label {
+  text-align: center;
+}
+
+.review-input {
+  margin: 0 auto;
+}
+
+.review-button-submit {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/*--------------------------------
 USERS-CREATE
 --------------------------------*/
 
@@ -305,6 +347,7 @@ USERS-CREATE
 .users-create-optional {
   width: 100%;
 }
+
 
 #map {
   @include span-columns(8);

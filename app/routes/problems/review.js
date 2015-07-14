@@ -1,14 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  
+
   actions: {
-    reviewTeammate: function(user, thinkerReview, thinkerCurrent) {
-      console.log('router > reviewTeammate');
-      //convert input value to Number, for some reason it is a string even though input type="number"
-      user.set('thinker', thinkerCurrent + thinkerReview);
-      console.log(user.get('thinker'));
-      user.save();
+
+    reviewTeammate: function(user, review, reviewKey) {
+      console.log('route > reviewTeammate ');
+
+      var adapter = this.store.adapterFor('application');
+
+      adapter.ajax("https://api.parse.com/1/functions/reviewTeammate", "POST", {
+        data: {
+          userId: user.get('id'),
+          review: review,
+          reviewKey: reviewKey
+        }
+      }).then(function(response) {
+        console.log('adapter.ajax response:', response);
+        this.transitionTo('index');
+      }.bind(this));
     }
   }
+
 });
