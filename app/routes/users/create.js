@@ -15,9 +15,9 @@ export default Ember.Route.extend({
       var latitude = user.get('latitude');
       var longitude = user.get('longitude');
       var latlng = latitude.toString() + ',' + longitude.toString();
-      var location;
-      var locationCity = '';
-      var locationCountry = '';
+      var city;
+      var state;
+      var country;
       var geoData;
 
       Ember.$.ajax({
@@ -27,25 +27,33 @@ export default Ember.Route.extend({
       }).then(function(data) {
         geoData = data.results;
         var arrAddress = geoData[0].address_components;
+
         //credit: http://stackoverflow.com/questions/5341023/retrieving-postal-code-with-google-maps-javascript-api-v3-reverse-geocode
         // iterate through address_component array
         $.each(arrAddress, function (i, address_component) {
           if (address_component.types[0] === "locality"){
-              locationCity = address_component.long_name;
+              city = address_component.long_name;
+              return false;
+          }
+        });
+        $.each(arrAddress, function (i, address_component) {
+          if (address_component.types[0] === "administrative_area_level_1"){
+              state = address_component.long_name;
               return false;
           }
         });
         $.each(arrAddress, function (i, address_component) {
           if (address_component.types[0] === "country"){
-              locationCountry = address_component.long_name;
+              country = address_component.long_name;
           }
         });
-        location = locationCity + ", " + locationCountry;
       }).then(function() {
         user.set('thinker', 0);
         user.set('enabler', 0);
         user.set('connector', 0);
-        user.set('location', location);
+        user.set('city', city);
+        user.set('state', state);
+        user.set('country', country);
         user.set('email', user.get('username'));
         user.set('interests', interestArray);
         user.save().then(function() {
