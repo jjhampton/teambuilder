@@ -108,6 +108,18 @@ HEADER
 }
 
 /*--------------------------------
+MAIN-INDEX
+--------------------------------*/
+
+.index-search-form {
+  margin-top: 2em;
+}
+
+.index-search-input {
+  width: 100%;
+}
+
+/*--------------------------------
 PROBLEMS-INDEX
 --------------------------------*/
 
@@ -142,13 +154,6 @@ PROBLEMS-INDEX
   margin-top: 2em;
 }
 
-.problems-search-form {
-  margin-top: 2em;
-}
-
-.problems-search-input {
-  width: 100%;
-}
 
 /*--------------------------------
 PROBLEMS-CREATE
