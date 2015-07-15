@@ -15,9 +15,9 @@ export default Ember.Route.extend({
       var latitude = problem.get('latitude');
       var longitude = problem.get('longitude');
       var latlng = latitude.toString() + ',' + longitude.toString();
-      var location;
-      var locationCity = '';
-      var locationCountry = '';
+      var city;
+      var state;
+      var country;
       var geoData;
 
       Ember.$.ajax({
@@ -32,18 +32,25 @@ export default Ember.Route.extend({
         // iterate through address_component array
         $.each(arrAddress, function (i, address_component) {
           if (address_component.types[0] === "locality"){
-              locationCity = address_component.long_name;
+              city = address_component.long_name;
+              return false;
+          }
+        });
+        $.each(arrAddress, function (i, address_component) {
+          if (address_component.types[0] === "administrative_area_level_1"){
+              state = address_component.long_name;
               return false;
           }
         });
         $.each(arrAddress, function (i, address_component) {
           if (address_component.types[0] === "country"){
-              locationCountry = address_component.long_name;
+              country = address_component.long_name;
           }
         });
-        location = locationCity + ", " + locationCountry;
       }).then(function() {
-        problem.set('location', location);
+        problem.set('city', city);
+        problem.set('state', state);
+        problem.set('country', country);
         problem.set('owner', this.get('session.currentUser'));
         problem.set('tags', tagArray);
         problem.save().then(function() {

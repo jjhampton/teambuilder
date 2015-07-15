@@ -7,19 +7,21 @@ export default Ember.Route.extend({
 
   actions: {
     getResults: function() {
-      console.log('clicked');
       var query = $('.index-search-input').val();
-      console.log('search input value is: ', query);
 
-      var problemNames = this.store.findAll('problem').then(function(response) {
+     this.store.findAll('problem').then(function(response) {
         return response.map(function(problem) {
-          return problem.get('name');
+          return [problem.get('id'), problem.get('name'), problem.get('tags'), problem.get('location')];
         });
       }).then(function(response){
-        console.log(response);
+        console.log("Problem searchables are", response);
+        console.log("search query was", query);
+        var matched = _.filter(response, function(problem){
+          return _.contains(problem, query);
+        });
+        console.log(matched[0][1]);
       });
 
-      console.log(problemNames);
 
 
 

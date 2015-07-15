@@ -8,7 +8,6 @@ export default DS.Model.extend({
   tags: DS.attr(),
   latitude: DS.attr('number'),
   longitude: DS.attr('number'),
-  location: DS.attr('string'),
   city: DS.attr('string'),
   state: DS.attr('string'),
   country: DS.attr('string'),
