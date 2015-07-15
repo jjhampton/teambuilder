@@ -347,16 +347,6 @@ USERS-CREATE
   width: 100%;
 }
 
-
-/* #map {
-  @include span-columns(8);
-  @include shift(2);
-  @include omega();
-  padding: 1em;
-  height: 31em;
-  margin-bottom: 1em;
-} */
-
 .users-create-button-location,
 .users-create-button-addinterest {
   display: block;
@@ -438,14 +428,6 @@ USERS-SHOW
   margin: 0 auto 1em auto;
 }
 
-.user-map {
-  display: block;
-  margin: 0 auto;
-  height: 200px;
-  width: 200px;
-  border: 1px solid red;
-}
-
 .user-interest {
   display: inline;
 }
@@ -457,6 +439,12 @@ USERS-SHOW
 .user-interest:first-child:after,
 .user-interest:last-child:after {
   content: '';
+}
+
+#showmap {
+  height: 31em;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 
