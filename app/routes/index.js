@@ -42,6 +42,8 @@ export default Ember.Route.extend({
         console.log(response.content);
         response.content.forEach(function(element) {
           console.log(element._data.name);
+          var problemName = '<p>' + '<a href="problems/' + element._data.id + '">' + element._data.name + '</p></a>';
+          $('.search-results').append(problemName);
         });
       });
     }
