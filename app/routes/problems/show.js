@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
   actions: {
     addUser: function(problem) {
       //initialize isMember as false before checking

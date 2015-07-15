@@ -51,7 +51,7 @@ APPLICATION
 .outer-container {
   @include outer-container(100%);
   background-color: $very-light-gray;
-  padding: 1em;
+  padding: 1.2em;
 }
 
 .primary-nav {
@@ -155,32 +155,31 @@ PROBLEMS-CREATE
 --------------------------------*/
 
 .problems-create-fieldset {
- @include span-columns(8);
- @include shift(2);
+ @include span-columns(10);
+ @include shift(1);
  @include omega();
  padding: 1em;
  margin-bottom: 1em;
 }
 
 .problems-create-info,
-.problems-create-location,
 .problems-create-tag {
   width: 100%;
 }
 
-#map {
-  @include span-columns(8);
-  @include shift(2);
-  @include omega();
-  padding: 1em;
+#createmap {
   height: 31em;
+  padding: 1em;
   margin-bottom: 1em;
 }
 
-.problems-create-button-location,
-.problems-create-button-addinterest {
+.problems-create-button-addtag {
   display: block;
   margin: 0 auto;
+}
+
+.problems-create-location-text {
+  text-align: center;
 }
 
 .problems-create-button-submit {
@@ -335,8 +334,8 @@ USERS-CREATE
 --------------------------------*/
 
 .users-create-fieldset {
- @include span-columns(8);
- @include shift(2);
+ @include span-columns(10);
+ @include shift(1);
  @include omega();
  padding: 1em;
  margin-bottom: 1em;
@@ -348,20 +347,14 @@ USERS-CREATE
   width: 100%;
 }
 
-
-#map {
-  @include span-columns(8);
-  @include shift(2);
-  @include omega();
-  padding: 1em;
-  height: 31em;
-  margin-bottom: 1em;
-}
-
 .users-create-button-location,
 .users-create-button-addinterest {
   display: block;
   margin: 0 auto;
+}
+
+.users-create-location-text {
+  text-align: center;
 }
 
 .users-create-button-submit {
@@ -395,17 +388,19 @@ USERS-SHOW
 
 .user-contributions-container {
   @include span-columns(10);
-  @include shift(1)
+  @include shift(1);
 }
 
 .user-contributions-list {
-  @include span-columns(4 of 10);
+  @include span-columns(5 of 10);
   list-style-type: circle;
+  padding: 1em;
 }
 
 .user-contributions-map {
-  @include span-columns(6 of 10);
+  @include span-columns(5 of 10);
   @include omega();
+  padding: 1em;
 }
 
 .users-show-section-heading,
@@ -435,14 +430,6 @@ USERS-SHOW
   margin: 0 auto 1em auto;
 }
 
-.user-map {
-  display: block;
-  margin: 0 auto;
-  height: 200px;
-  width: 200px;
-  border: 1px solid red;
-}
-
 .user-interest {
   display: inline;
 }
@@ -454,6 +441,11 @@ USERS-SHOW
 .user-interest:first-child:after,
 .user-interest:last-child:after {
   content: '';
+}
+
+#showmap {
+  height: 31em;
+  margin-bottom: 1em;
 }
 
 
