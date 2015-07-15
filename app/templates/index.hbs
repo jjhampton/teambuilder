@@ -10,6 +10,11 @@
   <div class="problems-index-container">Current Problems You Can Help With:
     {{problems-index model=model}}
     <form class="index-search-form">
+      <i class="fa fa-sort-desc"></i>
+      <select class="index-search-select">
+        <option value="users">Users</option>
+        <option value="problems">Problems</option>
+      </select>
       <input class="index-search-input" type="text" placeholder="Search by keyword">
       <button class="index-button-search" {{action 'getResults'}}>Search</button>
     </form>
