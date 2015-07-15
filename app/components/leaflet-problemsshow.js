@@ -4,9 +4,8 @@ export default Ember.Component.extend({
 
   insertMap: function() {
 
-    // var problemLatitude = this.model('model.latitude');
-    // var problemLongitude = this.get('model.longitude');
-    console.log(this.model);
+    var problemLatitude = this.get('model.latitude');
+    var problemLongitude = this.get('model.longitude');
 
     // marker that will be centered on map
     var marker = null;
@@ -25,11 +24,20 @@ export default Ember.Component.extend({
     });
 
     // map object, set to locate geolocation
-    var map = L.map('showmap',{attributionControl: false}).setView([problemLatitude, problemLongitude], 1);
+    var map = L.map('showmap', {attributionControl: false, zoomControl: false}).setView([problemLatitude, problemLongitude], 5);
 
     // add tile to map
     mapBoxBackground.addTo(map);
 
+    //add marker to center of map
+    marker = L.marker(map.getCenter(),{icon: redMarker}, {draggable: true}).addTo(map);
+
+    // disable map interaction
+    map.dragging.disable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    map.scrollWheelZoom.disable();
+    map.boxZoom.disable();
 
   }.on('didInsertElement')
 });

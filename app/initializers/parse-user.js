@@ -3,21 +3,21 @@ import ParseUser from 'ember-parse-adapter/models/parse-user';
 
 export function initialize() {
   ParseUser.reopen({
-    name: DS.attr('string', {async:true}),
-    thinker: DS.attr('number', {async:true}),
-    enabler: DS.attr('number', {async:true}),
-    connector: DS.attr('number', {async:true}),
-    email: DS.attr('string', {async:true}),
-    latitude: DS.attr('number', {async:true}),
-    longitude: DS.attr('number', {async:true}),
-    city: DS.attr('string', {async:true}),
-    state: DS.attr('string', {async:true}),
-    country: DS.attr('string', {async:true}),
-    age: DS.attr('number', {async:true}),
-    occupation: DS.attr('string', {async:true}),
-    interests: DS.attr({async:true}),
-    contributions: DS.attr({async:true}),
-    reviewKeys: DS.attr({async:true})
+    name: DS.attr('string'),
+    thinker: DS.attr('number'),
+    enabler: DS.attr('number'),
+    connector: DS.attr('number'),
+    email: DS.attr('string'),
+    latitude: DS.attr('number'),
+    longitude: DS.attr('number'),
+    city: DS.attr('string'),
+    state: DS.attr('string'),
+    country: DS.attr('string'),
+    age: DS.attr('number'),
+    occupation: DS.attr('string'),
+    interests: DS.attr(),
+    contributions: DS.attr(),
+    reviewKeys: DS.attr()
     //
     // parseClassName: function(){
     //   return "_User";
