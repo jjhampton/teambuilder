@@ -42,14 +42,21 @@ export default Ember.Route.extend({
           ]
         }
       }).then(function(response) {
-        console.log(response.content);
+        console.log(response.content.length);
         $('.search-results-index').empty();
-        response.content.forEach(function(element) {
-          var problemName = '<p>' + '<a href="problems/' + element._data.id + '">' + element._data.name + '</p></a>';
+        if (response.content.length === 0) {
           $('.search-results-primary-heading').html("Search Results");
           $('.search-results-secondary-heading').html("Showing results for: " + query);
-          $('.search-results-index').append(problemName);
-        });
+          $('.search-results-index').append('<p>No results found</p>');
+        }
+        else {
+          response.content.forEach(function(element) {
+            var problemName = '<p>' + '<a href="problems/' + element._data.id + '">' + element._data.name + '</p></a>';
+            $('.search-results-primary-heading').html("Search Results");
+            $('.search-results-secondary-heading').html("Showing results for: " + query);
+            $('.search-results-index').append(problemName);
+          });
+        }
       });
     }
   }
