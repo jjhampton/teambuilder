@@ -21,11 +21,12 @@ export default Ember.Component.extend({
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'jjhampton.f68b0cad',
     accessToken: 'pk.eyJ1IjoiampoYW1wdG9uIiwiYSI6ImEwM2Y0NWRjYTMxYTYzNGZlYzgxOGNmMzBhZmE3MDUzIn0.SN40uu8Q9bCtOf6stNTjZA',
-    maxZoom: 15
+    maxZoom: 15,
+    minZoom: 1
     });
 
     // map object, set to locate geolocation
-    var map = L.map('showmap',{attributionControl: false}).setView([userLatitude, userLongitude], 1);
+    var map = L.map('showmap',{attributionControl: false}).setView([userLatitude, userLongitude], 3);
 
     // add tile to map
     mapBoxBackground.addTo(map);
