@@ -6,7 +6,6 @@ export default Ember.Component.extend({
 
     var userLatitude = this.get('model.latitude');
     var userLongitude = this.get('model.longitude');
-    console.log(userLatitude);
 
     // marker that will be centered on map
     var marker = null;

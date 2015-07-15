@@ -56,4 +56,28 @@ export default Ember.Route.extend({
     // }
     }
   }
+
+  // activate: function() {
+  //
+  //   console.log(this.currentModel);
+  //   console.log(this.modelFor(this.routeName));
+  //   console.log(this.currentModel._data);
+  //
+  //   // var problem = this.currentModel._data;
+  //   var currentUser = this.get('session.currentUser');
+  //   var isMember = false;
+  //
+  //   // var membersArray = [
+  //   //   problem.get('owner.id'),
+  //   //   problem.get('member1.id'),
+  //   //   problem.get('member2.id'),
+  //   //   problem.get('member3.id'),
+  //   //   problem.get('member4.id'),
+  //   //   problem.get('member5.id')
+  //   // ];
+  //   // if (_.indexOf(membersArray, currentUser) !== -1) {
+  //   //   isMember = true;
+  //   // }
+  //   // alert(isMember);
+  // }
 });
