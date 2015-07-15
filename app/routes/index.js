@@ -8,6 +8,9 @@ export default Ember.Route.extend({
   actions: {
     getResults: function() {
       console.log('clicked');
+      this.store.find('problem', 'u5UQU4E85T').then(function(response) {
+        console.log(response.get('name'));
+      });
     }
   }
 });
