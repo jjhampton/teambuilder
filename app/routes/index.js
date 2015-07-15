@@ -7,32 +7,44 @@ export default Ember.Route.extend({
 
   actions: {
     getResults: function() {
-      var query = $('.index-search-input').val();
+      var query;
 
-     this.store.findAll('problem').then(function(response) {
-        return response.map(function(problem) {
-          return [problem.get('id'), problem.get('name'), problem.get('tags'), problem.get('location')];
+      function escapeRegExp(string) {
+        return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      }
+
+      query = escapeRegExp($('.index-search-input').val());
+
+    //  this.store.findAll('problem').then(function(response) {
+    //     return response.map(function(problem) {
+    //       return [problem.get('id'), problem.get('name'), problem.get('tags'), problem.get('city'), problem.get('state'), problem.get('country')];
+    //     });
+    //   }).then(function(response){
+    //     console.log("Problem searchables are", response);
+    //     console.log("search query was", query);
+    //     var matched = _.filter(response, function(problem){
+    //       return _.contains(problem, query);
+    //     });
+    //     console.log(matched);
+    //   });
+
+      this.store.findQuery('problem', {
+        where: {
+          $or: [
+            {name: {$regex: query}},
+            // {tags: {$regex: query}},
+            {city: {$regex: query}},
+            {state: {$regex: query}},
+            {country: {$regex: query}},
+          ]
+        }
+      }).then(function(response) {
+        console.log(response.content);
+        response.content.forEach(function(element) {
+          console.log(element.id);
         });
-      }).then(function(response){
-        console.log("Problem searchables are", response);
-        console.log("search query was", query);
-        var matched = _.filter(response, function(problem){
-          return _.contains(problem, query);
-        });
-        console.log(matched[0][1]);
       });
 
-
-
-
-
-
-      // var queryResult = this.store.findQuery('problem', {name: "Pikaday Test"}).then(function(response) {
-      //   return response.map(function(problem) {
-      //     return [problem.get('name')];
-      //   });
-      // });
-      // console.log(queryResult);
     }
   }
 });
