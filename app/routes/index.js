@@ -9,10 +9,28 @@ export default Ember.Route.extend({
     getResults: function() {
       console.log('clicked');
       var query = $('.index-search-input').val();
-      console.log('search input value', query);
-      this.store.find('problem', 'u5UQU4E85T').then(function(response) {
-        console.log(response.get('name'));
+      console.log('search input value is: ', query);
+
+      var problemNames = this.store.findAll('problem').then(function(response) {
+        return response.map(function(problem) {
+          return problem.get('name');
+        });
+      }).then(function(response){
+        console.log(response);
       });
+
+      console.log(problemNames);
+
+
+
+
+
+      // var queryResult = this.store.findQuery('problem', {name: "Pikaday Test"}).then(function(response) {
+      //   return response.map(function(problem) {
+      //     return [problem.get('name')];
+      //   });
+      // });
+      // console.log(queryResult);
     }
   }
 });
