@@ -8,6 +8,7 @@ export default Ember.Route.extend({
   actions: {
     getResults: function() {
       var query;
+      console.log($('.index-search-select').val());
 
       function escapeRegExp(string) {
         return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -27,6 +28,8 @@ export default Ember.Route.extend({
     //     });
     //     console.log(matched);
     //   });
+
+
 
       this.store.findQuery('problem', {
         where: {

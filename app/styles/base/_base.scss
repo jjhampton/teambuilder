@@ -18,6 +18,10 @@ UNIVERSAL / BASE
   box-sizing: border-box;
 }
 
+*:focus {
+    outline: 0;
+}
+
 img {
   max-width: 100%;
 }
@@ -117,14 +121,15 @@ MAIN-INDEX
 
 .index-search-input {
   display: inline-block;
-  width: 80%;
+  width: 60%;
 }
 
 .index-search-select {
   display: inline-block;
-  width: 10%;
-  -webkit-appearance: none;
-  height: 35px;
+  width: 35%;
+  /* height: 36px;
+  padding-left: 0.5em;
+  padding-right: 0.5em; */
 }
 
 .search-results {
