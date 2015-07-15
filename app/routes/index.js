@@ -41,10 +41,9 @@ export default Ember.Route.extend({
       }).then(function(response) {
         console.log(response.content);
         response.content.forEach(function(element) {
-          console.log(element.id);
+          console.log(element._data.name);
         });
       });
-
     }
   }
 });
