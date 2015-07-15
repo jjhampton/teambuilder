@@ -4,7 +4,6 @@ export default Ember.Component.extend({
 
   insertMap: function() {
     var currentUser = this.get('model');
-    console.log(currentUser);
 
     // marker that will be centered on map
     var marker = null;
@@ -49,7 +48,6 @@ export default Ember.Component.extend({
       // Sets latitude and longitude on current problem model that is being created
       currentUser.set('latitude', map.getCenter().lat);
       currentUser.set('longitude', map.getCenter().lng);
-      console.log(currentUser.get('latitude'));
     }
 
   }.on('didInsertElement')
