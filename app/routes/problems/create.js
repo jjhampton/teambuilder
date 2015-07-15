@@ -15,7 +15,6 @@ export default Ember.Route.extend({
       var latitude = problem.get('latitude');
       var longitude = problem.get('longitude');
       var latlng = latitude.toString() + ',' + longitude.toString();
-      console.log(latlng);
       var location;
       var locationCity = '';
       var locationCountry = '';
@@ -26,7 +25,6 @@ export default Ember.Route.extend({
         type: 'GET',
         dataType: 'json'
       }).then(function(data) {
-        console.log(data);
         geoData = data.results;
         var arrAddress = geoData[0].address_components;
 
@@ -44,7 +42,6 @@ export default Ember.Route.extend({
           }
         });
         location = locationCity + ", " + locationCountry;
-        console.log("location name is", location);
       }).then(function() {
         problem.set('location', location);
         problem.set('owner', this.get('session.currentUser'));

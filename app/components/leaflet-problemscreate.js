@@ -4,7 +4,6 @@ export default Ember.Component.extend({
 
   insertMap: function() {
     var currentProblem = this.get('model');
-    console.log(currentProblem);
 
     // marker that will be centered on map
     var marker = null;
