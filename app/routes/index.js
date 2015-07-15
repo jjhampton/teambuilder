@@ -40,10 +40,12 @@ export default Ember.Route.extend({
         }
       }).then(function(response) {
         console.log(response.content);
+        $('.search-results-index').empty();
         response.content.forEach(function(element) {
-          console.log(element._data.name);
           var problemName = '<p>' + '<a href="problems/' + element._data.id + '">' + element._data.name + '</p></a>';
-          $('.search-results').append(problemName);
+          $('.search-results-primary-heading').html("Search Results");
+          $('.search-results-secondary-heading').html("Showing results for: " + query);
+          $('.search-results-index').append(problemName);
         });
       });
     }
