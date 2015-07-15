@@ -26,7 +26,7 @@ export default Ember.Component.extend({
     });
 
     // map object, set to locate geolocation
-    var map = L.map('showmap',{attributionControl: false}).setView([userLatitude, userLongitude], 1);
+    var map = L.map('showmap',{attributionControl: false}).setView([userLatitude, userLongitude], 2);
 
     // add tile to map
     mapBoxBackground.addTo(map);
