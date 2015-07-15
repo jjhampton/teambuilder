@@ -388,17 +388,19 @@ USERS-SHOW
 
 .user-contributions-container {
   @include span-columns(10);
-  @include shift(1)
+  @include shift(1);
 }
 
 .user-contributions-list {
   @include span-columns(4 of 10);
   list-style-type: circle;
+  padding: 1em;
 }
 
 .user-contributions-map {
   @include span-columns(6 of 10);
   @include omega();
+  padding: 1em;
 }
 
 .users-show-section-heading,
