@@ -119,6 +119,11 @@ MAIN-INDEX
   width: 100%;
 }
 
+.search-results {
+  @include span-columns(12);
+  border: 1px solid black;
+}
+
 /*--------------------------------
 PROBLEMS-INDEX
 --------------------------------*/
