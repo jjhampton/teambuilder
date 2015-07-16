@@ -12,7 +12,6 @@ export default Ember.Route.extend({
     getResults: function() {
       var query;
       var queryType = $('.index-search-select').val();
-      console.log(queryType);
 
       function escapeRegExp(string) {
         return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -39,10 +38,10 @@ export default Ember.Route.extend({
           }
           else {
             response.content.forEach(function(element) {
-              var problemName = '<p>' + '<a href="problems/' + element._data.id + '">' + element._data.name + '</p></a>';
+              var userName = '<p>' + '<a href="problems/' + element._data.id + '">' + element._data.name + '</p></a>';
               $('.search-results-primary-heading').html("Search Results");
               $('.search-results-secondary-heading').html("Showing results for: " + query);
-              $('.search-results-index').append(problemName);
+              $('.search-results-index').append(userName);
             });
           }
         });
@@ -52,14 +51,13 @@ export default Ember.Route.extend({
           where: {
             $or: [
               {name: {$regex: query}},
-              // {tags: {$regex: query}},
+              {interests: query},
               {city: {$regex: query}},
               {state: {$regex: query}},
               {country: {$regex: query}},
             ]
           }
         }).then(function(response) {
-          console.log(response.content.length);
           $('.search-results-index').empty();
           if (response.content.length === 0) {
             $('.search-results-primary-heading').html("Search Results");
@@ -68,10 +66,10 @@ export default Ember.Route.extend({
           }
           else {
             response.content.forEach(function(element) {
-              var userName = '<p>' + '<a href="users/' + element._data.id + '">' + element._data.name + '</p></a>';
+              var problemName = '<p>' + '<a href="users/' + element._data.id + '">' + element._data.name + '</p></a>';
               $('.search-results-primary-heading').html("Search Results");
               $('.search-results-secondary-heading').html("Showing results for: " + query);
-              $('.search-results-index').append(userName);
+              $('.search-results-index').append(problemName);
             });
           }
         });
