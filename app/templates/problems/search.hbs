@@ -1,6 +1,4 @@
 <h2 class="search-results-primary-heading">Search Results</h2>
 <h3 class="search-results-secondary-heading">Showing Results for: {{model.query.name}}</h3>
-{{#each model as |problem|}}
-  <li class="problems-list-item">{{problem.name}}</li>
-{{/each}}
+{{problems-index model=model}}
 {{outlet}}

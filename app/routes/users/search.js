@@ -2,10 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  beforeModel: function(params) {
-    return params;
-  },
-
   model: function(params) {
     return this.store.findQuery('parse-user', {
       where: {
@@ -16,7 +12,8 @@ export default Ember.Route.extend({
           {state: {$regex: params.query}},
           {country: {$regex: params.query}}
         ]
-      }
+      },
+      name: params.query
     });
   }
 });
