@@ -1,0 +1,4 @@
+{{#each model as |user|}}
+  <li class="users-list-item">{{#link-to 'users.show' user}}{{user.name}}{{/link-to}}</li>
+{{/each}}
+{{yield}}

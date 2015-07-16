@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "Team Builder": {
+      "applicationId": "2LyY9FE22SGEpGNjywuiXAQd5mismhpxCcQAtzHX",
+      "masterKey": "9oO05o8k3Mh102QcZewZ15PnyeZQOPhxsK34u7Hs"
+    },
+    "_default": {
+      "link": "Team Builder"
+    }
+  }
+}
