@@ -132,10 +132,14 @@ MAIN-INDEX
   padding-right: 0.5em; */
 }
 
-.search-results {
+.search-results-container {
   @include span-columns(12);
-  border: 1px solid black;
 }
+
+.search-results-primary-heading {
+  text-align: center;
+}
+
 
 /*--------------------------------
 PROBLEMS-INDEX
