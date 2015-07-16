@@ -7,12 +7,13 @@ export default Ember.Route.extend({
       where: {
         $or: [
           {name: {$regex: params.query}},
-          {tags: params.query},
+          {interests: params.query},
           {city: {$regex: params.query}},
           {state: {$regex: params.query}},
           {country: {$regex: params.query}}
         ]
-      }
+      },
+      name: params.query
     });
   }
 
