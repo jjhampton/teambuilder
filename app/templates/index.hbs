@@ -8,22 +8,9 @@
 <section class="problems-outer-container">
   {{planetary-globe}}
   <div class="problems-index-container">Current Problems You Can Help With:
-    {{problems-index model=model.problem}}
-    <form class="index-search-form">
-      <select class="index-search-select">
-        <option value="users">Search Users</option>
-        <option value="problems">Search Problems</option>
-      </select>
-      <input class="index-search-input" type="text" placeholder="Keyword, Location, Tags">
-      <button class="index-button-search" {{action 'getResults'}}>Search</button>
-    </form>
+    {{problems-index model=model}}
+    {{search-form action="transitionSearch"}}
   </div>
 </section>
-<section class="search-results-container">
-  <h2 class="search-results-primary-heading"></h2>
-  <h3 class="search-results-secondary-heading"></h3>
-  <div class="search-results-index"></div>
-</section>
-
 
 {{outlet}}
