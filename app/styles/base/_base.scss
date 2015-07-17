@@ -137,11 +137,28 @@ MAIN-INDEX
 }
 
 .search-results-container {
-  @include span-columns(12);
+  @include span-columns(9);
+  @include shift(1.5);
 }
 
 .search-results-primary-heading {
   text-align: center;
+}
+
+.users-list-item {
+  margin-bottom: 1em;
+}
+
+.users-list-item a {
+  padding-right: 1em;
+}
+
+.users-list-item img {
+  vertical-align: middle;
+}
+
+.search-descriptor {
+  padding-right: 1em;
 }
 
 

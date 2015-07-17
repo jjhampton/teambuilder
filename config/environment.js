@@ -27,7 +27,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' d3js.org maps.gstatic.com ",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' api.parse.com",
-      'img-src': "'self' api.tiles.mapbox.com *.fastly.net *.lorempixel.com ",
+      'img-src': "'self' api.tiles.mapbox.com *.fastly.net *.lorempixel.com *.gravatar.com",
       'style-src': "'self' 'unsafe-inline' ",
       'media-src': "'self' "
     }

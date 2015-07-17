@@ -1,4 +1,9 @@
 {{#each model as |problem|}}
-  <li class="problems-list-item">{{#link-to 'problems.show' problem}}{{problem.name}}{{/link-to}}</li>
+  <li class="problems-list-item">
+    {{#link-to 'problems.show' problem}}{{problem.name}}{{/link-to}}
+    <span>in {{problem.city}}, {{problem.country}}</span>
+  </li>
 {{/each}}
+{{yield}}
+
 {{yield}}
