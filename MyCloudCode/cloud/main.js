@@ -52,12 +52,8 @@ Parse.Cloud.define("sendMailgun", function(request, response) {
   var options = {
     success: function() {
       response.success(request.params + " YEAH");
-      console.log("sendEmail triggered on Parse Cloud");
-      console.log(request.params);
     },
     error: function() {
-      console.log("error on Parse Cloud");
-      console.error(request.params);
       response.error("error on Parse Cloud");
     }
   };
