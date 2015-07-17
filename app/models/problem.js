@@ -22,6 +22,6 @@ export default DS.Model.extend({
   member4: DS.belongsTo('parseUser', {async:true}),
   member5: DS.belongsTo('parseUser', {async:true}),
   latLng: function() {
-    return this.get('latitude') + "," + this.get('longitude');
+    return [this.get('latitude'),  this.get('longitude')];
   }.property('latitude', 'longitude')
 });

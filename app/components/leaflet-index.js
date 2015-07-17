@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
   insertMap: function() {
+    var problems = this.get('problems');
+
     var redMarker = L.AwesomeMarkers.icon({
-      icon: 'coffee',
       markerColor: 'red'
     });
 
@@ -17,18 +19,15 @@ export default Ember.Component.extend({
 
     var map = L.map('indexmap', {attributionControl: false, zoomControl: false}).setView([40.866667, 10.566667], 1);
 
-    // map.fitWorld().zoomIn();
 
     Stamen_Watercolor.addTo(map);
 
-    // map.on('locationfound', onLocationFound);
-    //
-    // function onLocationFound(e) {
-    //     // create a marker at the users "latlng" and add it to the map
-    //     L.marker(e.latlng, {icon: redMarker}, {draggable: true}).addTo(map);
-    // }
+    problems.forEach(function(problem) {
+      console.log(problem.get('latLng'));
+      L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map);
+    });
 
-
+    return map;
 
   }.on('didInsertElement')
 });
