@@ -7,9 +7,8 @@ export default Ember.Component.extend({
 
     var redMarker = L.AwesomeMarkers.icon({
       icon: 'star',
-      markerColor: 'orange',
-      prefix: 'fa',
-      spin: true
+      markerColor: 'darkgreen',
+      prefix: 'fa'
     });
 
     var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
