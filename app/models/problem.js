@@ -20,7 +20,7 @@ export default DS.Model.extend({
   member2: DS.belongsTo('parseUser', {async:true}),
   member3: DS.belongsTo('parseUser', {async:true}),
   member4: DS.belongsTo('parseUser', {async:true}),
-  member5: DS.belongsTo('parseUser', {async:true})
+  member5: DS.belongsTo('parseUser', {async:true}),
   latLng: function() {
     return this.get('latitude') + "," + this.get('longitude');
   }.property('latitude', 'longitude')
