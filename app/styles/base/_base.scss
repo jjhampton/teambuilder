@@ -97,6 +97,10 @@ input.nav-input {
   float: right;
 }
 
+.profile-gravatar {
+  border-radius: 50%;
+}
+
 
 
 /*--------------------------------
@@ -304,6 +308,18 @@ progress[value]::-webkit-progress-value {
   list-style-type: circle;
 }
 
+.problem-members-list img {
+  vertical-align: middle;
+}
+
+.problem-members-list-item {
+  margin-bottom: 1em;
+}
+
+.problem-members-list-item img{
+  vertical-align: middle;
+}
+
 .problem-email {
   display: block;
   width: 100%;
@@ -326,6 +342,10 @@ PROBLEMS-REVIEW
 .review-members-list {
   @include span-columns(9);
   @include shift(1.5);
+}
+
+.review-members-list img {
+  vertical-align: middle;
 }
 
 .review-input-label {

@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  size: 200,
+  tagName: 'span',
+  size: 145,
   email: '',
 
   gravatarUrl: function() {
