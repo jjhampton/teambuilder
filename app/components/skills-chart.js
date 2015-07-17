@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'span',
   didInsertElement: function() {
     var thinker = (this.get('user.thinker'));
     var enabler = (this.get('user.enabler'));
     var connector = (this.get('user.connector'));
     var ctx = $("#skillsChart").get(0).getContext("2d");
     var data = {
-    labels: ["Thinker", "Enabler", "Connector"],
+    labels: ["Thinker", "Enabler", "Connector", "Implementer", "Shaper", "Finisher"],
     datasets: [
         {
             label: "My First dataset",
