@@ -23,7 +23,8 @@
     "fontawesome": "~4.3.0",
     "leaflet-awesome-markers": "~2.0.2",
     "leaflet-control-osm-geocoder": "*",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "crypto-js": "svn+http://crypto-js.googlecode.com/svn/#~3.1.2"
   },
   "resolutions": {
     "ember": "~1.13.0",

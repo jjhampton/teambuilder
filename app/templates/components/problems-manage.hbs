@@ -3,19 +3,19 @@
 <h2>Team Members:</h2>
 <ul class="problem-members-list">
 {{#if model.member1}}
-  <li class="problem-members-list-item">{{model.member1.name}}   <button {{action 'removeMember' model 'member1'}}>Remove</button></li>
+  <li class="problem-members-list-item">{{gravatar-small email=model.member1.email size="40"}}{{model.member1.name}}   <button {{action 'removeMember' model 'member1'}}>Remove</button></li>
 {{/if}}
 {{#if model.member2}}
-  <li class="problem-members-list-item">{{model.member2.name}}   <button {{action 'removeMember' model 'member2'}}>Remove</button></li>
+  <li class="problem-members-list-item">{{gravatar-small email=model.member2.email size="40"}}{{model.member2.name}}   <button {{action 'removeMember' model 'member2'}}>Remove</button></li>
 {{/if}}
 {{#if model.member3}}
-  <li class="problem-members-list-item">{{model.member3.name}}   <button {{action 'removeMember' model 'member3'}}>Remove</button></li>
+  <li class="problem-members-list-item">{{gravatar-small email=model.member3.email size="40"}}{{model.member3.name}}   <button {{action 'removeMember' model 'member3'}}>Remove</button></li>
 {{/if}}
 {{#if model.member4}}
-  <li class="problem-members-list-item">{{model.member4.name}}   <button {{action 'removeMember' model 'member4'}}>Remove</button></li>
+  <li class="problem-members-list-item">{{gravatar-small email=model.member4.email size="40"}}{{model.member4.name}}   <button {{action 'removeMember' model 'member4'}}>Remove</button></li>
 {{/if}}
 {{#if model.member5}}
-  <li class="problem-members-list-item">{{model.member5.name}}   <button {{action 'removeMember' model 'member5'}}>Remove</button></li>
+  <li class="problem-members-list-item">{{gravatar-small email=model.member5.email size="40"}}{{model.member5.name}}   <button {{action 'removeMember' model 'member5'}}>Remove</button></li>
 {{/if}}
 </ul>
 <h2>Update solution progress:</h2>
