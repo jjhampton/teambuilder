@@ -149,6 +149,10 @@ MAIN-INDEX
   margin-bottom: 1em;
 }
 
+.users-list-item span {
+  padding-right: 1em;
+}
+
 .users-list-item a {
   padding-right: 1em;
 }
@@ -157,8 +161,8 @@ MAIN-INDEX
   vertical-align: middle;
 }
 
-.search-descriptor {
-  padding-right: 1em;
+.search-results-skillschart {
+  vertical-align: middle;
 }
 
 
@@ -540,6 +544,10 @@ USERS-SHOW
   display: block;
   max-width: 75%;
   margin: 0 auto 1em auto;
+}
+
+#skillsChart {
+
 }
 
 .user-interest {

@@ -31,4 +31,5 @@ app.import('bower_components/leaflet-awesome-markers/dist/leaflet.awesome-marker
 app.import('bower_components/leaflet-awesome-markers/dist/leaflet.awesome-markers.css');
 app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf');
 app.import('bower_components/crypto-js/build/rollups/hmac-md5.js');
+app.import('bower_components/Chart.js/Chart.min.js');
 module.exports = app.toTree();
