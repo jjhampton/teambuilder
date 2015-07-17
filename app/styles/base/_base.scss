@@ -222,12 +222,16 @@ PROBLEMS-SHOW
 .problem-info-container {
   @include span-columns(5);
   @include shift(1);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .problem-location-container {
   @include span-columns(5);
   @include omega();
   text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .problem-users-container {
