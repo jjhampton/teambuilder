@@ -6,7 +6,10 @@ export default Ember.Component.extend({
     var problems = this.get('problems');
 
     var redMarker = L.AwesomeMarkers.icon({
-      markerColor: 'red'
+      icon: 'star',
+      markerColor: 'orange',
+      prefix: 'fa',
+      spin: true
     });
 
     var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
@@ -23,7 +26,6 @@ export default Ember.Component.extend({
     Stamen_Watercolor.addTo(map);
 
     problems.forEach(function(problem) {
-      console.log(problem.get('latLng'));
       L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map);
     });
 
