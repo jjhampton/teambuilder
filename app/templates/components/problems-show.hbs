@@ -17,7 +17,11 @@
   <p class="problem-collaborations"><b>We collaborate via Trello:</b> <a href="{{model.trelloURL}}">{{model.name}} Trello Board</a></p>
 </section>
 <section class="problem-location-container">
+  {{#if model.state}}
   <h3 class="secondary-heading">Location: {{model.city}}, {{model.state}}, {{model.country}}</h3>
+  {{else}}
+  <h3 class="secondary-heading">Location: {{model.city}}, {{model.country}}</h3>
+  {{/if}}
   {{leaflet-problemsshow model=model}}
 </section>
 <section class="problem-users-container">
