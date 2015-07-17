@@ -181,6 +181,17 @@ PROBLEMS-INDEX
   border: 1px solid black;
 }
 
+.leaflet-index-container {
+  @include span-columns(5 of 12);
+  @include shift(0.5);
+  text-align: center;
+}
+
+#indexmap {
+  height: 31em;
+  margin-bottom: 1em;
+}
+
 .globe {
   max-width: 100%;
   cursor: move;
