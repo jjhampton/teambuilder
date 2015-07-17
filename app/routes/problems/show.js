@@ -54,30 +54,24 @@ export default Ember.Route.extend({
     //     this.transitionTo('index');
     //   }.bind(this));
     // }
+    },
+
+    sendEmail: function(text, userName, userEmail, problem, problemOwner) {
+      console.log("show route > ", text, userName, userEmail, problem, problemOwner);
+      var adapter = this.store.adapterFor('application');
+
+      adapter.ajax("https://api.parse.com/1/functions/sendMailgun", "POST", {
+        data: {
+          text: text,
+          userName: userName,
+          userEmail: userEmail,
+          problem: problem,
+          problemOwner: problemOwner
+        }
+      }).then(function(response) {
+        console.log('adapter.ajax response:', response);
+        // this.transitionTo('index');
+      }.bind(this));
     }
   }
-
-  // activate: function() {
-  //
-  //   console.log(this.currentModel);
-  //   console.log(this.modelFor(this.routeName));
-  //   console.log(this.currentModel._data);
-  //
-  //   // var problem = this.currentModel._data;
-  //   var currentUser = this.get('session.currentUser');
-  //   var isMember = false;
-  //
-  //   // var membersArray = [
-  //   //   problem.get('owner.id'),
-  //   //   problem.get('member1.id'),
-  //   //   problem.get('member2.id'),
-  //   //   problem.get('member3.id'),
-  //   //   problem.get('member4.id'),
-  //   //   problem.get('member5.id')
-  //   // ];
-  //   // if (_.indexOf(membersArray, currentUser) !== -1) {
-  //   //   isMember = true;
-  //   // }
-  //   // alert(isMember);
-  // }
 });
