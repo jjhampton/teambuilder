@@ -46,9 +46,21 @@ export default Ember.Component.extend({
       marker = L.marker(map.getCenter(),{icon: redMarker}, {draggable: true}).addTo(map);
 
       // Sets latitude and longitude on current problem model that is being created
-      currentProblem.set('latitude', map.getCenter().lat);
-      currentProblem.set('longitude', map.getCenter().lng);
+      currentProblem.set('latitude', marker.getLatLng().lat);
+      currentProblem.set('longitude', marker.getLatLng().lng);
     }
+
+    map.on('click', function (e) {
+      if (marker !== null) {
+          map.removeLayer(marker);
+      }
+      marker = L.marker(e.latlng,{icon: redMarker},{draggable: true}).addTo(map);
+      marker.dragging.enable();
+
+      currentProblem.set('latitude', marker.getLatLng().lat);
+      currentProblem.set('longitude', marker.getLatLng().lng);
+
+    });
 
   }.on('didInsertElement')
 });

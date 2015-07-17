@@ -6,6 +6,8 @@ export default Ember.Component.extend({
 
     var userLatitude = this.get('model.latitude');
     var userLongitude = this.get('model.longitude');
+    var latLng = L.latLng(userLatitude, userLongitude);
+
 
     // marker that will be centered on map
     var marker = null;
@@ -26,6 +28,10 @@ export default Ember.Component.extend({
 
     // map object, set to locate geolocation
     var map = L.map('showmap',{attributionControl: false}).setView([userLatitude, userLongitude], 2);
+
+    //add marker to user's home location
+    var marker = L.marker(latLng,{icon: redMarker}, {draggable: true}).addTo(map);
+    marker.bindPopup(this.get('model.name') + "'s location").openPopup();
 
     // add tile to map
     mapBoxBackground.addTo(map);
