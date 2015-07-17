@@ -36,6 +36,7 @@
     "planetaryjs": false,
     "moment": false,
     "Parse": false,
-    "CryptoJS": false
+    "CryptoJS": false,
+    "Chart": false
   }
 }
