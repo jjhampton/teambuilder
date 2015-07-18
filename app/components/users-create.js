@@ -1,7 +1,6 @@
-import ValidatableForm from 'ember-cli-html5-validation/components/validatable-form';
+import Ember from 'ember';
 
-export default ValidatableForm.extend({
-  classNames: ['users-create-form'],
+export default Ember.Component.extend({
 
   actions: {
     createUser: function() {
