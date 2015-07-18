@@ -26,27 +26,34 @@ export default Ember.Route.extend({
         dataType: 'json'
       }).then(function(data) {
         geoData = data.results;
-        var arrAddress = geoData[0].address_components;
+        if (geoData.length > 0) {
+          var arrAddress = geoData[0].address_components;
 
-        //credit: http://stackoverflow.com/questions/5341023/retrieving-postal-code-with-google-maps-javascript-api-v3-reverse-geocode
-        // iterate through address_component array
-        $.each(arrAddress, function (i, address_component) {
-          if (address_component.types[0] === "locality"){
-              city = address_component.long_name;
-              return false;
-          }
-        });
-        $.each(arrAddress, function (i, address_component) {
-          if (address_component.types[0] === "administrative_area_level_1"){
-              state = address_component.long_name;
-              return false;
-          }
-        });
-        $.each(arrAddress, function (i, address_component) {
-          if (address_component.types[0] === "country"){
-              country = address_component.long_name;
-          }
-        });
+          //credit: http://stackoverflow.com/questions/5341023/retrieving-postal-code-with-google-maps-javascript-api-v3-reverse-geocode
+          // iterate through address_component array
+          $.each(arrAddress, function (i, address_component) {
+            if (address_component.types[0] === "locality"){
+                city = address_component.long_name;
+                return false;
+            }
+          });
+          $.each(arrAddress, function (i, address_component) {
+            if (address_component.types[0] === "administrative_area_level_1"){
+                state = address_component.long_name;
+                return false;
+            }
+          });
+          $.each(arrAddress, function (i, address_component) {
+            if (address_component.types[0] === "country"){
+                country = address_component.long_name;
+            }
+          });
+        }
+        else {
+          city = null;
+          state = null;
+          country = null;
+        }
       }).then(function() {
         user.set('thinker', 0);
         user.set('enabler', 0);

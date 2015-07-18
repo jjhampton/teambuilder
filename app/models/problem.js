@@ -23,5 +23,22 @@ export default DS.Model.extend({
   member5: DS.belongsTo('parseUser', {async:true}),
   latLng: function() {
     return [this.get('latitude'),  this.get('longitude')];
-  }.property('latitude', 'longitude')
+  }.property('latitude', 'longitude'),
+  location: function() {
+    var city = this.get('city');
+    var state = this.get('state');
+    var country = this.get('country');
+    if (typeof country === "undefined" || country === null) {
+      return "Outside national boundaries";
+    }
+    if (city && state) {
+      return city + ', ' + state + ', ' + country;
+    }
+    else if (city) {
+      return city + ', ' + country;
+    }
+    else if (state) {
+      return state + ', ' + country;
+    }
+  }.property('city', 'state', 'country')
 });
