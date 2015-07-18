@@ -9,7 +9,9 @@ export default Ember.Route.extend({
     createProblem: function(problem) {
       var tagArray = [];
       $('input[name=tag]').each(function() {
-        tagArray.push($(this).val());
+        if ($(this).val()) {
+          tagArray.push($(this).val());
+        }
       });
 
       var latitude = problem.get('latitude');

@@ -56,20 +56,20 @@ export default Ember.Route.extend({
     // }
     },
 
-    sendEmail: function(text, userName, userEmail, problem, problemOwner) {
-      console.log("show route > ", text, userName, userEmail, problem, problemOwner);
+    sendOwnerEmail: function(text, senderName, senderEmail, problem, ownerEmail) {
+      console.log("show route > ", text, senderName, senderEmail, problem, ownerEmail);
       var adapter = this.store.adapterFor('application');
 
       adapter.ajax("https://api.parse.com/1/functions/sendMailgun", "POST", {
         data: {
           text: text,
-          userName: userName,
-          userEmail: userEmail,
-          problem: problem,
-          problemOwner: problemOwner
+          senderName: senderName,
+          senderEmail: senderEmail,
+          subject: problem,
+          recipientEmail: ownerEmail
         }
       }).then(function(response) {
-        // console.log('adapter.ajax response:', response);
+        console.log('adapter.ajax response:', response);
         // this.transitionTo('index');
       }.bind(this));
     }

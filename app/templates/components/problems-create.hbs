@@ -3,16 +3,15 @@
   <fieldset class="problems-create-fieldset">
     <legend><b>Problem Information</b></legend>
 
-    {{input class="problems-create-info" type="text" placeholder="Name of problem" value=model.name}}
+    {{input class="problems-create-info" type="text" placeholder="Name of problem (required)" value=model.name}}
 
-    {{textarea class="problems-create-info" placeholder="Short description of the problem" value=model.description}}
+    {{textarea class="problems-create-info" placeholder="Short description of the problem (required)" value=model.description}}
 
-    {{input class="problems-create-info" type="url" placeholder="Trello Project URL" value=model.trelloURL}}
   </fieldset>
 
   <fieldset class="problems-create-fieldset">
     <legend><b>Deadline for solving the problem</b></legend>
-    {{pikaday-input class="problems-create-datepicker" placeholder="Enter date" type="date" value=model.deadline}}
+    {{pikaday-input class="problems-create-datepicker" placeholder="Enter date (required)" type="date" value=model.deadline}}
   </fieldset>
 
   <fieldset class="problems-create-fieldset">
