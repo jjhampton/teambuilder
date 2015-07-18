@@ -36,6 +36,7 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-parse-adapter": "0.5.3",
+    "ember-parsley": "0.0.4",
     "ember-pikaday": "0.8.0",
     "ember-simple-auth-parse": "0.0.5"
   }
