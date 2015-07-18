@@ -58,10 +58,12 @@
   <button class="problem-button-review">Review Teammates</button>
   {{/link-to}}
   {{/if}}
+  {{#if isOwner}}
   <h3>Team Owner:</h3>
-  {{#link-to 'problems.manage' model}}
-  <button class="problem-button-manage">Manage Team</button>
-  {{/link-to}}
+    {{#link-to 'problems.manage' model}}
+    <button class="problem-button-manage">Manage Team</button>
+    {{/link-to}}
+  {{/if}}
 </section>
 
 

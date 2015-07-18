@@ -13,5 +13,18 @@ export default Ember.Component.extend({
       var problemOwner = this.get('model.owner.email');
       this.sendAction('sendEmail', text, userName, userEmail, problem, problemOwner);
     }
-  }
+  },
+
+  isOwner: function() {
+    var problemOwnerId = this.get('model.owner.id');
+    console.log(problemOwnerId);
+
+    var currentUserId = this.get('session.currentUser.id');
+    console.log(currentUserId);
+    return (problemOwnerId === currentUserId);
+  }.property('model', 'session')
 });
+//
+// latLng: function() {
+//   return [this.get('latitude'),  this.get('longitude')];
+// }.property('latitude', 'longitude')
