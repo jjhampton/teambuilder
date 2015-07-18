@@ -5,7 +5,7 @@
   <p class="problem-deadline"><b>Deadline:</b> {{momentDate model.deadline}}</p>
   <ul class="problem-tags-list">
     <li class="problem-tag"><b>Tags:</b></li>
-    {{#each model.tags as |tag|}}
+    {{#each model.tags key="@index" as |tag|}}
       <li class="problem-tag">{{tag}}</li>
     {{/each}}
   </ul>

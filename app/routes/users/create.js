@@ -9,7 +9,6 @@ export default Ember.Route.extend({
     createUser: function(user) {
       var interestArray = [];
       $('input[name=interest]').each(function() {
-        console.log($(this).val());
         if ($(this).val()) {
           interestArray.push($(this).val());
         }
