@@ -37,7 +37,7 @@ Parse.Cloud.define("sendMailgun", function(request, response) {
   Mailgun.initialize('sandboxff5a943272184648b20a5c2c318b254a.mailgun.org','key-7dd87a6b809f919c0480a13c4a4f8f8d');
 
 	var text = "Team Builder Comment\n" +
-		"From:" + request.params.senderName + "\n" +
+		"From: " + request.params.senderName + "\n" +
     "For: " + request.params.senderEmail + "\n\n" +
 		"Comments:\n" + request.params.text + "\n\n" +
     "Reply to this comment at: " + request.params.senderEmail;
