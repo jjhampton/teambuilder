@@ -4,17 +4,22 @@
 <section class="user-info-container">
   <h2 class="users-show-section-heading">About</h2>
   <ul class="user-info-list">
+    {{#if model.age}}
     <li class="user-info-item"><span class="list-item-title">Age:</span> {{model.age}}</li>
+    {{/if}}
     <li class="user-info-item"><span class="list-item-title">Location:</span> {{model.location}}</li>
+    {{#if model.occupation}}
     <li class="user-info-item"><span class="list-item-title">Occupation:</span> {{model.occupation}}</li>
+    {{/if}}
     <ul class="user-info-item">
       <li class="user-interest"><span class="list-item-title">Interests:</span></li>
-      {{#each model.interests as |interest|}}
+      {{#each model.interests key="@index" as |interest|}}
         <li class="user-interest">{{interest}}</li>
       {{/each}}
     </ul>
   </ul>
-  <button class="user-info-button-email">Email user</button>
+  {{textarea class="user-email-textarea" value=comment placeholder="Enter your email message here."}}
+  <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Email user</button>
 </section>
 <section class="user-skillchart-container">
   <h2 class="user-skillchart-heading">Skills Chart</h2>

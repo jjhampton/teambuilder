@@ -45,7 +45,7 @@
   <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
   <p class="problem-email-label">Don't want to join but still want to provide input? Send the owner your comments and suggestions.</p>
   {{textarea class="problem-email" value=comment placeholder="Enter your comment or message here."}}
-  <button {{action 'sendEmail' comment}}>Send crowdsourced input</button>
+  <button {{action 'sendOwnerEmail' comment}}>Send crowdsourced input</button>
 </section>
 <section class="problem-options-container">
   {{#if model.isComplete}}

@@ -5,13 +5,13 @@ export default Ember.Component.extend({
     addUser: function(problem) {
       this.sendAction('addUser', problem);
     },
-    sendEmail: function(comment) {
+    sendOwnerEmail: function(comment) {
       var text =  comment;
-      var userName = this.get('session.currentUser.name');
-      var userEmail = this.get('session.currentUser.email');
+      var senderName = this.get('session.currentUser.name');
+      var senderEmail = this.get('session.currentUser.email');
       var problem = this.get('model.name');
-      var problemOwner = this.get('model.owner.email');
-      this.sendAction('sendEmail', text, userName, userEmail, problem, problemOwner);
+      var ownerEmail = this.get('model.owner.email');
+      this.sendAction('sendOwnerEmail', text, senderName, senderEmail, problem, ownerEmail);
     }
   },
 

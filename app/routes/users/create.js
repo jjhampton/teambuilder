@@ -9,7 +9,10 @@ export default Ember.Route.extend({
     createUser: function(user) {
       var interestArray = [];
       $('input[name=interest]').each(function() {
-        interestArray.push($(this).val());
+        console.log($(this).val());
+        if ($(this).val()) {
+          interestArray.push($(this).val());
+        }
       });
 
       var latitude = user.get('latitude');

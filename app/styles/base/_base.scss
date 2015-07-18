@@ -44,6 +44,10 @@ p {
   font-weight: bold;
 }
 
+.input-error {
+  color: red;
+}
+
 /*--------------------------------
 BODY
 --------------------------------*/
@@ -491,15 +495,18 @@ USERS-SHOW
 
 .user-info-container {
   @include span-columns(4);
+  padding: 1em;
 }
 
 .user-skillchart-container {
   @include span-columns(4);
+  padding: 1em;
 }
 
 .user-skillpoints-container {
   @include span-columns(4);
   @include omega();
+  padding: 1em;
 }
 
 .user-contributions-container {
@@ -532,6 +539,12 @@ USERS-SHOW
 .user-info-item,
 .user-skill,
 .user-contribution {
+  margin-bottom: 1em;
+}
+
+.user-email-textarea {
+  display: block;
+  width: 100%;
   margin-bottom: 1em;
 }
 

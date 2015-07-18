@@ -36,22 +36,22 @@ Parse.Cloud.define("sendMailgun", function(request, response) {
   var Mailgun = require('mailgun');
   Mailgun.initialize('sandboxff5a943272184648b20a5c2c318b254a.mailgun.org','key-7dd87a6b809f919c0480a13c4a4f8f8d');
 
-	var text = "Team Builder Crowdsourced Comment\n" +
-		"From:" + request.params.userName + "\n" +
-    "For: " + request.params.problem + "\n\n" +
+	var text = "Team Builder Comment\n" +
+		"From:" + request.params.senderName + "\n" +
+    "For: " + request.params.senderEmail + "\n\n" +
 		"Comments:\n" + request.params.text + "\n\n" +
-    "Reply to this comment at: " + request.params.userEmail;
+    "Reply to this comment at: " + request.params.senderEmail;
 
   var params = {
-    to: request.params.problemOwner,
+    to: request.params.recipientEmail,
     from: "mailgun@sandboxff5a943272184648b20a5c2c318b254a.mailgun.org",
-    subject: "Team Builder Crowdsourced Comment for: " + request.params.problem,
+    subject: "Team Builder Crowdsourced Comment for: " + request.params.subject,
     text: text
   };
 
   var options = {
     success: function() {
-      response.success(request.params + " YEAH");
+      response.success(request.params + " send on Mailgun succeeded");
     },
     error: function() {
       response.error("error on Parse Cloud");

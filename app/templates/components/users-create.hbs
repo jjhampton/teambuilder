@@ -1,13 +1,12 @@
 <h1 class="primary-heading">Sign up today to begin helping others solve problems.</h1>
-<form class="users-create-form">
   <fieldset class="users-create-fieldset">
-    <legend><b>User Information</b></legend>
+    <legend><b>Account Information</b></legend>
 
-    {{input class="users-create-info"  type="text" placeholder="Full name" value=model.name}}
+    {{input class="users-create-info"  type="text" placeholder="Full name" value=model.name required=true title='Please enter your full name above.'}}
 
-    {{input class="users-create-info" type="email" placeholder="Email address" value=model.username}}
+    {{input class="users-create-info" type="email" placeholder="Email address" value=model.username required=true title='Please enter your email address above.'}}
 
-    {{input class="users-create-info users-create-password" type="password" placeholder="Password" value=model.password}}
+    {{input class="users-create-info users-create-password" type="password" placeholder="Password" value=model.password required=true title='Please enter a password above.'}}
   </fieldset>
 
   <fieldset class="users-create-fieldset users-create-fieldset-optional">
@@ -18,9 +17,9 @@
     {{input class="users-create-info" type="text" placeholder="Age" value=model.age}}
 
     <legend><b>Interests</b></legend>
-    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest">
-    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest">
-    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest">
+    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest" required=true title='Please enter an interest.'>
+    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest" required=true title='Please enter an interest.'>
+    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest" required=true title='Please enter an interest.'>
     <button class="users-create-button-addinterest" {{action 'addInterestInput'}}>+ Add another interest</button>
   </fieldset>
 
@@ -31,6 +30,5 @@
   </fieldset>
 
   <button class="users-create-button-submit" {{action 'createUser'}}>Sign Up!</button>
-</form>
 
 {{yield}}
