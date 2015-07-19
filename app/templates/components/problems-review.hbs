@@ -1,7 +1,9 @@
 <h1 class="primary-heading">Review Your Team's Performance</h1>
 <h2 class="secondary-heading">{{model.name}}</h2>
 <ul class="review-members-list">
-  {{teammate-review model=model.owner problem=model action="reviewTeammate"}}
+  {{#unless isOwner}}
+    {{teammate-review model=model.owner problem=model action="reviewTeammate"}}
+  {{/unless}}
   {{#if model.member1}}
     {{teammate-review model=model.member1  problem=model action="reviewTeammate"}}
   {{/if}}
