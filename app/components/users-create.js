@@ -17,13 +17,13 @@ export default Ember.Component.extend({
           "positionClass": "toast-top-center",
           "showDuration": "2000",
           "hideDuration": "2000",
-          "timeOut": "2000",
+          "timeOut": "3000",
           "extendedTimeOut": "2000",
           "showEasing": "linear",
           "hideEasing": "swing",
-          "showMethod": "slideDown",
-          "hideMethod": "slideUp"};
-        toastr.success('Your account has been created!');
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.success('User account created!');
       }
       else {
         alert("Please fill in the required user information fields before submitting.");

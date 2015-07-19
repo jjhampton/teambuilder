@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ResetScroll from '../../mixins/reset-scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScroll, {
   actions: {
     sendUserEmail: function(text, senderName, senderEmail, recipientName, recipientEmail) {
       console.log("show route > ", text, senderName, senderEmail, recipientName, recipientEmail);

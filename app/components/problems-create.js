@@ -12,7 +12,17 @@ export default Ember.Component.extend({
 
       if (isValid) {
         this.sendAction('action', this.get('model'));
-        toastr.info('Your problem has been submitted!  Thanks!');
+        toastr.options = {
+          "positionClass": "toast-top-center",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.success('Your problem was submitted!');
       }
       else {
         alert("Please fill in the required problem information fields before submitting.");
