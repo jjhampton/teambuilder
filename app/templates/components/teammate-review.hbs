@@ -1,16 +1,16 @@
 <p class="review-member-name">{{gravatar-small email=model.email size="40"}}{{model.name}}</p>
 <p class="review-instructions">You have up to 100 skill points to divide between the three categories:</p>
 <label class="review-input-label">
-  Thinker:
-  {{input class="review-input" type="number" value=thinkerReview}}
+  Thinking Role Score:
+  {{input class="review-input" type="number" value=thinkingReview}}
 </label>
 <label class="review-input-label">
-  Enabler:
-  {{input class="review-input" type="number" value=enablerReview}}
+  Action Role Score:
+  {{input class="review-input" type="number" value=actionReview}}
 </label>
 <label class="review-input-label">
-  Connector:
-  {{input class="review-input" type="number" value=connectorReview}}
+  Social Role Score:
+  {{input class="review-input" type="number" value=socialReview}}
 </label>
 <button class="review-button-submit" {{action 'reviewTeammate' model problem}}>Submit teammate review!</button>
 {{yield}}

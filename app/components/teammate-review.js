@@ -29,9 +29,9 @@ export default Ember.Component.extend({
       }
       else {
         var review = {
-          thinkerReview: Number(this.get('thinkerReview')),
-          enablerReview: Number(this.get('enablerReview')),
-          connectorReview: Number(this.get('connectorReview'))
+          thinkingReview: Number(this.get('thinkingReview')),
+          actionReview: Number(this.get('actionReview')),
+          socialReview: Number(this.get('socialReview'))
         };
 
         this.sendAction('action', user, review, reviewKey);

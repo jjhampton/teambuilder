@@ -27,14 +27,13 @@
   <h2 class="user-skillchart-heading">Skills Chart</h2>
   {{skills-chart user=model}}
   <canvas id="skillsChart" width="400" height="400"></canvas>
-  {{!-- <img class="user-chart" src="assets/skills-chart-example.gif"> --}}
 </section>
 <section class="user-skillpoints-container">
-  <h2 class="user-skillchart-heading">Earned Skill Points</h2>
+  <h2 class="user-skillchart-heading">Earned Team Points</h2>
   <ul class="user-skills-list">
-    <li class="user-skill"><span class="list-item-title">Thinker:</span> {{model.thinker}}</li>
-    <li class="user-skill"><span class="list-item-title">Enabler:</span> {{model.enabler}}</li>
-    <li class="user-skill"><span class="list-item-title">Connector:</span> {{model.connector}}</li>
+    <li class="user-skill"><span class="list-item-title">Thinking:</span> {{model.thinking}}</li>
+    <li class="user-skill"><span class="list-item-title">Action:</span> {{model.action}}</li>
+    <li class="user-skill"><span class="list-item-title">Social:</span> {{model.social}}</li>
   </ul>
 </section>
 <section class="user-contributions-container">

@@ -4,9 +4,9 @@ import ParseUser from 'ember-parse-adapter/models/parse-user';
 export function initialize() {
   ParseUser.reopen({
     name: DS.attr('string'),
-    thinker: DS.attr('number'),
-    enabler: DS.attr('number'),
-    connector: DS.attr('number'),
+    thinking: DS.attr('number'),
+    action: DS.attr('number'),
+    social: DS.attr('number'),
     email: DS.attr('string'),
     latitude: DS.attr('number'),
     longitude: DS.attr('number'),

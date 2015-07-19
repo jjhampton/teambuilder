@@ -10,15 +10,15 @@ Parse.Cloud.define("reviewTeammate", function(request, response) {
   Parse.Cloud.useMasterKey();
   var userId = request.params.userId;
   var reviewKey = request.params.reviewKey;
-  var thinkerReview = request.params.review.thinkerReview;
-  var enablerReview = request.params.review.enablerReview;
-  var connectorReview = request.params.review.connectorReview;
+  var thinkingReview = request.params.review.thinkingReview;
+  var actionReview = request.params.review.actionReview;
+  var socialReview = request.params.review.socialReview;
   var query = new Parse.Query("User");
 
   query.get(userId).then(function(user) {
-    user.increment("thinker", thinkerReview);
-    user.increment("enabler", enablerReview);
-    user.increment("connector", connectorReview);
+    user.increment("thinking", thinkingReview);
+    user.increment("action", actionReview);
+    user.increment("social", socialReview);
     user.add("reviewKeys", reviewKey);
     return user.save();
   }).then(function(user) {
