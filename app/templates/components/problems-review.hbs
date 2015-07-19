@@ -4,7 +4,12 @@
   {{#unless isOwner}}
     {{teammate-review model=model.owner problem=model action="reviewTeammate"}}
   {{/unless}}
-  {{#if model.member1}}
+  {{#each model.members as |member|}}
+    {{#if member}}
+      {{teammate-review model=member  problem=model action="reviewTeammate"}}
+    {{/if}}
+  {{/each}}
+  {{!-- {{#if model.member1}}
     {{teammate-review model=model.member1  problem=model action="reviewTeammate"}}
   {{/if}}
   {{#if model.member2}}
@@ -18,7 +23,7 @@
   {{/if}}
   {{#if model.member5}}
     {{teammate-review model=model.member5 problem=model action="reviewTeammate"}}
-  {{/if}}
+  {{/if}} --}}
 </ul>
 
 {{yield}}
