@@ -1,7 +1,8 @@
 <header class="header index-hero-header">
   <h1 class="index-primary-heading"><img class='header-logo' src='assets/images/connection27.svg'>Cross-Pollinate</h1>
-  <h4 class="index-secondary-heading">Spark new ideas.  Solve problems submitted by people around the world.  Be a participant in the lives of others. Seek input from other volunteers.</h4>
+  <h3 class="index-secondary-heading">Help solve problems submitted by people around the world. Seek input from other volunteers. Spark new ideas.  Be a participant in the lives of others.</h3>
 </header>
+{{search-form action="transitionSearch"}}
 <section class="problems-outer-container">
   {{!-- {{planetary-globe}} --}}
   <div class="leaflet-index-container">
@@ -13,7 +14,6 @@
   <div class="problems-index-container">
     <h3 class="secondary-heading">These places around the globe currently need help solving local problems:</h3>
     {{problems-index model=model}}
-    {{search-form action="transitionSearch"}}
   </div>
 </section>
 

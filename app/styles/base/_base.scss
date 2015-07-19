@@ -64,9 +64,7 @@ APPLICATION
 .primary-nav {
   width: 100%;
   background-color: #fff;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  border-bottom: 1px solid #3F3F37;
+  padding: 0.5em;
   overflow: hidden;
   background: -webkit-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* Chrome 10+, Saf5.1+ */
   background:    -moz-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* FF3.6+ */
@@ -127,7 +125,6 @@ HEADER
   background:         linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* W3C */
   padding-top: 1em;
   padding-bottom: 1em;
-  margin-bottom: 1em;
 }
 
 .header-logo {
@@ -139,6 +136,9 @@ HEADER
 .index-secondary-heading {
   font-weight: bold;
   text-align: center;
+  margin-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .header-button-add {
@@ -146,12 +146,13 @@ HEADER
 }
 
 .index-primary-heading {
-  font-family: $sansita;
+  font-family: $days-one;
   font-weight: 100;
   font-size: 5em;
   font-weight: bold;
   text-align: center;
   margin: 0;
+  margin-top: 0.5em;
 }
 
 
@@ -160,20 +161,24 @@ MAIN-INDEX
 --------------------------------*/
 
 .index-search-form {
+  @include span-columns(10);
+  @include shift(1);
+  @include omega();
   margin-top: 2em;
 }
 
 .index-search-radio-container {
+  text-align: center;
   margin-bottom: 1em;
 }
 
 .index-search-input {
   display: inline-block;
-  width: 60%;
+  width: 75%;
 }
 
 .index-button-search {
-  width: 35%;
+  width: 20%;
 }
 
 
