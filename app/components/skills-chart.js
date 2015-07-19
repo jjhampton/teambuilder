@@ -12,9 +12,9 @@ export default Ember.Component.extend({
     datasets: [
         {
             label: "My First dataset",
-            fillColor: "rgba(27, 54, 255, 0.8)",
-            strokeColor: "rgba(27, 54, 255, 1)",
-            pointColor: "rgba(27, 54, 255, 1)",
+            fillColor: "rgba(64, 212, 37, 0.8)",
+            strokeColor: "rgba(5, 142, 217, 1)",
+            pointColor: "rgba(63, 63, 55, 1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
@@ -22,6 +22,11 @@ export default Ember.Component.extend({
         }
       ]
     };
-    var myNewChart = new Chart(ctx).Radar(data);
+    var myNewChart = new Chart(ctx).Radar(data, {
+      scaleLineColor: '#058ED9',
+      responsive: true,
+      maintainAspectRatio: true,
+      pointLabelFontColor : '#058ED9',
+    });
   }
 });
