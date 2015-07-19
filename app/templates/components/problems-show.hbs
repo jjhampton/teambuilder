@@ -25,21 +25,12 @@
 
   <ul class="problem-members-list">
     <li class="problem-members-list-item">{{#link-to 'users.show' model.owner.id}}{{gravatar-small email=model.owner.email size="40"}}{{model.owner.name}} (Owner){{/link-to}}</li>
-    {{#if model.member1}}
-      <li class="problem-members-list-item">{{#link-to 'users.show' model.member1.id}}{{gravatar-small email=model.member1.email size="40"}}{{model.member1.name}}{{/link-to}}</li>
-    {{/if}}
-    {{#if model.member2}}
-      <li class="problem-members-list-item">{{#link-to 'users.show' model.member2.id}}{{gravatar-small email=model.member2.email size="40"}}{{model.member2.name}}{{/link-to}}</li>
-    {{/if}}
-    {{#if model.member3}}
-      <li class="problem-members-list-item">{{#link-to 'users.show' model.member3.id}}{{gravatar-small email=model.member3.email size="40"}}{{model.member3.name}}{{/link-to}}</li>
-    {{/if}}
-    {{#if model.member4}}
-      <li class="problem-members-list-item">{{#link-to 'users.show' model.member4.id}}{{gravatar-small email=model.member4.email size="40"}}{{model.member4.name}}{{/link-to}}</li>
-    {{/if}}
-    {{#if model.member5}}
-      <li class="problem-members-list-item">{{#link-to 'users.show' model.member5.id}}{{gravatar-small email=model.member5.email size="40"}}{{model.member5.name}}{{/link-to}}</li>
-    {{/if}}
+
+    {{#each model.members as |member|}}
+      {{#if member}}
+        <li class="problem-members-list-item">{{#link-to 'users.show' member.id}}{{gravatar-small email=member.email size="40"}}{{member.name}}{{/link-to}}</li>
+      {{/if}}
+    {{/each}}
   </ul>
 
   <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
