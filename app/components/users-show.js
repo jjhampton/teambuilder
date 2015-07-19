@@ -11,5 +11,12 @@ export default Ember.Component.extend({
       this.sendAction('action', text, senderName, senderEmail, recipientName, recipientEmail);
       this.set('comment', '');
     }
-  }
+  },
+
+  isUser: function() {
+    var profileUserId = this.get('model.id');
+
+    var currentUserId = this.get('session.currentUser.id');
+    return (profileUserId === currentUserId);
+  }.property('model', 'session'),
 });
