@@ -3,12 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'span',
   didInsertElement: function() {
+    var canvasId = this.get('user.id');
     var thinking = (this.get('user.thinking'));
     var action = (this.get('user.action'));
     var social = (this.get('user.social'));
-    var ctx = $("#skillsChart").get(0).getContext("2d");
+    var ctx = $("#" + canvasId).get(0).getContext("2d");
     var data = {
-    labels: ["Thinking Score", "Action Score", "Social Score"],
+    labels: ["T", "A", "S"],
     datasets: [
         {
             label: "My First dataset",
@@ -22,9 +23,7 @@ export default Ember.Component.extend({
         }
       ]
     };
-    var myNewChart = new Chart(ctx).Radar(data, {
-      responsive: true,
-      maintainAspectRatio: true,
+    var myNewChart = new Chart(ctx).Radar(data, { 
       pointLabelFontColor : '#058ED9',
     });
   }
