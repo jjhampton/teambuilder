@@ -37,6 +37,7 @@
     "moment": false,
     "Parse": false,
     "CryptoJS": false,
-    "Chart": false
+    "Chart": false,
+    "toastr": false
   }
 }

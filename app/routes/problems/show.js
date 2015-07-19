@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ResetScroll from '../../mixins/reset-scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScroll, {
 
   actions: {
     addUser: function(problem) {
@@ -43,17 +44,33 @@ export default Ember.Route.extend({
           problem.set('member5', this.get('session.currentUser'));
           problem.save();
         }
+        else {
+          toastr.options = {
+            "positionClass": "toast-top-right",
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "3000",
+            "extendedTimeOut": "2000",
+            "showEasing": "linear",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"};
+          toastr.error('Sorry, this team is already full.');
+        }
       }
       else {
-        alert("You are already a member.");
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.error('You are already a member.');
       }
-    // addUser: function(problem) {
-    //   var currentUser = this.get('session.currentUser');
-    //   problem.get('members').addObject(currentUser);
-    //   problem.save().then(function() {
-    //     this.transitionTo('index');
-    //   }.bind(this));
-    // }
     },
 
     sendOwnerEmail: function(text, senderName, senderEmail, problem, ownerEmail) {
@@ -70,6 +87,17 @@ export default Ember.Route.extend({
         }
       }).then(function(response) {
         console.log('adapter.ajax response:', response);
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.success('Email sent!');
         // this.transitionTo('index');
       }.bind(this));
     }

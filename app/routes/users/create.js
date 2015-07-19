@@ -57,6 +57,7 @@ export default Ember.Route.extend({
           country = null;
         }
       }).then(function() {
+        user.set('reviewKeys', []);
         user.set('thinker', 0);
         user.set('enabler', 0);
         user.set('connector', 0);

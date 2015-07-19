@@ -12,14 +12,20 @@ export default Ember.Component.extend({
       var reviewKey = problemId + currentUserId;
       var reviewKeys = user.get('reviewKeys'); //user's current reviewKeys array
 
-      console.log('this reviewKey is ', reviewKey);
-      console.log('user current review keys are: ', user.get('reviewKeys'));
-
       var isAlreadyReviewed = _.contains(reviewKeys, reviewKey);
-      console.log(isAlreadyReviewed);
 
       if (isAlreadyReviewed) {
-        alert("You have already reviewed this team member for this problem.");
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.error('You have already reviewed this teammate for this problem.');
       }
       else {
         var review = {
@@ -29,6 +35,17 @@ export default Ember.Component.extend({
         };
 
         this.sendAction('action', user, review, reviewKey);
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.success('Teammate Reviewed!');
       }
     }
   }

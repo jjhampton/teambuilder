@@ -1,11 +1,11 @@
 import Ember from 'ember';
+import ResetScroll from '../../mixins/reset-scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScroll, {
 
   actions: {
 
     reviewTeammate: function(user, review, reviewKey) {
-      console.log('route > reviewTeammate ');
 
       var adapter = this.store.adapterFor('application');
 
@@ -16,8 +16,9 @@ export default Ember.Route.extend({
           reviewKey: reviewKey
         }
       }).then(function(response) {
-        console.log('adapter.ajax response:', response);
+        console.log('adapter.ajax response:', response.result.message);
         // this.transitionTo('index');
+        user.get('reviewKeys').pushObject(reviewKey);
       }.bind(this));
     }
   }

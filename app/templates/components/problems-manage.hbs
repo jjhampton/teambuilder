@@ -1,33 +1,37 @@
 <h1 class="primary-heading">Manage Your Problem</h1>
 <h2 class="secondary-heading manage-heading">{{model.name}}</h2>
-<h3 class="manage-heading">Team Members:</h3>
-<ul class="manage-members-list">
-{{#if model.member1}}
-  <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member1.email size="40"}}{{model.member1.name}}   <button {{action 'removeMember' model 'member1'}}>Remove</button></p></li>
+{{#if model.isComplete}}
+  <h3 class="manage-heading">Your problem is marked as solved!  Please review your teammates.</h3>
+{{else}}
+  <h3 class="manage-heading">Team Members:</h3>
+  <ul class="manage-members-list">
+  {{#if model.member1}}
+    <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member1.email size="40"}}{{model.member1.name}}   <button {{action 'removeMember' model 'member1'}}>Remove</button></p></li>
+  {{/if}}
+  {{#if model.member2}}
+    <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member2.email size="40"}}{{model.member2.name}}   <button {{action 'removeMember' model 'member2'}}>Remove</button></p></li>
+  {{/if}}
+  {{#if model.member3}}
+    <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member3.email size="40"}}{{model.member3.name}}  <button {{action 'removeMember' model 'member3'}}>Remove</button></p></li>
+  {{/if}}
+  {{#if model.member4}}
+    <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member4.email size="40"}}{{model.member4.name}}   <button {{action 'removeMember' model 'member4'}}>Remove</button></p></li>
+  {{/if}}
+  {{#if model.member5}}
+    <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member5.email size="40"}}{{model.member5.name}}  <button {{action 'removeMember' model 'member5'}}>Remove</button></p></li>
+  {{/if}}
+  </ul>
+  <div class="manage-progress">
+    <h3 class="manage-heading">Update solution progress:</h3>
+    <label>
+      Update current completion percentage:
+      {{input class="manage-input-progress" type="number" value=model.progress}}
+      <button {{action 'updateProgress' model}}>Update!</button>
+    </label>
+    <label>
+      Press if the problem solved and ready for team review:
+      <button {{action 'markComplete' model}}>Problem solved!</button>
+    </label>
+  </div>
 {{/if}}
-{{#if model.member2}}
-  <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member2.email size="40"}}{{model.member2.name}}   <button {{action 'removeMember' model 'member2'}}>Remove</button></p></li>
-{{/if}}
-{{#if model.member3}}
-  <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member3.email size="40"}}{{model.member3.name}}  <button {{action 'removeMember' model 'member3'}}>Remove</button></p></li>
-{{/if}}
-{{#if model.member4}}
-  <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member4.email size="40"}}{{model.member4.name}}   <button {{action 'removeMember' model 'member4'}}>Remove</button></p></li>
-{{/if}}
-{{#if model.member5}}
-  <li class="manage-members-list-item"><p class="manage-member-name">{{gravatar-small email=model.member5.email size="40"}}{{model.member5.name}}  <button {{action 'removeMember' model 'member5'}}>Remove</button></p></li>
-{{/if}}
-</ul>
-<div class="manage-progress">
-  <h3 class="manage-heading">Update solution progress:</h3>
-  <label>
-    Update current completion percentage:
-    {{input class="manage-input-progress" type="number" value=model.progress}}
-    <button {{action 'updateProgress' model}}>Update!</button>
-  </label>
-  <label>
-    Press if the problem solved and ready for team review:
-    <button {{action 'markComplete' model}}>Problem solved!</button>
-  </label>
-</div>
 {{yield}}

@@ -18,8 +18,10 @@
       {{/each}}
     </ul>
   </ul>
-  {{textarea class="user-email-textarea" value=comment placeholder="Enter your email message here."}}
-  <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Email user</button>
+  {{#unless isUser}}
+    {{textarea class="user-email-textarea" value=comment placeholder="Enter your email message here."}}
+    <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Email user</button>
+  {{/unless}}
 </section>
 <section class="user-skillchart-container">
   <h2 class="user-skillchart-heading">Skills Chart</h2>
