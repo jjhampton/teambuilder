@@ -1,5 +1,9 @@
-<input class="index-search-radio" name="queryType" type="radio" value="users" checked> Search Users
-<input class="index-search-radio" name="queryType" type="radio" value="problems"> Search Problems
-{{input class="index-search-input" type="text" placeholder="by Keyword, Location, or Tags" value=query}}
-<button class="index-button-search" {{action 'sendQuery' query}}>Search</button>
+<div class="index-search-radio-container">
+  <input class="index-search-radio" name="queryType" type="radio" value="users" checked> Search Users
+  <input class="index-search-radio" name="queryType" type="radio" value="problems"> Search Problems
+</div>
+<div class="index-search-input-container">
+  {{input class="index-search-input" type="text" placeholder="by Keyword, Location, or Tags" value=query}}
+  <button class="index-button-search" {{action 'sendQuery' query}}>Search</button>
+</div>
 {{yield}}
