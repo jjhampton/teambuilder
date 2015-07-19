@@ -3,8 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     createProblem: function() {
-      var validationList = [this.get('model.name'), this.get('model.name'), this.get('model.description'),
-      this.get('model.password')];
+      var validationList = [this.get('model.name'), this.get('model.description'), this.get('model.deadline')];
 
       function isTruthy(element) {
         return element;
@@ -13,6 +12,7 @@ export default Ember.Component.extend({
 
       if (isValid) {
         this.sendAction('action', this.get('model'));
+        toastr.info('Your problem has been submitted!  Thanks!');
       }
       else {
         alert("Please fill in the required problem information fields before submitting.");
