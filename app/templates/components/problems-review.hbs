@@ -6,9 +6,7 @@
   {{/unless}}
 
   {{#each model.members as |member|}}
-    {{#if member}}
-      {{teammate-review model=member  problem=model action="reviewTeammate"}}
-    {{/if}}
+    {{teammate-review model=member  problem=model action="reviewTeammate"}}
   {{/each}}
 </ul>
 

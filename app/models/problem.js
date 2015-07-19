@@ -42,6 +42,11 @@ export default DS.Model.extend({
     }
   }.property('city', 'state', 'country'),
   members: function() {
-    return [this.get('member1'), this.get('member2'), this.get('member3'), this.get('member4'), this.get('member5')];
+    var membersProperties =  [this.get('member1'), this.get('member2'), this.get('member3'), this.get('member4'), this.get('member5')];
+    var membersArray = _.filter(membersProperties, function(prop) {
+      return prop.content !== null;
+    });
+    console.log(membersArray);
+    return membersArray;
   }.property('member1', 'member2', 'member3', 'member4', 'member5')
 });

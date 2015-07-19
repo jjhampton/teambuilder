@@ -27,16 +27,16 @@
     <li class="problem-members-list-item">{{#link-to 'users.show' model.owner.id}}{{gravatar-small email=model.owner.email size="40"}}{{model.owner.name}} (Owner){{/link-to}}</li>
 
     {{#each model.members as |member|}}
-      {{#if member}}
-        <li class="problem-members-list-item">{{#link-to 'users.show' member.id}}{{gravatar-small email=member.email size="40"}}{{member.name}}{{/link-to}}</li>
-      {{/if}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' member.id}}{{gravatar-small email=member.email size="40"}}{{member.name}}{{/link-to}}</li>
     {{/each}}
   </ul>
 
-  <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
-  <p class="problem-email-label">Don't want to join but still want to provide input? Send the owner your comments and suggestions.</p>
-  {{textarea class="problem-email" value=comment placeholder="Enter your comment or message here."}}
-  <button {{action 'sendOwnerEmail' comment}}>Send crowdsourced input</button>
+  {{#unless isOwner}}
+    <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
+    <p class="problem-email-label">Don't want to join but still want to provide input? Send the owner your comments and suggestions.</p>
+    {{textarea class="problem-email" value=comment placeholder="Enter your comment or message here."}}
+    <button {{action 'sendOwnerEmail' comment}}>Send crowdsourced input</button>
+  {{/unless}}
 </section>
 <section class="problem-options-container">
   {{#if model.isComplete}}
