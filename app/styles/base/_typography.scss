@@ -21,6 +21,7 @@ h6 {
 
 h1 {
   font-size: 3em;
+  color: $base-font-color;
 }
 
 h2 {
@@ -36,7 +37,7 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: #2956B2;
   text-decoration: none;
   transition: color 0.1s linear;
 

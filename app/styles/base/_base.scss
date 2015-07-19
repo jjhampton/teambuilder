@@ -58,21 +58,21 @@ APPLICATION
 
 .outer-container {
   @include outer-container(100%);
-  background-color: $very-light-gray;
+  background-color: #fff;
 }
 
 .primary-nav {
   width: 100%;
   background-color: #fff;
-  padding: 0.5em;
-  border-bottom: 1px solid $medium-gray;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-bottom: 1px solid #3F3F37;
   overflow: hidden;
-
-  background: -webkit-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* W3C */
 }
 
 .nav-buttons-container {
@@ -83,6 +83,7 @@ APPLICATION
 .nav-buttons-container {
   display: inline-block;
   float: left;
+  line-height: 0;
 }
 
 .nav-form-login {
@@ -118,10 +119,22 @@ HEADER
 
 .header {
   text-align: center;
-  color: #000;
+  color: $base-font-color;
+  background: -webkit-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #40D425 10%, #FBE01B 90%); /* W3C */
+  padding-top: 1em;
+  padding-bottom: 1em;
   margin-bottom: 1em;
 }
 
+.header-logo {
+  height: 1.5em;
+  padding-right: 0.5em;
+  vertical-align: middle;
+}
 
 .index-secondary-heading {
   font-weight: bold;
@@ -133,6 +146,9 @@ HEADER
 }
 
 .index-primary-heading {
+  font-family: $sansita;
+  font-weight: 100;
+  font-size: 5em;
   font-weight: bold;
   text-align: center;
   margin: 0;
