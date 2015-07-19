@@ -59,7 +59,6 @@ APPLICATION
 .outer-container {
   @include outer-container(100%);
   background-color: $very-light-gray;
-  padding: 1.2em;
 }
 
 .primary-nav {
@@ -68,6 +67,12 @@ APPLICATION
   padding: 0.5em;
   border-bottom: 1px solid $medium-gray;
   overflow: hidden;
+
+  background: -webkit-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #3D7EAA 10%, #FFE47A 90%); /* W3C */
 }
 
 .nav-buttons-container {
@@ -113,11 +118,26 @@ HEADER
 
 .header {
   text-align: center;
+  color: #000;
+  margin-bottom: 1em;
+}
+
+
+.index-secondary-heading {
+  font-weight: bold;
+  text-align: center;
 }
 
 .header-button-add {
   margin-bottom: 2em;
 }
+
+.index-primary-heading {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
 
 /*--------------------------------
 MAIN-INDEX
@@ -191,13 +211,14 @@ PROBLEMS-INDEX
 }
 
 .leaflet-index-container {
-  @include span-columns(5 of 12);
-  @include shift(0.5);
+  @include span-columns(8 of 12);
+  @include shift(2);
+  @include omega();
   text-align: center;
 }
 
 #indexmap {
-  height: 31em;
+  height: 42em;
   margin-bottom: 1em;
 }
 
@@ -207,7 +228,8 @@ PROBLEMS-INDEX
 }
 
 .problems-index-container {
-  @include span-columns(6 of 12);
+  @include span-columns(10 of 12);
+  @include shift(1);
   @include omega();
   text-align: center;
   padding: 1em;
