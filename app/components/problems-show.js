@@ -12,6 +12,7 @@ export default Ember.Component.extend({
       var problem = this.get('model.name');
       var ownerEmail = this.get('model.owner.email');
       this.sendAction('sendOwnerEmail', text, senderName, senderEmail, problem, ownerEmail);
+      this.set('comment', '');
     }
   },
 

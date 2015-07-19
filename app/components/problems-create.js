@@ -22,7 +22,7 @@ export default Ember.Component.extend({
           "hideEasing": "swing",
           "showMethod": "fadeIn",
           "hideMethod": "fadeOut"};
-        toastr.success('Your problem was submitted!');
+        toastr.success('Your problem was added!');
       }
       else {
         alert("Please fill in the required problem information fields before submitting.");

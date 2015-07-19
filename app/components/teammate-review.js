@@ -15,7 +15,17 @@ export default Ember.Component.extend({
       var isAlreadyReviewed = _.contains(reviewKeys, reviewKey);
 
       if (isAlreadyReviewed) {
-        alert("You have already reviewed this team member for this problem.");
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.error('You have already reviewed this teammate for this problem.');
       }
       else {
         var review = {
