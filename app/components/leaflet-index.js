@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
     var redMarker = L.AwesomeMarkers.icon({
       icon: 'star',
-      markerColor: 'orange',
+      markerColor: 'red',
       prefix: 'fa'
     });
 
