@@ -46,7 +46,6 @@ export default DS.Model.extend({
     var membersArray = _.filter(membersProperties, function(prop) {
       return prop.content !== null;
     });
-    console.log(membersArray);
     return membersArray;
   }.property('member1', 'member2', 'member3', 'member4', 'member5')
 });

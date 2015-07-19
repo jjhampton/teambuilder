@@ -5,7 +5,7 @@
     {{teammate-review model=model.owner problem=model action="reviewTeammate"}}
   {{/unless}}
 
-  {{#each model.members as |member|}}
+  {{#each membersToReview as |member|}}
     {{teammate-review model=member  problem=model action="reviewTeammate"}}
   {{/each}}
 </ul>

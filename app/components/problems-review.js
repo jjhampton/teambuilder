@@ -13,7 +13,15 @@ export default Ember.Component.extend({
     return (problemOwnerId === currentUserId);
   }.property('model', 'session'),
 
-  memberNumber: function() {
+  membersToReview: function() {
+    var currentUserId = this.get('session.currentUser.id');
+    var allMembers = this.get('model.members');
 
-  }
+    var membersToReview =  _.filter(allMembers, function(member) {
+      return member.get('id') !== currentUserId;
+    });
+
+    return membersToReview;
+  }.property('model', 'session')
+
 });
