@@ -26,7 +26,17 @@ export default Ember.Component.extend({
         toastr.success('User account created!');
       }
       else {
-        alert("Please fill in the required user information fields before submitting.");
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.error('Please enter the required user information above to create an account.');
       }
     },
 
