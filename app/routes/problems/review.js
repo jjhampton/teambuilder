@@ -18,10 +18,7 @@ export default Ember.Route.extend(ResetScroll, {
       }).then(function(response) {
         console.log('adapter.ajax response:', response.result.message);
         // this.transitionTo('index');
-        console.log('route> earlier keys are', user.get('reviewKeys'));
-        console.log('reviewKey  is', reviewKey);
         user.get('reviewKeys').pushObject(reviewKey);
-        console.log('route> after keys are', user.get('reviewKeys'));
       }.bind(this));
     }
   }
