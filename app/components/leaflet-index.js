@@ -7,22 +7,26 @@ export default Ember.Component.extend({
 
     var redMarker = L.AwesomeMarkers.icon({
       icon: 'star',
-      markerColor: 'darkgreen',
+      markerColor: 'green',
       prefix: 'fa'
     });
 
-    var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-    	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    	subdomains: 'abcd',
-    	minZoom: 1,
+
+
+    var mapBoxBackground = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'jjhampton.f68b0cad',
+      accessToken: 'pk.eyJ1IjoiampoYW1wdG9uIiwiYSI6ImEwM2Y0NWRjYTMxYTYzNGZlYzgxOGNmMzBhZmE3MDUzIn0.SN40uu8Q9bCtOf6stNTjZA',
+    	minZoom: 2,
     	maxZoom: 15,
-    	ext: 'png'
+      continuousWorld: false,
+      noWrap: true
     });
 
-    var map = L.map('indexmap', {attributionControl: false, zoomControl: false}).setView([40.866667, 10.566667], 1);
+    var map = L.map('indexmap', {attributionControl: false, zoomControl: false}).setView([30.866667, 5], 2);
 
 
-    Stamen_Watercolor.addTo(map);
+    mapBoxBackground.addTo(map);
 
     problems.forEach(function(problem) {
       L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map);

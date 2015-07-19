@@ -1,6 +1,7 @@
 // Typography
 $base-font-family: $helvetica, $georgia, serif;
 $heading-font-family: $base-font-family;
+$days-one: 'Days One', $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -21,11 +22,16 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 $very-light-gray: #fafafa;
+$base-auburn: #FA7921;
+$base-yellow: #FBE01B;
+$base-blue: #058ED9;
+$base-charcoal: #3F3F37;
+$base-green: #40D425;
 
 // Font Colors
 $base-background-color: #fff;
-$base-font-color: $dark-gray;
-$action-color: $blue;
+$base-font-color: #3F3F37;
+$action-color: $base-blue;
 
 // Border
 $base-border-color: $light-gray;
