@@ -1,7 +1,5 @@
-<select class="index-search-select">
-  <option value="users">Search Users</option>
-  <option value="problems">Search Problems</option>
-</select>
+<input class="index-search-radio" name="queryType" type="radio" value="users" checked> Search Users
+<input class="index-search-radio" name="queryType" type="radio" value="problems"> Search Problems
 {{input class="index-search-input" type="text" placeholder="by Keyword, Location, or Tags" value=query}}
 <button class="index-button-search" {{action 'sendQuery' query}}>Search</button>
 {{yield}}

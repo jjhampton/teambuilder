@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       }
       var escapedQuery = escapeRegExp(this.get('query'));
 
-      var queryType = $('.index-search-select').val();
+      var queryType = $('input[name=queryType]:checked').val();
 
       this.sendAction('action', escapedQuery, queryType);
     }
