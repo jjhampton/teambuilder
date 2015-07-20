@@ -2,6 +2,9 @@
   <li class="problems-list-item">
     {{#link-to 'problems.show' problem}}{{problem.name}}{{/link-to}}
     <span>in {{problem.location}}</span>
+    <span class="problem-index-progress-text"><b>Progress:</b> {{problem.progress}}%
+      <progress class="problem-progress-bar" value="{{problem.progress}}" max="100"></progress>
+    </span>
   </li>
 {{/each}}
 {{yield}}

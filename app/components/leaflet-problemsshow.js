@@ -12,7 +12,9 @@ export default Ember.Component.extend({
 
     // specialized marker style for use as marker option
     var redMarker = L.AwesomeMarkers.icon({
-      markerColor: 'red'
+      icon: 'star',
+      markerColor: 'blue',
+      prefix: 'fa'
     });
 
     // map tile

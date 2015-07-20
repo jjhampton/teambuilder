@@ -166,6 +166,14 @@ MAIN-INDEX
   text-align: center;
   margin-bottom: 1em;
 }
+.index-search-radio {
+  margin-right: 1em;
+}
+
+.search-label {
+  display: inline-block;
+  margin-right: 1em;
+}
 
 .index-search-input {
   display: inline-block;
@@ -259,6 +267,7 @@ PROBLEMS-INDEX
 .problems-index {
   margin-top: 2em;
 }
+
 
 
 /*--------------------------------
@@ -371,7 +380,7 @@ progress[value]::-webkit-progress-value {
 	   -webkit-linear-gradient(top,
 	                           rgba(255, 255, 255, .25),
 	                           rgba(0, 0, 0, .25)),
-	   -webkit-linear-gradient(left, #09c, #f44);
+	   -webkit-linear-gradient(left, #78D47A 10%, #FBE01B 90%);
 
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
