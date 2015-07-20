@@ -1,21 +1,54 @@
-<h1 class="primary-heading">{{model.firstName}} {{model.lastName}}: User Profile</h1>
-<div class="users-show-chart">Skill Chart</div>
-<p class="user-points">Earned Points:</p>
-<p class="user-thinker">Thinker: {{model.thinker}}</p>
-<p class="user-enabler">Enabler: {{model.enabler}}</p>
-<p class="user-connector">Connector: {{model.connector}}</p>
-<p class="user-contributions">Contributions: {{model.contributions}}</p>
-{{!-- add sub-component to iterate --}}
-<div class="users-show-map">Map</div>
-<p class="user-gravatar">Gravatar: Need gravatar - see AJAX example</p>
-<p class="user-age">Age: {{model.age}}</p>
-<p class="user-location">Location: {{model.city}}, {{model.state}}, {{model.country}}</p>
-<p class="user-occupation">Occupation: {{model.occupation}}</p>
-{{!-- add sub-component to iterate --}}
-<p class="user-tags">Tags from teammates: {{model.tags}}</p>
-{{!-- add sub-component to iterate --}}
-<p class="user-interests">Interests: {{model.interests}}</p>
-<button class="user-button-email">Email user</button>
+<h1 class="primary-heading">{{model.name}}</h1>
+{{gravatar-image email=model.email size="100"}}
+
+<section class="user-info-container">
+  <h2 class="users-show-section-heading">About</h2>
+  <ul class="user-info-list">
+    {{#if model.age}}
+    <li class="user-info-item"><span class="list-item-title">Age:</span> {{model.age}}</li>
+    {{/if}}
+    <li class="user-info-item"><span class="list-item-title">Location:</span> {{model.location}}</li>
+    {{#if model.occupation}}
+    <li class="user-info-item"><span class="list-item-title">Occupation:</span> {{model.occupation}}</li>
+    {{/if}}
+    <ul class="user-info-item">
+      <li class="user-interest"><span class="list-item-title">Interests:</span></li>
+      {{#each model.interests key="@index" as |interest|}}
+        <li class="user-interest">{{interest}}</li>
+      {{/each}}
+    </ul>
+  </ul>
+  {{#unless isUser}}
+    {{textarea class="user-email-textarea" value=comment placeholder="Enter your email message here."}}
+    <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Email user</button>
+  {{/unless}}
+</section>
+<section class="user-skillchart-container">
+  <h2 class="user-skillchart-heading">Skills Chart</h2>
+  {{skills-chart user=model}}
+  <canvas id="skillsChart" class="user-chart" width="389" height="389"></canvas>
+</section>
+<section class="user-skillpoints-container">
+  <h2 class="user-skillchart-heading">Earned Team Points</h2>
+  <ul class="user-skills-list">
+    <li class="user-skill"><span class="list-item-title">Thinking:</span> {{model.thinking}}</li>
+    <li class="user-skill"><span class="list-item-title">Action:</span> {{model.action}}</li>
+    <li class="user-skill"><span class="list-item-title">Social:</span> {{model.social}}</li>
+  </ul>
+</section>
+<section class="user-contributions-container">
+  <h2 class="users-show-section-heading">Contributions:</h2>
+  <ul class="user-contributions-list">
+  {{#each model.contributions as |contribution|}}
+    <li class="user-contribution"><span class="list-item-title">{{contribution}}:</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here</li>
+  {{/each}}
+  </ul>
+  <div class="user-contributions-map">
+    {{leaflet-usersshow model=model}}
+  </div>
+</section>
+
+
 
 
 

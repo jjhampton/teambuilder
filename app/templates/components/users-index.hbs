@@ -1,0 +1,17 @@
+{{#each model as |user|}}
+  <li class="users-list-item">
+    {{#link-to 'users.show' user}}{{gravatar-small email=user.email size="40"}}{{user.name}}{{/link-to}}
+    <span class="search-descriptor"><b>Location:</b> {{user.location}}</span>
+    <span class="search-skillschart-container">
+      {{smallskills-chart user=user}}
+      <canvas id="{{user.id}}" class="search-results-skillschart" width="150" height="150"></canvas>
+    </span>
+    <div>
+      <span class="search-descriptor"><b>Occupation:</b> {{user.occupation}}</span>
+      <span class="search-descriptor"><b>Thinking Team Points:</b> {{user.thinking}}</span>
+      <span class="search-descriptor"><b>Action Team Points:</b> {{user.action}}</span>
+      <span class="search-descriptor"><b>Social Team Points:</b> {{user.social}}</span>
+    </div>
+  </li>
+{{/each}}
+{{yield}}

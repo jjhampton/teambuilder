@@ -1,0 +1,13 @@
+<h1 class="primary-heading">Review Your Team's Performance</h1>
+<h2 class="secondary-heading">{{model.name}}</h2>
+<ul class="review-members-list">
+  {{#unless isOwner}}
+    {{teammate-review model=model.owner problem=model action="reviewTeammate"}}
+  {{/unless}}
+
+  {{#each membersToReview as |member|}}
+    {{teammate-review model=member  problem=model action="reviewTeammate"}}
+  {{/each}}
+</ul>
+
+{{yield}}
