@@ -60,3 +60,28 @@ Parse.Cloud.define("sendMailgun", function(request, response) {
 
   Mailgun.sendEmail(params, options);
 });
+
+Parse.Cloud.define("addContributionToUser", function(request, response) {
+  Parse.Cloud.useMasterKey();
+  var userId = request.params.userId;
+  var contributionId = request.params.contributionId;
+  var contributionName = request.params.contributionName;
+  var contributionLatLng = request.params.contributionLatLng;
+
+  var query = new Parse.Query("User");
+  query.get(userId).then(function(user) {
+    user.add("contributions", {
+      id: contributionId,
+      name: contributionName,
+      latLng: contributionLatLng
+    });
+    return user.save();
+  }).then(function(user) {
+    response.success({
+      message: "Updated contributions for " + user.get('name')
+    });
+  }, function(error) {
+    console.log("Failed: " +error.message);
+    response.error(error);
+  });
+});

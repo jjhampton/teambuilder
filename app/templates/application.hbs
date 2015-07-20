@@ -4,7 +4,7 @@
       {{#link-to 'index'}}
         <button class="nav-button-home">Home</button>
       {{/link-to}}
-      {{#link-to 'users.show' session.currentUser}}
+      {{#link-to 'users.show' session.currentUser.id}}
         <button class="nav-button-profile">{{session.currentUser.name}}'s Profile</button>
         {{gravatar-small email=session.currentUser.email size="40"}}
       {{/link-to}}

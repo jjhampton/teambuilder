@@ -5,6 +5,7 @@ export default Ember.Route.extend(ResetScroll, {
 
   actions: {
     addUser: function(problem) {
+      var adapter = this.store.adapterFor('application');
       //initialize isMember as false before checking
       var isMember = false;
       var currentUser = this.get('session.currentUser.id');
@@ -27,6 +28,23 @@ export default Ember.Route.extend(ResetScroll, {
         if (problem.get('member1.createdAt') === undefined) {
           problem.set('member1', this.get('session.currentUser'));
           problem.save();
+
+          adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
+            data: {
+              userId: this.get('session.currentUser.id'),
+              contributionId: problem.get('id'),
+              contributionName: problem.get('name'),
+              contributionLatLng: problem.get('latLng')
+            }
+          }).then(function(response) {
+            console.log('adapter.ajax response:', response.result.message);
+            this.get('session.currentUser.contributions').pushObject({
+              id: problem.get('id'),
+              name: problem.get('name'),
+              latLng: problem.get('latLng')
+            });
+            console.log(this.get('session.currentUser.contributions'));
+          }.bind(this));
         }
         else if (problem.get('member2.createdAt') === undefined) {
           problem.set('member2', this.get('session.currentUser'));
