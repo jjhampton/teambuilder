@@ -18,6 +18,9 @@ export function initialize() {
     interests: DS.attr(),
     contributions: DS.attr(),
     reviewKeys: DS.attr(),
+    totalPoints: function() {
+      return this.get('thinking') + this.get('action') + this.get('social');
+    }.property('thinking', 'action', 'social'),
     location: function() {
       var city = this.get('city');
       var state = this.get('state');
