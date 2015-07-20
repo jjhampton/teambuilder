@@ -41,7 +41,13 @@
   <h2 class="users-show-section-heading">Contributions:</h2>
   <ul class="user-contributions-list">
   {{#each model.contributions as |contribution|}}
-    <li class="user-contribution"><span class="list-item-title">{{contribution}}:</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here</li>
+    <li class="user-contribution">
+      <span class="list-item-title">
+      {{#link-to 'problems.show' contribution.id}}
+        {{contribution.name}}
+      {{/link-to}}
+      </span>
+    </li>
   {{/each}}
   </ul>
   <div class="user-contributions-map">
