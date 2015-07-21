@@ -5,6 +5,21 @@ export default Ember.Route.extend(ResetScroll, {
 
   model: function(params) {
     return this.store.find('problem', params.problem_id);
+
+    // return this.store.find('problem', params.problem_id).then(function(problems) {
+    //   var problemPhotos = problems.getEach(function(problem) {
+    //     return Ember.$.ajax({
+    //       url: "https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&list=allimages&format=json&aisort=name&aidir=newer&aiprop=url&ailimit=10&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
+    //       type: 'GET',
+    //       dataType: 'json',
+    //       contentType: "application/json",
+    //       headers: {
+    //         'User_Agent': "jjhampton.github.io"
+    //       }
+    //     });
+    //   });
+    //   return problemPhotos;
+    // });
   },
 
   actions: {
