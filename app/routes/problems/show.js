@@ -16,8 +16,7 @@ export default Ember.Route.extend(ResetScroll, {
               'User_Agent': "jjhampton.github.io"
             }
           }).then(function(response){
-            console.log(_.toArray(response.query.pages));
-            return response.query.pages;
+            return _.toArray(response.query.pages);
           })
         });
       });
