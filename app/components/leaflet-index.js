@@ -11,8 +11,6 @@ export default Ember.Component.extend({
       prefix: 'fa'
     });
 
-
-
     var mapBoxBackground = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: 'jjhampton.f68b0cad',
@@ -24,7 +22,6 @@ export default Ember.Component.extend({
     });
 
     var map = L.map('indexmap', {attributionControl: false, zoomControl: false}).setView([30.866667, 5], 2);
-
 
     mapBoxBackground.addTo(map);
 
