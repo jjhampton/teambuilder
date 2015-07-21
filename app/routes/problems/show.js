@@ -18,7 +18,7 @@ export default Ember.Route.extend(ResetScroll, {
         problem.get('member5.id')
       ];
 
-      // User data to be sent as Parse Cloud Code param
+      // User data to be sent as Parse Cloud Code
       var userData = {
         userId: this.get('session.currentUser.id'),
         contributionId: problem.get('id'),
@@ -26,18 +26,13 @@ export default Ember.Route.extend(ResetScroll, {
         contributionLatLng: problem.get('latLng')
       };
 
-      function pushContributionToStore() {
-        this.get('session.currentUser.contributions').pushObject({
-          id: problem.get('id'),
-          name: problem.get('name'),
-          latLng: problem.get('latLng')
-        });
-      }
 
       //Checks if current user's id is in membersArray, if is, sets isMember true
       if (_.indexOf(membersArray, currentUser) !== -1) {
         isMember = true;
       }
+
+
 
       // if not a member, allows to join team
       if (!isMember) {
@@ -45,51 +40,72 @@ export default Ember.Route.extend(ResetScroll, {
           problem.set('member1', this.get('session.currentUser'));
           problem.save();
 
-          // Send contribution data to Parse Cloud Code function
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
-          }).then(function() {
-            pushContributionToStore();
+          }).then(function(response) {
+            console.log('adapter.ajax response:', response.result.message);
+            this.get('session.currentUser.contributions').pushObject({
+              id: problem.get('id'),
+              name: problem.get('name'),
+              latLng: problem.get('latLng')
+            });
+            console.log(this.get('session.currentUser.contributions'));
           }.bind(this));
         }
         else if (problem.get('member2.createdAt') === undefined) {
           problem.set('member2', this.get('session.currentUser'));
           problem.save();
-          // Send contribution data to Parse Cloud Code function
+
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
           }).then(function() {
-            pushContributionToStore();
+            this.get('session.currentUser.contributions').pushObject({
+              id: problem.get('id'),
+              name: problem.get('name'),
+              latLng: problem.get('latLng')
+            });
           }.bind(this));
         }
         else if (problem.get('member3.createdAt') === undefined) {
           problem.set('member3', this.get('session.currentUser'));
           problem.save();
-          // Send contribution data to Parse Cloud Code function
+
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
           }).then(function() {
-            pushContributionToStore();
+            this.get('session.currentUser.contributions').pushObject({
+              id: problem.get('id'),
+              name: problem.get('name'),
+              latLng: problem.get('latLng')
+            });
           }.bind(this));
         }
         else if (problem.get('member4.createdAt') === undefined) {
           problem.set('member4', this.get('session.currentUser'));
           problem.save();
-          // Send contribution data to Parse Cloud Code function
+
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
           }).then(function() {
-            pushContributionToStore();
+            this.get('session.currentUser.contributions').pushObject({
+              id: problem.get('id'),
+              name: problem.get('name'),
+              latLng: problem.get('latLng')
+            });
           }.bind(this));
         }
         else if (problem.get('member5.createdAt') === undefined) {
           problem.set('member5', this.get('session.currentUser'));
           problem.save();
-          // Send contribution data to Parse Cloud Code function
+
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
           }).then(function() {
-            pushContributionToStore();
+            this.get('session.currentUser.contributions').pushObject({
+              id: problem.get('id'),
+              name: problem.get('name'),
+              latLng: problem.get('latLng')
+            });
           }.bind(this));
         }
         else {
