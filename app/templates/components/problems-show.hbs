@@ -39,14 +39,14 @@
   {{#if model.isComplete}}
     {{#if isMember}}
       <h3>If you were on this team: </h3>
-      {{#link-to 'problems.review' model}}
+      {{#link-to 'problems.review' model.id}}
       <button class="problem-button-review">Review Teammates</button>
       {{/link-to}}
     {{/if}}
   {{/if}}
   {{#if isOwner}}
   <h3>Team Owner:</h3>
-    {{#link-to 'problems.manage' model}}
+    {{#link-to 'problems.manage' model.id}}
     <button class="problem-button-manage">Manage Team</button>
     {{/link-to}}
   {{/if}}

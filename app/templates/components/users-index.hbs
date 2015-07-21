@@ -1,6 +1,6 @@
 {{#each model as |user|}}
   <li class="users-list-item">
-    {{#link-to 'users.show' user}}{{gravatar-small email=user.email size="40"}}{{user.name}}{{/link-to}}
+    {{#link-to 'users.show' user.id}}{{gravatar-small email=user.email size="40"}}{{user.name}}{{/link-to}}
     <span class="search-descriptor"><b>Location:</b> {{user.location}}</span>
     <span class="search-skillschart-container">
       {{smallskills-chart user=user}}
