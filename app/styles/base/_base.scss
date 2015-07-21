@@ -127,24 +127,28 @@ HEADER
   background:     -ms-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* IE10 */
   background:      -o-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* Opera 11.10+ */
   background:         linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* W3C */
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0;
+  padding-bottom: 2em;
   -webkit-box-shadow: 0 4px 4px -3px #999;
        -moz-box-shadow: 0 4px 4px -3px #999;
             box-shadow: 0 4px 4px -3px #999;
 }
 
 .header-logo {
-  height: 1.5em;
-  padding-right: 0.5em;
-  vertical-align: middle;
+  height: 16em;
+  padding-right: 3em;
+  vertical-align: bottom;
+}
+
+.index-headings-container {
+  display: inline-block;
 }
 
 .index-secondary-heading {
   font-weight: bold;
-  text-align: center;
-  margin-top: 1em;
-  padding-left: 8em;
+  text-align: left;
+  padding-left: 2em;
+  padding-bottom: 1em;
 }
 
 .index-primary-heading {
@@ -410,6 +414,7 @@ progress[value]::-webkit-progress-value {
 
 .problem-members-list img {
   vertical-align: middle;
+  margin-right: 1em;
 }
 
 .problem-members-list-item {
@@ -448,7 +453,8 @@ PROBLEMS-MANAGE
 }
 
 .manage-input-progress {
-  display: inline;
+  display: inline-block;
+  margin-right: 1em;
 }
 
 .manage-members-list {
@@ -469,6 +475,14 @@ PROBLEMS-MANAGE
 .manage-member-name {
   text-align: center;
   font-weight: bold;
+}
+
+.manage-text-complete {
+  padding-right: 1em;
+}
+
+.manage-button-complete {
+  vertical-align: middle;
 }
 
 /*--------------------------------
