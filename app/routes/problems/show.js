@@ -4,22 +4,24 @@ import ResetScroll from '../../mixins/reset-scroll';
 export default Ember.Route.extend(ResetScroll, {
 
   model: function(params) {
-    return this.store.find('problem', params.problem_id);
-
-    // return this.store.find('problem', params.problem_id).then(function(problems) {
-    //   var problemPhotos = problems.getEach(function(problem) {
-    //     return Ember.$.ajax({
-    //       url: "https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&list=allimages&format=json&aisort=name&aidir=newer&aiprop=url&ailimit=10&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
-    //       type: 'GET',
-    //       dataType: 'json',
-    //       contentType: "application/json",
-    //       headers: {
-    //         'User_Agent': "jjhampton.github.io"
-    //       }
-    //     });
-    //   });
-    //   return problemPhotos;
-    // });
+      return this.store.find('problem', params.problem_id).then(function(problem){
+        return Ember.RSVP.hash ({
+          problems: problem,
+          photos: Ember.$.ajax({
+            url: "https://en.wikipedia.org//w/api.php?action=query&prop=pageimages&piprop=original&format=json&pilimit=100&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
+            type: 'GET',
+            dataType: 'jsonp',
+            contentType: "application/json",
+            headers: {
+              'User_Agent': "jjhampton.github.io"
+            }
+          }).then(function(response){
+            console.log(_.toArray(response.query.pages));
+            return response.query.pages;
+          })
+        });
+      });
+      // console.log(problem.get('name'));
   },
 
   actions: {

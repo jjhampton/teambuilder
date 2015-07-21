@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
+  logPhotos: function() {
+    console.log(this.get('photos'));
+  }.on('didInsertElement'),
+
   actions: {
     addUser: function(problem) {
       if (this.get('session.isAuthenticated')) {
