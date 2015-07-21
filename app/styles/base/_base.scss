@@ -104,9 +104,23 @@ input.nav-input {
   margin-bottom: 0;
 }
 
+.nav-logo-text {
+  vertical-align: -webkit-baseline-middle;
+  vertical-align:             text-bottom;
+  font-family: $days-one;
+  font-size: 1.7em;
+  font-weight: bold;
+  padding-right: 0.5em;
+  color: $base-charcoal;
+  text-decoration: none !important;
+}
+
+.nav-container-logout {
+  float: right;
+}
+
 .nav-button-logout {
   display: inline-block;
-  float: right;
 }
 
 .profile-gravatar {
