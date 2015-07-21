@@ -16,7 +16,16 @@ export default Ember.Route.extend(ResetScroll, {
               'User_Agent': "jjhampton.github.io"
             }
           }).then(function(response){
-            return _.toArray(response.query.pages);
+            var responseArray = _.toArray(response.query.pages);
+            console.log(responseArray);
+
+            function isTruthy(element) {
+              return element.hasOwnProperty('thumbnail');
+            }
+            var truthyArray = _.filter(responseArray, isTruthy);
+
+            return _.sample(truthyArray, 5);
+
           })
         });
       });

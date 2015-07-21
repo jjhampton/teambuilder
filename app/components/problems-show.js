@@ -4,7 +4,7 @@ export default Ember.Component.extend({
 
   logPhotos: function() {
     this.get('photos').forEach(function(photo) {
-      console.log(photo.thumbnail.original);
+      console.log(photo.thumbnail);
     });
   }.on('didInsertElement'),
 
