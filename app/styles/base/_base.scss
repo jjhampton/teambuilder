@@ -109,10 +109,13 @@ input.nav-input {
   vertical-align:             text-bottom;
   font-family: $days-one;
   font-size: 1.7em;
-  font-weight: bold;
   padding-right: 0.5em;
   color: $base-charcoal;
   text-decoration: none !important;
+}
+
+.nav-logo-hidden {
+  display: none;
 }
 
 .nav-container-logout {
