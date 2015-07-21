@@ -40,11 +40,11 @@ export default Ember.Component.extend({
 
     // add markers for contribution locations
     contributions.forEach(function(contribution) {
-      L.marker(contribution.latLng,{icon: greenMarker}, {draggable: true}).addTo(map).bindPopup(contribution.name).openPopup();
+      L.marker(contribution.latLng,{icon: blueMarker}, {draggable: true}).addTo(map).bindPopup(contribution.name).openPopup();
     });
 
     // add marker to user's home location
-    marker = L.marker(latLng,{icon: blueMarker}, {draggable: true}).addTo(map);
+    marker = L.marker(latLng,{icon: greenMarker}, {draggable: true}).addTo(map);
     marker.bindPopup(this.get('model.name') + "'s home").openPopup();
 
     // add tile to map
