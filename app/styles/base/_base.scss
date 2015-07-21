@@ -74,6 +74,12 @@ APPLICATION
   background:         linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* W3C */
 }
 
+.nav-shadow {
+  -webkit-box-shadow: 0 1px 2px 0px #999;
+       -moz-box-shadow: 0 1px 2px 0px #999;
+            box-shadow: 0 1px 2px 0px #999;
+}
+
 .nav-buttons-container {
   display: inline-block;
   float: left;
@@ -126,6 +132,9 @@ HEADER
   background:         linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* W3C */
   padding-top: 1em;
   padding-bottom: 1em;
+  -webkit-box-shadow: 0 3px 6px rgba(153, 153, 153, 0.7);
+       -moz-box-shadow: 0 3px 3px rgba(153, 153, 153, 0.7);
+            box-shadow: 0 3px 3px rgba(153, 153, 153, 0.7);
 }
 
 .header-logo {
@@ -249,6 +258,9 @@ PROBLEMS-INDEX
 #indexmap {
   height: 42em;
   margin-bottom: 1em;
+  -webkit-box-shadow: 0 3px 3px #999;
+       -moz-box-shadow: 0 3px 3px #999;
+            box-shadow: 0 3px 3px #999;
 }
 
 .globe {
@@ -291,6 +303,9 @@ PROBLEMS-CREATE
   height: 31em;
   padding: 1em;
   margin-bottom: 1em;
+  -webkit-box-shadow: 0 3px 3px #999;
+       -moz-box-shadow: 0 3px 3px #999;
+            box-shadow: 0 3px 3px #999;
 }
 
 .problems-create-button-addtag {
@@ -629,6 +644,9 @@ USERS-SHOW
 #showmap {
   height: 31em;
   margin-bottom: 1em;
+  -webkit-box-shadow: 0 3px 3px #999;
+       -moz-box-shadow: 0 3px 3px #999;
+            box-shadow: 0 3px 3px #999;
 }
 
 
