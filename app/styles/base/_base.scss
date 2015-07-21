@@ -453,11 +453,11 @@ LOCATION-PHOTOS
 --------------------------------*/
 
 .location-photos-container {
-  height: 8em;
+  height: 6em;
 }
 
 .location-photo {
-  @include span-columns(1 of 3);
+  @include span-columns(1 of 5);
   height: 100%;
 }
 

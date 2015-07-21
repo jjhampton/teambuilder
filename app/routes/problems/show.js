@@ -8,7 +8,7 @@ export default Ember.Route.extend(ResetScroll, {
         return Ember.RSVP.hash ({
           problems: problem,
           photos: Ember.$.ajax({
-            url: "https://en.wikipedia.org//w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=100&pilimit=100&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
+            url: "https://en.wikipedia.org//w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=200&pilimit=100&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
             type: 'GET',
             dataType: 'jsonp',
             contentType: "application/json",
@@ -28,7 +28,7 @@ export default Ember.Route.extend(ResetScroll, {
 
               var truthyArray = _.filter(responseArray, isTruthy);
 
-              return _.sample(truthyArray, 3);
+              return _.sample(truthyArray, 5);
             }
             else {
               return null;
