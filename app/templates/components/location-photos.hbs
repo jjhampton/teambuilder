@@ -1,0 +1,6 @@
+{{#each photos as |photo|}}
+  <div class="location-photo-wrapper">
+    <img class="location-photo" src="{{photo.thumbnail.source}}">
+  </div>
+{{/each}}
+{{yield}}

@@ -3,6 +3,40 @@ import ResetScroll from '../../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll, {
 
+  model: function(params) {
+      return this.store.find('problem', params.problem_id).then(function(problem){
+        return Ember.RSVP.hash ({
+          problems: problem,
+          photos: Ember.$.ajax({
+            url: "https://en.wikipedia.org//w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=200&pilimit=100&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
+            type: 'GET',
+            dataType: 'jsonp',
+            contentType: "application/json",
+            headers: {
+              'User_Agent': "jjhampton.github.io"
+            }
+          }).then(function(response){
+
+            function isTruthy(element) {
+              return element.hasOwnProperty('thumbnail');
+            }
+
+            if (response.query) {
+              var responseArray = _.toArray(response.query.pages);
+
+              var truthyArray = _.filter(responseArray, isTruthy);
+
+              return _.sample(truthyArray, 4);
+            }
+            else {
+              return null;
+            }
+          })
+        });
+      });
+      // console.log(problem.get('name'));
+  },
+
   actions: {
     addUser: function(problem) {
       var adapter = this.store.adapterFor('application');

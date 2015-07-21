@@ -448,6 +448,24 @@ progress[value]::-webkit-progress-value {
   margin-bottom: 1em;
 }
 
+/*--------------------------------
+LOCATION-PHOTOS
+--------------------------------*/
+
+.location-photo-wrapper {
+  display: inline-block;
+  height: 6em;
+  width: 23%;
+}
+
+.location-photo {
+  padding: 0.3em;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 3px #999;
+       -moz-box-shadow: 0 3px 3px #999;
+            box-shadow: 0 3px 3px #999;
+}
 
 
 /*--------------------------------

@@ -14,7 +14,7 @@ Router.map(function() {
 
   this.route('users', function() {
     this.route('create');
-    this.route('show', {path: ':parse-user_id'});
+    this.route('show', {path: ':user_id'});
     this.route('search', {path: '/search/:query'});
   });
 
