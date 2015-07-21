@@ -15,12 +15,12 @@ export default Ember.Component.extend({
 
     // specialized marker style for use as marker option
     var greenMarker = L.AwesomeMarkers.icon({
-      icon: 'star',
+      icon: 'home',
       markerColor: 'green',
       prefix: 'fa'
     });
     var blueMarker = L.AwesomeMarkers.icon({
-      icon: 'home',
+      icon: 'star',
       markerColor: 'blue',
       prefix: 'fa'
     });
