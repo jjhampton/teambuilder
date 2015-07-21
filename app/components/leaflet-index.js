@@ -26,7 +26,13 @@ export default Ember.Component.extend({
     mapBoxBackground.addTo(map);
 
     problems.forEach(function(problem) {
-      L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map).bindPopup(problem.get('name')).openPopup();
+      var marker = L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map).bindPopup(problem.get('name'));
+      marker.on('mouseover', function (e) {
+            this.openPopup();
+        });
+      marker.on('mouseout', function (e) {
+          this.closePopup();
+      });
     });
 
     return map;
