@@ -3,6 +3,10 @@ import ResetScroll from '../../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll, {
 
+  model: function(params) {
+    return this.store.find('problem', params.problem_id);
+  },
+
   actions: {
     addUser: function(problem) {
       var adapter = this.store.adapterFor('application');
