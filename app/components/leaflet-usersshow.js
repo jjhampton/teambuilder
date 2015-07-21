@@ -6,15 +6,21 @@ export default Ember.Component.extend({
 
     var userLatitude = this.get('model.latitude');
     var userLongitude = this.get('model.longitude');
-    var latLng = L.latLng(userLatitude, userLongitude);
+    var contributions = this.get('contributions');
 
+    var latLng = L.latLng(userLatitude, userLongitude);
 
     // marker that will be centered on map
     var marker = null;
 
     // specialized marker style for use as marker option
-    var redMarker = L.AwesomeMarkers.icon({
+    var greenMarker = L.AwesomeMarkers.icon({
       icon: 'star',
+      markerColor: 'green',
+      prefix: 'fa'
+    });
+    var blueMarker = L.AwesomeMarkers.icon({
+      icon: 'home',
       markerColor: 'blue',
       prefix: 'fa'
     });
@@ -31,13 +37,18 @@ export default Ember.Component.extend({
     // map object, set to locate geolocation
     var map = L.map('showmap',{attributionControl: false}).setView([userLatitude, userLongitude], 2);
 
-    //add marker to user's home location
-    var marker = L.marker(latLng,{icon: redMarker}, {draggable: true}).addTo(map);
-    marker.bindPopup(this.get('model.name') + "'s location").openPopup();
+
+    // add markers for contribution locations
+    contributions.forEach(function(contribution) {
+      L.marker(contribution.latLng,{icon: greenMarker}, {draggable: true}).addTo(map).bindPopup(contribution.name).openPopup();
+    });
+
+    // add marker to user's home location
+    marker = L.marker(latLng,{icon: blueMarker}, {draggable: true}).addTo(map);
+    marker.bindPopup(this.get('model.name') + "'s home").openPopup();
 
     // add tile to map
     mapBoxBackground.addTo(map);
-
 
   }.on('didInsertElement')
 });
