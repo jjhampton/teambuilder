@@ -8,7 +8,7 @@ export default Ember.Route.extend(ResetScroll, {
         return Ember.RSVP.hash ({
           problems: problem,
           photos: Ember.$.ajax({
-            url: "https://en.wikipedia.org//w/api.php?action=query&prop=pageimages&piprop=original&format=json&pilimit=100&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
+            url: "https://en.wikipedia.org//w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=100&pilimit=100&generator=geosearch&redirects=&ggscoord=" + problem.get('latitude') + "%7C" + problem.get('longitude') + "&ggsradius=10000&ggslimit=50",
             type: 'GET',
             dataType: 'jsonp',
             contentType: "application/json",
@@ -16,15 +16,23 @@ export default Ember.Route.extend(ResetScroll, {
               'User_Agent': "jjhampton.github.io"
             }
           }).then(function(response){
-            var responseArray = _.toArray(response.query.pages);
-            console.log(responseArray);
+            console.log(response);
 
             function isTruthy(element) {
               return element.hasOwnProperty('thumbnail');
             }
-            var truthyArray = _.filter(responseArray, isTruthy);
 
-            return _.sample(truthyArray, 5);
+            if (response.query) {
+
+              var responseArray = _.toArray(response.query.pages);
+
+              var truthyArray = _.filter(responseArray, isTruthy);
+
+              return _.sample(truthyArray, 3);
+            }
+            else {
+              return null;
+            }
 
           })
         });

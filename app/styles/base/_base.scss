@@ -457,9 +457,8 @@ LOCATION-PHOTOS
 }
 
 .location-photo {
-  @include span-columns(1 of 5);
+  @include span-columns(1 of 3);
   height: 100%;
-  overflow: hidden;
 }
 
 

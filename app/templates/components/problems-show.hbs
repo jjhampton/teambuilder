@@ -16,7 +16,9 @@
 <section class="problem-location-container">
   <h3 class="secondary-heading">Location: {{model.location}}</h3>
   {{leaflet-problemsshow model=model}}
-  {{location-photos photos=photos}}
+  {{#if photos}}
+    {{location-photos photos=photos}}
+  {{/if}}
 </section>
 <section class="problem-users-container">
   <h3 class="problem-members">Current Team Members:</h3>
