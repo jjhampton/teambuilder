@@ -453,13 +453,18 @@ LOCATION-PHOTOS
 --------------------------------*/
 
 .location-photos-container {
+}
+
+.location-photo-wrapper {
+  display: inline-block;
   height: 6em;
+  width: 23%;
 }
 
 .location-photo {
-  @include span-columns(1 of 4);
-  height: 100%;
   padding: 0.3em;
+  height: 100%;
+  width: 100%;
   -webkit-box-shadow: 0 3px 3px #999;
        -moz-box-shadow: 0 3px 3px #999;
             box-shadow: 0 3px 3px #999;
