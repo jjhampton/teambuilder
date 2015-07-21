@@ -28,7 +28,7 @@ export default Ember.Route.extend(ResetScroll, {
 
               var truthyArray = _.filter(responseArray, isTruthy);
 
-              return _.sample(truthyArray, 5);
+              return _.sample(truthyArray, 4);
             }
             else {
               return null;
