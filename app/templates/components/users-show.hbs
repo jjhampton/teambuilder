@@ -49,6 +49,20 @@
       </span>
     </li>
   {{/each}}
+  <h3 class="users-show-section-heading">Comments From Others:</h3>
+  <ul>
+  {{#each model.comments as |comment|}}
+    <li class="user-contribution">
+      <span>
+      {{#link-to 'problems.show' comment.problem.id}}
+        {{comment.problem.name}}:
+      {{/link-to}}
+      <p>"{{comment.text}}"</p>
+      <p> from: {{comment.reviewer.name}}</p>
+      </span>
+    </li>
+  {{/each}}
+  </ul>
   </ul>
   <div class="user-contributions-map">
     {{leaflet-usersshow model=model contributions=model.contributions}}

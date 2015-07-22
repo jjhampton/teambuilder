@@ -69,6 +69,7 @@ export default Ember.Route.extend(ResetScroll, {
         user.set('email', user.get('username'));
         user.set('interests', interestArray);
         user.set('contributions', []);
+        user.set('comments', []);
         user.save().then(function() {
           this.get('session').authenticate('authenticator:parse-token', {
             sessionToken: user.get('sessionToken')

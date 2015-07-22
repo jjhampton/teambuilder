@@ -13,7 +13,7 @@ export default Ember.Component.extend({
       var socialReview = Number(this.get('socialReview') || 0);
       var commentReview = {
         problem: problem,
-        text: this.get('commentReview'),
+        text: this.get('commentReview') || "No review comment entered",
         reviewer: this.get('session.currentUser')
       };
       console.log('tr component var > ', commentReview);
