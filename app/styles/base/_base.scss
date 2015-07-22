@@ -365,6 +365,17 @@ PROBLEMS-SHOW
   @include span-columns(10);
   @include shift(1);
   @include omega();
+  padding-top: 2em;
+  display: none;
+}
+
+.problem-room-container-show {
+  display: block;
+}
+
+.appearin-heading {
+  text-align: center;
+  margin-bottom: 2em;
 }
 
 .problem-location-heading {
