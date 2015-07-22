@@ -49,16 +49,12 @@
       </span>
     </li>
   {{/each}}
-  <h3 class="users-show-section-heading">Comments From Others:</h3>
+  <h3 class="users-show-section-heading">Feedback From Others:</h3>
   <ul>
   {{#each model.comments as |comment|}}
-    <li class="user-contribution">
+    <li class="user-comment">
       <span>
-      {{#link-to 'problems.show' comment.problem.id}}
-        {{comment.problem.name}}:
-      {{/link-to}}
-      <p>"{{comment.text}}"</p>
-      <p> from: {{comment.reviewer.name}}</p>
+      <p>"{{comment.text}}" - {{#link-to 'users.show' comment.reviewer.id}}{{comment.reviewer.name}}{{/link-to}} referring to {{#link-to 'problems.show' comment.problem.id}}{{comment.problem.name}}{{/link-to}}</p>
       </span>
     </li>
   {{/each}}

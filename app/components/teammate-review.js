@@ -6,15 +6,22 @@ export default Ember.Component.extend({
   actions: {
     reviewTeammate: function(user, problem) {
       var review; // review object that will be sent w/ action bubbling
+      console.log('problem in tr component > ', problem);
 
       // review values entered by user, sets to 0 if blank/NaN
       var thinkingReview = Number(this.get('thinkingReview') || 0);
       var actionReview = Number(this.get('actionReview') || 0);
       var socialReview = Number(this.get('socialReview') || 0);
       var commentReview = {
-        problem: problem,
+        problem: {
+          id: problem.id,
+          name: problem.name
+        },
         text: this.get('commentReview') || "No review comment entered",
-        reviewer: this.get('session.currentUser')
+        reviewer: {
+          id: this.get('session.currentUser').id,
+          name: this.get('session.currentUser.name')
+        }
       };
       console.log('tr component var > ', commentReview);
 
