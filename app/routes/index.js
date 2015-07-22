@@ -2,16 +2,7 @@ import Ember from 'ember';
 import ResetScroll from '../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll, {
-
-  activate: function(){
-    $('.nav-logo-text').toggleClass("nav-logo-hidden");
-  },
-
-  deactivate: function(){
-    $('.nav-logo-text').toggleClass("nav-logo-hidden");
-  },
-
-
+  
   model: function() {
     return this.store.findAll('problem');
   },
