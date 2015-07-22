@@ -58,7 +58,7 @@
   </ul>
   {{#unless isUser}}
   <div class="user-email-container">
-    <p class="user-email-label"><b>Contact {{model.name}}</b></p>
+    <p class="user-email-label"><b>Contact {{model.name}}:</b></p>
     {{textarea class="user-email-textarea" value=comment placeholder="Enter your message here."}}
     <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Send message</button>
   </div>
