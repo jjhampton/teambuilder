@@ -656,19 +656,18 @@ USERS-SHOW
 
 .user-info-container {
   @include span-columns(3.3333);
-  padding: 1em;
+  padding-right: 1em;
   @include shift(1);
 }
 
 .user-skillchart-container {
   @include span-columns(3.3333);
-  padding: 1em;
 }
 
 .user-skillpoints-container {
   @include span-columns(3.3333);
   @include omega();
-  padding: 1em;
+  padding-left: 1em;
 }
 
 .user-contributions-container {
@@ -682,19 +681,29 @@ USERS-SHOW
   padding: 1em;
 }
 
+.user-comments-list {
+  list-style-type: circle;
+}
+
 .user-contributions-map {
   @include span-columns(5 of 10);
   @include omega();
   padding: 1em;
 }
 
-.users-show-section-heading,
-.user-skillchart-heading {
+.users-show-section-heading {
+  margin-top: 1em;
   text-align: center;
 }
 
 .user-skillchart-heading {
-  margin: 0;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.user-skillpoints-heading {
+  text-align: center;
+  margin-top: 1em;
 }
 
 .user-skills-list,
@@ -705,6 +714,15 @@ USERS-SHOW
 .user-info-item,
 .user-skill,
 .user-contribution {
+  margin-bottom: 1em;
+}
+
+.user-email-container{
+  margin-top: 1em;
+}
+
+.user-email-label {
+  text-align: center;
   margin-bottom: 1em;
 }
 
@@ -721,8 +739,6 @@ USERS-SHOW
 
 .user-chart {
   display: block;
-  max-width: 100%;
-  max-height: 389px;
 }
 
 .user-interest {

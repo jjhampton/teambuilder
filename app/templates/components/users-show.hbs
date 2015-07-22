@@ -18,15 +18,11 @@
       {{/each}}
     </ul>
   </ul>
-  {{#unless isUser}}
-    {{textarea class="user-email-textarea" value=comment placeholder="Enter your email message here."}}
-    <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Email user</button>
-  {{/unless}}
 </section>
 <section class="user-skillchart-container">
   <h3 class="user-skillchart-heading">Skills Chart</h3>
   {{skills-chart user=model}}
-  <canvas id="skillsChart" class="user-chart" width="389" height="389"></canvas>
+  <canvas id="skillsChart" class="user-chart" width="350" height="350"></canvas>
 </section>
 <section class="user-skillpoints-container">
   <h3 class="user-skillpoints-heading">Earned Team Points</h3>
@@ -40,44 +36,37 @@
 <section class="user-contributions-container">
   <h3 class="users-show-section-heading">Contributions:</h3>
   <ul class="user-contributions-list">
+  <h4 class="users-show-section-heading">Problems Helped With:</h4>
   {{#each model.contributions as |contribution|}}
     <li class="user-contribution">
-      <span class="list-item-title">
+      <span>
       {{#link-to 'problems.show' contribution.id}}
         {{contribution.name}}
       {{/link-to}}
       </span>
     </li>
   {{/each}}
-  <h3 class="users-show-section-heading">Feedback From Others:</h3>
-  <ul>
+  <h4 class="users-show-section-heading">Feedback From Others:</h4>
+  <ul class="user-comments-list">
   {{#each model.comments as |comment|}}
     <li class="user-comment">
       <span>
-      <p>"{{comment.text}}" - {{#link-to 'users.show' comment.reviewer.id}}{{comment.reviewer.name}}{{/link-to}} referring to {{#link-to 'problems.show' comment.problem.id}}{{comment.problem.name}}{{/link-to}}</p>
+      <p>"{{comment.text}}" - from a teammate at {{#link-to 'problems.show' comment.problem.id}}{{comment.problem.name}}{{/link-to}}</p>
       </span>
     </li>
   {{/each}}
   </ul>
+  {{#unless isUser}}
+  <div class="user-email-container">
+    <p class="user-email-label"><b>Contact {{model.name}}</b></p>
+    {{textarea class="user-email-textarea" value=comment placeholder="Enter your message here."}}
+    <button class="user-info-button-email" {{action 'sendUserEmail' comment}}>Send message</button>
+  </div>
+  {{/unless}}
   </ul>
   <div class="user-contributions-map">
     {{leaflet-usersshow model=model contributions=model.contributions}}
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {{yield}}

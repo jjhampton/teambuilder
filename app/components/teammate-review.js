@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   actions: {
     reviewTeammate: function(user, problem) {
       var review; // review object that will be sent w/ action bubbling
-      console.log('problem in tr component > ', problem);
 
       // review values entered by user, sets to 0 if blank/NaN
       var thinkingReview = Number(this.get('thinkingReview') || 0);
@@ -15,7 +14,7 @@ export default Ember.Component.extend({
       var commentReview = {
         problem: {
           id: problem.id,
-          name: problem.name
+          name: problem.get('name')
         },
         text: this.get('commentReview') || "No review comment entered",
         reviewer: {
@@ -23,7 +22,6 @@ export default Ember.Component.extend({
           name: this.get('session.currentUser.name')
         }
       };
-      console.log('tr component var > ', commentReview);
 
       var scoreTotal; // sum of different review scores, not to exceed 100
       var problemId = problem.id;
@@ -50,7 +48,6 @@ export default Ember.Component.extend({
       }
       else {
         scoreTotal = thinkingReview + actionReview + socialReview;
-        console.log(scoreTotal);
         if (scoreTotal <= 100) {
           review = {
             thinkingReview: thinkingReview,
