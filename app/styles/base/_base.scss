@@ -361,15 +361,10 @@ PROBLEMS-SHOW
   padding-right: 1em;
 }
 
-.problem-users-container {
-  @include span-columns(5);
+.problem-room-container {
+  @include span-columns(10);
   @include shift(1);
-}
-
-.problem-options-container {
-  @include span-columns(5);
   @include omega();
-  text-align: center;
 }
 
 .problem-location-heading {
@@ -492,6 +487,9 @@ LOCATION-PHOTOS
             box-shadow: 0 3px 3px #999;
 }
 
+#appearin-room {
+  width: 100%;
+}
 
 /*--------------------------------
 PROBLEMS-MANAGE

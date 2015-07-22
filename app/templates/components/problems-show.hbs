@@ -35,6 +35,7 @@
       {{#link-to 'problems.review' model}}
       <button class="problem-button-review">Review Teammates</button>
       {{/link-to}}
+      <button {{action 'showAppearinRoom'}}>Click To Enter Videoconference Room</button>
     {{/if}}
   {{/if}}
   {{#if isOwner}}
@@ -52,12 +53,10 @@
     {{location-photos photos=photos}}
   {{/if}}
 </section>
-<section class="problem-users-container">
+{{appearin-room problem=model isRoomTriggered=isRoomTriggered}}
 
-</section>
-<section class="problem-options-container">
 
-</section>
+
 
 
 {{yield}}

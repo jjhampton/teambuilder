@@ -60,8 +60,14 @@ export default Ember.Component.extend({
           "hideMethod": "fadeOut"};
         toastr.error('Please sign in if you wish to send a message to the problem owner.');
       }
+    },
+
+    showAppearinRoom: function() {
+      this.set('isRoomTriggered', true);
     }
   },
+
+  isRoomTriggered: false,
 
   isOwner: function() {
     var problemOwnerId = this.get('model.owner.id');

@@ -23,11 +23,11 @@ module.exports = function(environment) {
       restApiId: '5C2WXxLMKNOCehjv7OoOud29Z4FckwOFelnivMvi'
     },
     contentSecurityPolicy: {
-      'default-src': "'self' ",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' d3js.org maps.gstatic.com ",
+      'default-src': "'self' *.appear.in",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' d3js.org maps.gstatic.com *.wikipedia.org",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' api.parse.com",
-      'img-src': "'self' api.tiles.mapbox.com *.fastly.net *.lorempixel.com *.gravatar.com ",
+      'img-src': "'self' api.tiles.mapbox.com *.fastly.net *.lorempixel.com *.gravatar.com *.wikimedia.org",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com ",
       'media-src': "'self' "
     }
