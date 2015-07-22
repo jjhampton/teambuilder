@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     var social = (this.get('user.social'));
     var ctx = $("#skillsChart").get(0).getContext("2d");
     var data = {
-    labels: ["Thinking Score", "Action Score", "Social Score"],
+    labels: ["Thinking", "Action", "Social"],
     datasets: [
         {
             label: "My First dataset",
@@ -26,6 +26,7 @@ export default Ember.Component.extend({
       responsive: true,
       maintainAspectRatio: true,
       pointLabelFontColor : '#058ED9',
+      pointLabelFontSize : 16
     });
   }
 });
