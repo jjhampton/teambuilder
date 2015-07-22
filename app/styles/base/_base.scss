@@ -587,6 +587,18 @@ PROBLEMS-REVIEW
   text-align: center;
 }
 
+.review-textarea {
+  display: block;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+
+.review-textarea-label {
+  text-align: center;
+}
+
 .review-input {
   margin: 0 auto;
 }

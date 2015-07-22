@@ -17,6 +17,7 @@ export function initialize() {
     occupation: DS.attr('string'),
     interests: DS.attr(),
     contributions: DS.attr(),
+    comments: DS.attr(),
     reviewKeys: DS.attr(),
     totalPoints: function() {
       return this.get('thinking') + this.get('action') + this.get('social');

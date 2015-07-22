@@ -12,5 +12,9 @@
   Social Role Score:
   {{input class="review-input" type="number" value=socialReview}}
 </label>
+<label class="review-textarea-label">
+  Comments on Teammate's Contributions:
+  {{textarea class="review-textarea" type="text" value=commentReview}}
+</label>
 <button class="review-button-submit" {{action 'reviewTeammate' model problem}}>Submit teammate review!</button>
 {{yield}}
