@@ -11,7 +11,6 @@ export default DS.Model.extend({
   city: DS.attr('string'),
   state: DS.attr('string'),
   country: DS.attr('string'),
-  trelloURL: DS.attr('string'),
   progress: DS.attr('number'),
   isComplete: DS.attr('boolean'),
   owner: DS.belongsTo('parseUser', {async:true}),
