@@ -22,13 +22,15 @@
   </ul>
 
   {{#unless isOwner}}
-    <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
-    <p class="problem-email-label"><b>Crowdsourced Input:</b></p>
-    <p class="problem-email-text">Don't want to join this team but still have some input to provide? Send the owner your comments and suggestions.</p>
-    {{textarea class="problem-email" value=comment placeholder="Enter your message here."}}
-    <button class="problems-button-message" {{action 'sendOwnerEmail' comment}}>Send message</button>
+    {{#unless isMember}}
+      <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
+      <p class="problem-email-label"><b>Crowdsourced Input:</b></p>
+      <p class="problem-email-text">Don't want to join this team but still have some input to provide? Send the owner your comments and suggestions.</p>
+      {{textarea class="problem-email" value=comment placeholder="Enter your message here."}}
+      <button class="problems-button-message" {{action 'sendOwnerEmail' comment}}>Send message</button>
+    {{/unless}}
   {{/unless}}
-  
+
   {{#if isMember}}
   <h4 class="problem-show-review-text">If you are on this team: </h4>
     <button {{action 'showAppearinRoom'}}>Enter Videoconference Room</button>

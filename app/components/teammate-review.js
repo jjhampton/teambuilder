@@ -11,6 +11,17 @@ export default Ember.Component.extend({
       var thinkingReview = Number(this.get('thinkingReview') || 0);
       var actionReview = Number(this.get('actionReview') || 0);
       var socialReview = Number(this.get('socialReview') || 0);
+      var commentReview = {
+        problem: {
+          id: problem.id,
+          name: problem.get('name')
+        },
+        text: this.get('commentReview') || "No review comment entered",
+        reviewer: {
+          id: this.get('session.currentUser').id,
+          name: this.get('session.currentUser.name')
+        }
+      };
 
       var scoreTotal; // sum of different review scores, not to exceed 100
       var problemId = problem.id;
@@ -37,12 +48,12 @@ export default Ember.Component.extend({
       }
       else {
         scoreTotal = thinkingReview + actionReview + socialReview;
-        console.log(scoreTotal);
         if (scoreTotal <= 100) {
           review = {
             thinkingReview: thinkingReview,
             actionReview: actionReview,
-            socialReview: socialReview
+            socialReview: socialReview,
+            commentReview: commentReview
           };
 
           this.sendAction('action', user, review, reviewKey);

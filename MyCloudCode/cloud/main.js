@@ -13,6 +13,7 @@ Parse.Cloud.define("reviewTeammate", function(request, response) {
   var thinkingReview = request.params.review.thinkingReview;
   var actionReview = request.params.review.actionReview;
   var socialReview = request.params.review.socialReview;
+  var commentReview = request.params.review.commentReview;
   var query = new Parse.Query("User");
 
   query.get(userId).then(function(user) {
@@ -20,6 +21,11 @@ Parse.Cloud.define("reviewTeammate", function(request, response) {
     user.increment("action", actionReview);
     user.increment("social", socialReview);
     user.add("reviewKeys", reviewKey);
+    user.add("comments", {
+      problem: commentReview.problem,
+      text: commentReview.text,
+      reviewer: commentReview.reviewer
+    });
     return user.save();
   }).then(function(user) {
     response.success({
