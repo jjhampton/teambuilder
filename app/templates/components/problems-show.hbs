@@ -28,18 +28,22 @@
     {{textarea class="problem-email" value=comment placeholder="Enter your message here."}}
     <button class="problems-button-message" {{action 'sendOwnerEmail' comment}}>Send message</button>
   {{/unless}}
+  
+  {{#if isMember}}
+  <h4 class="problem-show-review-text">If you are on this team: </h4>
+    <button {{action 'showAppearinRoom'}}>Enter Videoconference Room</button>
+  {{/if}}
 
   {{#if model.isComplete}}
     {{#if isMember}}
-      <h4 class="problem-show-review-text">If you were on this team: </h4>
       {{#link-to 'problems.review' model}}
       <button class="problem-button-review">Review Teammates</button>
       {{/link-to}}
-      <button {{action 'showAppearinRoom'}}>Click To Enter Videoconference Room</button>
     {{/if}}
   {{/if}}
+
   {{#if isOwner}}
-  <h3>Team Owner:</h3>
+  <h4>Team Owner:</h4>
     {{#link-to 'problems.manage' model}}
     <button class="problem-button-manage">Manage Team</button>
     {{/link-to}}
