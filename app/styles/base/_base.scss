@@ -643,17 +643,18 @@ USERS-SHOW
 }
 
 .user-info-container {
-  @include span-columns(4);
+  @include span-columns(3.3333);
   padding: 1em;
+  @include shift(1);
 }
 
 .user-skillchart-container {
-  @include span-columns(4);
+  @include span-columns(3.3333);
   padding: 1em;
 }
 
 .user-skillpoints-container {
-  @include span-columns(4);
+  @include span-columns(3.3333);
   @include omega();
   padding: 1em;
 }
@@ -678,6 +679,10 @@ USERS-SHOW
 .users-show-section-heading,
 .user-skillchart-heading {
   text-align: center;
+}
+
+.user-skillchart-heading {
+  margin: 0;
 }
 
 .user-skills-list,
