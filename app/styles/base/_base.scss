@@ -162,6 +162,7 @@ HEADER
 }
 
 .index-secondary-heading {
+  font-family: $magra;
   font-weight: bold;
   text-align: left;
   padding-left: 2em;
@@ -350,7 +351,6 @@ PROBLEMS-SHOW
   @include shift(1);
   padding-left: 1em;
   padding-right: 1em;
-  padding-top: 2em;
 }
 
 .problem-location-container {
@@ -372,6 +372,15 @@ PROBLEMS-SHOW
   text-align: center;
 }
 
+.problem-location-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.problem-location-text {
+  margin: 0.5em;
+}
+
 .problem-tags-list {
   margin-bottom: 0.75em;
 }
@@ -387,6 +396,10 @@ PROBLEMS-SHOW
 .problem-tag:first-child:after,
 .problem-tag:last-child:after {
   content: '';
+}
+
+.problem-progress-text {
+  margin-bottom: 2em;
 }
 
 .problem-progress-bar {
@@ -421,7 +434,7 @@ progress[value]::-webkit-progress-value {
 
 .problem-members-list,
 .problem-volunteer {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .problem-members-list {
@@ -438,6 +451,10 @@ progress[value]::-webkit-progress-value {
   margin-bottom: 1em;
 }
 
+.problem-email-label {
+  margin: 0;
+}
+
 .problem-email {
   display: block;
   width: 100%;
@@ -445,6 +462,14 @@ progress[value]::-webkit-progress-value {
 }
 
 .problem-button-review {
+  margin-bottom: 1em;
+}
+
+.problems-button-message {
+  margin-bottom: 2em;
+}
+
+.problem-show-review-text {
   margin-bottom: 1em;
 }
 
@@ -704,7 +729,8 @@ footer {
   @include span-columns(10);
   @include shift(1);
   @include omega();
-  margin-top: 1em;
+  height: 2em;
+  margin-top: 6em;
 }
 
 .attribution {

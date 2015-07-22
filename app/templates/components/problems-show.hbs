@@ -12,17 +12,7 @@
   <p class="problem-progress-text"><b>Progress:</b> {{model.progress}}%
     <progress class="problem-progress-bar" value="{{model.progress}}" max="100"></progress>
   </p>
-</section>
-<section class="problem-location-container">
-  <h3 class="secondary-heading">Location: {{model.location}}</h3>
-  {{leaflet-problemsshow model=model}}
-  {{#if photos}}
-    {{location-photos photos=photos}}
-  {{/if}}
-</section>
-<section class="problem-users-container">
-  <h3 class="problem-members">Current Team Members:</h3>
-
+  <p class="problem-members"><b>Current Team Members:</b></p>
   <ul class="problem-members-list">
     <li class="problem-members-list-item">{{#link-to 'users.show' model.owner.id}}{{gravatar-small email=model.owner.email size="40"}}{{model.owner.name}} (Owner){{/link-to}}</li>
 
@@ -33,15 +23,15 @@
 
   {{#unless isOwner}}
     <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
-    <p class="problem-email-label">Don't want to join this team but still have some input to provide? Send the owner your comments and suggestions.</p>
+    <p class="problem-email-label"><b>Crowdsourced Input:</b></p>
+    <p class="problem-email-text">Don't want to join this team but still have some input to provide? Send the owner your comments and suggestions.</p>
     {{textarea class="problem-email" value=comment placeholder="Enter your message here."}}
-    <button {{action 'sendOwnerEmail' comment}}>Send crowdsourced input</button>
+    <button class="problems-button-message" {{action 'sendOwnerEmail' comment}}>Send message</button>
   {{/unless}}
-</section>
-<section class="problem-options-container">
+
   {{#if model.isComplete}}
     {{#if isMember}}
-      <h3>If you were on this team: </h3>
+      <h4 class="problem-show-review-text">If you were on this team: </h4>
       {{#link-to 'problems.review' model}}
       <button class="problem-button-review">Review Teammates</button>
       {{/link-to}}
@@ -53,6 +43,20 @@
     <button class="problem-button-manage">Manage Team</button>
     {{/link-to}}
   {{/if}}
+</section>
+<section class="problem-location-container">
+  <h3 class="problem-location-heading">Location: {{model.location}}</h3>
+  {{leaflet-problemsshow model=model}}
+  {{#if photos}}
+    <p class="problem-location-text"><b>What's near this location?</b></p>
+    {{location-photos photos=photos}}
+  {{/if}}
+</section>
+<section class="problem-users-container">
+
+</section>
+<section class="problem-options-container">
+
 </section>
 
 
