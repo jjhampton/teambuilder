@@ -1,12 +1,11 @@
 <div class="index-search-input-container">
-  {{input class="index-search-input" type="text" placeholder="Search by Keyword, Location, or Tags" value=query}}
+  {{input class="index-search-input" type="text" placeholder="Find problems to help solve - search by keyword, location, or tags." value=query}}
   <button class="index-button-search" {{action 'sendQuery' query}}>Search</button>
 </div>
 <div class="index-search-radio-container">
-  <input class="index-search-radio" name="queryType" type="radio" id="users" value="users" checked>
-  <label class="search-label" for="users">Search Users</label>
-  <input class="index-search-radio" name="queryType" type="radio" id="problems" value="problems">
+  <input class="index-search-radio" name="queryType" type="radio" id="problems" value="problems" checked>
   <label class="search-label" for="problems">Search Problems</label>
-
+  <input class="index-search-radio" name="queryType" type="radio" id="users" value="users">
+  <label class="search-label" for="users">Search Volunteers</label>
 </div>
 {{yield}}
