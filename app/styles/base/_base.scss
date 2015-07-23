@@ -790,9 +790,29 @@ footer {
   @include omega();
   height: 2em;
   margin-top: 6em;
+  border-top: 1px solid #999;
+  padding-top: 0.5em;
+}
+
+.footer-copyright {
+  font-family: $base-font-family;
+}
+
+.footer-logo-text {
+  font-weight: bold;
+  font-family: $days-one;
+}
+
+.footer-logo {
+  height: 2.5em;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .attribution {
-  font-size: 0.5em;
+  float: right;
   text-align: right;
+  font-size: 0.5em;
+  padding-top: 1.3em;
 }
