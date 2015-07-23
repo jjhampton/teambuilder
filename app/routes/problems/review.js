@@ -19,6 +19,10 @@ export default Ember.Route.extend(ResetScroll, {
         console.log('adapter.ajax response:', response.result.message);
         // this.transitionTo('index');
         user.get('reviewKeys').pushObject(reviewKey);
+        user.get('comments').pushObject(review.commentReview);
+        user.incrementProperty('thinking', review.thinkingReview);
+        user.incrementProperty('action', review.actionReview);
+        user.incrementProperty('social', review.socialReview);
       }.bind(this));
     }
   }

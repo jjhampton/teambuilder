@@ -57,7 +57,9 @@ export default Ember.Component.extend({
       this.openPopup();
     });
     marker.on('mouseout', function (e) {
-      this.closePopup();
+      setTimeout(function() {
+        this.closePopup();
+      }.bind(this), 1500);
     });
 
     // add tile to map
