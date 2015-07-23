@@ -19,6 +19,15 @@ export function initialize() {
     contributions: DS.attr(),
     comments: DS.attr(),
     reviewKeys: DS.attr(),
+    thinkingRatio: function() {
+      return this.get('thinking') / (this.get('thinking') + this.get('action') + this.get('social'));
+    }.property('thinking', 'action', 'social'),
+    actionRatio: function() {
+      return this.get('action') / (this.get('thinking') + this.get('action') + this.get('social'));
+    }.property('thinking', 'action', 'social'),
+    socialRatio: function() {
+      return this.get('social') / (this.get('thinking') + this.get('action') + this.get('social'));
+    }.property('thinking', 'action', 'social'),
     totalPoints: function() {
       return this.get('thinking') + this.get('action') + this.get('social');
     }.property('thinking', 'action', 'social'),
