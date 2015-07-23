@@ -24,4 +24,15 @@
 <div class="outer-container">
 {{outlet}}
 </div>
-<footer><span class="footer-logo-text"><small class="footer-copyright">&copy; 2015</small><img class="footer-logo" src='assets/images/connection27.svg'>Cross-Pollinate</span><small class="attribution">Icon made by <a href="http://www.danielbruce.se" title="Daniel Bruce">Daniel Bruce</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>.  Licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0.</a></small></footer>
+<footer>
+  <p class="footer-logo-text">
+    <small class="footer-copyright"><b>&copy; 2015</b></small>
+    {{#link-to 'index'}}
+      <img class="footer-logo" src='assets/images/connection27.svg'>
+      Cross-Pollinate
+    {{/link-to}}
+  </p>
+  <small class="attribution">
+    Icon made by <a href="http://www.danielbruce.se" title="Daniel Bruce">Daniel Bruce</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>.  Licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0.</a>
+  </small>
+</footer>
