@@ -1,7 +1,7 @@
 {
-  "name": "teambuilder",
+  "name": "cross-pollinate",
   "version": "0.0.0",
-  "description": "Small description for teambuilder goes here",
+  "description": "An app to connect people from around the world in order to build diverse teams, exchange ideas, and communicate to solve problems.",
   "private": true,
   "directories": {
     "doc": "doc",
