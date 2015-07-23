@@ -214,7 +214,7 @@ MAIN-INDEX
   line-height: 0.65;
 }
 
-.users-search-sorttext {
+.search-sorttext {
   font-weight: bold;
 }
 
@@ -236,8 +236,7 @@ MAIN-INDEX
   background-color: #fff;
   color: $base-charcoal;
   border: 1px solid $base-charcoal;
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $action-color;
     color: #fff;
     border: 1px solid $action-color;
@@ -245,6 +244,44 @@ MAIN-INDEX
   font-size: 0.8em;
   font-weight: 400;
   line-height: 0;
+}
+
+.search-button-reverse {
+  background-color: #fff;
+  color: $base-charcoal;
+  border: 1px solid $base-charcoal;
+  &:hover {
+    background-color: $action-color;
+    color: #fff;
+    border: 1px solid $action-color;
+  }
+  &:focus {
+    background-color: #fff;
+    color: $base-charcoal;
+    border: 1px solid $action-color;
+  }
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.search-button-selected {
+  background-color: darken($action-color, 15%);
+  color: #fff;
+  border: 1px solid darken($action-color, 15%);;
+}
+
+.search-results-radio-container {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.search-results-radio {
+  margin-right: 1em;
+}
+
+.results-radio-label {
+  display: inline-block;
+  margin-right: 1em;
 }
 
 .search-sortpoints,
@@ -283,6 +320,14 @@ MAIN-INDEX
 .search-results-skillschart {
   max-width: 150px;
   max-height: 150px;
+}
+
+.problem-index-deadline-text {
+  padding-left: 1em;
+}
+
+.problem-index-progress-text {
+  text-align: center;
 }
 
 
