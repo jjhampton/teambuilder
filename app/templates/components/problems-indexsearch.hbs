@@ -7,7 +7,7 @@
   </div>
 </div>
 {{#each sortedList as |problem|}}
-  <li class="problems-list-item">
+  <li class="problems-search-list-item">
     {{#link-to 'problems.show' problem.id}}{{problem.name}}{{/link-to}}
     <span>in {{problem.location}}</span>
     <span class="problem-index-deadline-text">
@@ -19,6 +19,5 @@
     </div>
   </li>
 {{/each}}
-{{yield}}
 
 {{yield}}
