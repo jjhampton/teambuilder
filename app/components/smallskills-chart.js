@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     var social = (this.get('user.social'));
     var ctx = $("#" + canvasId).get(0).getContext("2d");
     var data = {
-    labels: ["T", "A", "S"],
+    labels: ["Thinking", "Action", "Social"],
     datasets: [
         {
             label: "My First dataset",

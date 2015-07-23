@@ -67,11 +67,11 @@ APPLICATION
   background-color: #fff;
   padding: 0.5em;
   overflow: hidden;
-  background: -webkit-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* W3C */
   -webkit-box-shadow: 0 0px 1px 1px #999;
        -moz-box-shadow: 0 0px 1px 1px #999;
             box-shadow: 0 0px 1px 1px #999;
@@ -139,11 +139,11 @@ HEADER
 .header {
   text-align: center;
   color: $base-font-color;
-  background: -webkit-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #78D47A 10%, #FBE01B 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #78D47A 10%, rgba(251, 224, 27, 0.8) 100%); /* W3C */
   padding-top: 0;
   padding-bottom: 2em;
   -webkit-box-shadow: 0 4px 4px -3px #999;
@@ -215,15 +215,32 @@ MAIN-INDEX
 
 
 .search-results-container {
-  @include span-columns(9);
-  @include shift(1.5);
+  @include span-columns(8);
+  @include shift(2);
 }
 
-.search-results-primary-heading {
+.search-results-primary-heading,
+.search-results-secondary-heading {
   text-align: center;
 }
 
-.users-list-item {
+.search-userinfo-container {
+  @include span-columns(5 of 8);
+  padding-top: 1em;
+}
+
+.search-descriptor-container {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.search-descriptor {
+  margin-bottom: 0;
+}
+
+.search-skillschart-container {
+  @include span-columns(3 of 8);
+  @include omega();
   margin-bottom: 1em;
 }
 
@@ -235,14 +252,9 @@ MAIN-INDEX
   padding-right: 1em;
 }
 
-.users-list-item img {
-  vertical-align: middle;
-}
-
 .search-results-skillschart {
   max-width: 150px;
   max-height: 150px;
-  vertical-align: middle;
 }
 
 
@@ -297,6 +309,10 @@ PROBLEMS-INDEX
 
 .problems-index {
   margin-top: 2em;
+}
+
+.problems-list-item {
+  margin-bottom: 1em;
 }
 
 
