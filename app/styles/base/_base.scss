@@ -167,6 +167,7 @@ HEADER
   text-align: left;
   padding-left: 2em;
   padding-bottom: 1em;
+  text-align: center;
 }
 
 .index-primary-heading {
@@ -305,10 +306,6 @@ PROBLEMS-INDEX
   @include omega();
   text-align: center;
   padding: 1em;
-}
-
-.problems-index {
-  margin-top: 2em;
 }
 
 .problems-list-item {
