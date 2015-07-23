@@ -59,6 +59,7 @@ export default Ember.Route.extend(ResetScroll, {
           country = null;
         }
       }).then(function() {
+        problem.set('progress', 0);
         problem.set('city', city);
         problem.set('state', state);
         problem.set('country', country);

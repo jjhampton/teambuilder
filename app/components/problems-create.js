@@ -3,12 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     createProblem: function() {
+      function isTruthy(element) {
+        return element;
+      }
+
       if (this.get('session.isAuthenticated')) {
         var validationList = [this.get('model.name'), this.get('model.description'), this.get('model.deadline')];
-
-        function isTruthy(element) {
-          return element;
-        }
         var isValid = validationList.every(isTruthy);
 
         if (isValid) {

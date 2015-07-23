@@ -6,6 +6,10 @@ export default Ember.Component.extend({
 
   actions: {
     sendQuery: function() {
+      if (this.get('query') === undefined) {
+        this.set('query', "");
+      }
+
       function escapeRegExp(string) {
         return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
       }
