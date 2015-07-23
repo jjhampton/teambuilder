@@ -32,7 +32,7 @@
   {{/unless}}
 
   {{#if isMember}}
-  <h4 class="problem-show-review-text">If you are on this team: </h4>
+  <h4 class="problem-show-review-text">Team Member Options: </h4>
     <button {{action 'showAppearinRoom'}}>Enter Videoconference Room</button>
   {{/if}}
 
@@ -45,7 +45,7 @@
   {{/if}}
 
   {{#if isOwner}}
-  <h4>Team Owner:</h4>
+  <h4>Team Owner Options:</h4>
     {{#link-to 'problems.manage' model}}
     <button class="problem-button-manage">Manage Team</button>
     {{/link-to}}

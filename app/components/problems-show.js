@@ -74,11 +74,11 @@ export default Ember.Component.extend({
 
     var currentUserId = this.get('session.currentUser.id');
     return (problemOwnerId === currentUserId);
-  }.property('model', 'session'),
+  }.property('model.owner', 'session'),
 
   isMember: function() {
     var members = [this.get('model.owner.id'), this.get('model.member1.id'), this.get('model.member2.id'), this.get('model.member3.id'), this.get('model.member4.id'), this.get('model.member5.id')];
     var currentUserId = this.get('session.currentUser.id');
     return _.contains(members, currentUserId);
-  }.property('model', 'session')
+  }.property('model.owner', 'model.member1', 'model.member2', 'model.member3', 'model.member4', 'model.member5', 'session')
 });

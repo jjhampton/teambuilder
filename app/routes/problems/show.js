@@ -72,6 +72,7 @@ export default Ember.Route.extend(ResetScroll, {
       if (!isMember) {
         if (problem.get('member1.createdAt') === undefined) {
           problem.set('member1', this.get('session.currentUser'));
+          problem.set('isMember', true);
           problem.save();
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
@@ -88,6 +89,7 @@ export default Ember.Route.extend(ResetScroll, {
         }
         else if (problem.get('member2.createdAt') === undefined) {
           problem.set('member2', this.get('session.currentUser'));
+          problem.set('isMember', true);
           problem.save();
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
@@ -102,6 +104,7 @@ export default Ember.Route.extend(ResetScroll, {
         }
         else if (problem.get('member3.createdAt') === undefined) {
           problem.set('member3', this.get('session.currentUser'));
+          problem.set('isMember', true);
           problem.save();
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
@@ -116,6 +119,7 @@ export default Ember.Route.extend(ResetScroll, {
         }
         else if (problem.get('member4.createdAt') === undefined) {
           problem.set('member4', this.get('session.currentUser'));
+          problem.set('isMember', true);
           problem.save();
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
@@ -130,6 +134,7 @@ export default Ember.Route.extend(ResetScroll, {
         }
         else if (problem.get('member5.createdAt') === undefined) {
           problem.set('member5', this.get('session.currentUser'));
+          problem.set('isMember', true);
           problem.save();
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
