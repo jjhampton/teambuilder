@@ -1,4 +1,4 @@
-{{#each model as |problem|}}
+{{#each sortedList as |problem|}}
   <li class="problems-list-item">
     {{#link-to 'problems.show' problem.id}}{{problem.name}}{{/link-to}}
     <span>in {{problem.location}}</span>
