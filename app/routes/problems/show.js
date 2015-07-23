@@ -60,7 +60,6 @@ export default Ember.Route.extend(ResetScroll, {
         contributionLatLng: problem.get('latLng')
       };
 
-
       //Checks if current user's id is in membersArray, if is, sets isMember true
       if (_.indexOf(membersArray, currentUser) !== -1) {
         isMember = true;
@@ -74,6 +73,18 @@ export default Ember.Route.extend(ResetScroll, {
           problem.set('member1', this.get('session.currentUser'));
           problem.set('isMember', true);
           problem.save();
+
+          toastr.options = {
+            "positionClass": "toast-top-right",
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "3000",
+            "extendedTimeOut": "2000",
+            "showEasing": "linear",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"};
+          toastr.success('Joined team!');
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
@@ -92,6 +103,18 @@ export default Ember.Route.extend(ResetScroll, {
           problem.set('isMember', true);
           problem.save();
 
+          toastr.options = {
+            "positionClass": "toast-top-right",
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "3000",
+            "extendedTimeOut": "2000",
+            "showEasing": "linear",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"};
+          toastr.success('Joined team!');
+
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
           }).then(function() {
@@ -106,6 +129,18 @@ export default Ember.Route.extend(ResetScroll, {
           problem.set('member3', this.get('session.currentUser'));
           problem.set('isMember', true);
           problem.save();
+
+          toastr.options = {
+            "positionClass": "toast-top-right",
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "3000",
+            "extendedTimeOut": "2000",
+            "showEasing": "linear",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"};
+          toastr.success('Joined team!');
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
@@ -122,6 +157,18 @@ export default Ember.Route.extend(ResetScroll, {
           problem.set('isMember', true);
           problem.save();
 
+          toastr.options = {
+            "positionClass": "toast-top-right",
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "3000",
+            "extendedTimeOut": "2000",
+            "showEasing": "linear",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"};
+          toastr.success('Joined team!');
+
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
           }).then(function() {
@@ -136,6 +183,18 @@ export default Ember.Route.extend(ResetScroll, {
           problem.set('member5', this.get('session.currentUser'));
           problem.set('isMember', true);
           problem.save();
+
+          toastr.options = {
+            "positionClass": "toast-top-right",
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "3000",
+            "extendedTimeOut": "2000",
+            "showEasing": "linear",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"};
+          toastr.success('Joined team!');
 
           adapter.ajax("https://api.parse.com/1/functions/addContributionToUser", "POST", {
             data: userData
