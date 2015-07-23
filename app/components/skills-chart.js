@@ -26,7 +26,9 @@ export default Ember.Component.extend({
       responsive: true,
       maintainAspectRatio: true,
       pointLabelFontColor : '#058ED9',
-      pointLabelFontSize : 16
+      pointLabelFontSize : 16,
+      scaleLineColor: "#ddd",
+      angleLineColor : "#ddd"
     });
   }
 });

@@ -13,6 +13,18 @@ export default Ember.Route.extend(ResetScroll, {
       }).then(function(){
         problem.set(member, null);
       });
+    },
+
+    updateProgress: function(problem) {
+      problem.save();
+      this.transitionTo('problems.show', problem.id);
+    },
+
+    markComplete: function(problem) {
+      problem.set('isComplete', true);
+      problem.set('progress', 100);
+      problem.save();
+      this.transitionTo('problems.show', problem.id);
     }
   }
 
