@@ -9,7 +9,7 @@ export default Ember.Route.extend(ResetScroll, {
       where: {
         $or: [
           {name: {$regex: params.query}},
-          {interests: params.query},
+          {tags: params.query},
           {city: {$regex: params.query}},
           {state: {$regex: params.query}},
           {country: {$regex: params.query}}

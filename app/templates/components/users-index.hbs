@@ -1,4 +1,16 @@
-{{#each model as |user|}}
+<div class="search-sort-container">
+  <p class="search-sorttext">Sort Results By:</p>
+  <div class="search-sortpoints">
+    <button class="search-button-sort" {{action 'sortBy' 'totalPoints'}} autofocus>Total Team Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'thinking'}}>Thinking Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'action'}}>Action Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'social'}}>Social Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'thinkingRatio'}}>Thinking Ratio</button>
+    <button class="search-button-sort" {{action 'sortBy' 'actionRatio'}}>Action Ratio</button>
+    <button class="search-button-sort" {{action 'sortBy' 'socialRatio'}}>Social Ratio</button>
+  </div>
+</div>
+{{#each sortedList as |user|}}
   <li class="users-list-item">
     <div class="search-userinfo-container">
       {{gravatar-small email=user.email size="80"}}
