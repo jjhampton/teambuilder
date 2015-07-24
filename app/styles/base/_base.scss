@@ -138,7 +138,7 @@ HEADER
 
 .header {
   text-align: center;
-  color: $base-font-color;
+  color: #2F2F2B;
   background: -webkit-linear-gradient(90deg, #78D47A 10%, rgba(140, 199, 211, 1) 100%); /* Chrome 10+, Saf5.1+ */
   background:    -moz-linear-gradient(90deg, #78D47A 10%, rgba(140, 199, 211, 1) 100%); /* FF3.6+ */
   background:     -ms-linear-gradient(90deg, #78D47A 10%, rgba(140, 199, 211, 1) 100%); /* IE10 */
@@ -168,6 +168,7 @@ HEADER
   padding-left: 2em;
   padding-bottom: 1em;
   text-align: center;
+  color: #2F2F2B;
 }
 
 .index-primary-heading {
@@ -177,6 +178,7 @@ HEADER
   text-align: center;
   margin: 0;
   margin-top: 0.5em;
+  color: #2F2F2B;
 }
 
 
