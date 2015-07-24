@@ -49,6 +49,10 @@ p {
   text-align: center;
 }
 
+.primary-heading {
+  font-size: 1.5em;
+}
+
 .key-title {
   font-weight: bold;
 }
@@ -93,7 +97,7 @@ APPLICATION
   @include media($mobile) {
     display: block;
     float: none;
-    text-align: center;
+    text-align: left;
   }
   display: inline-block;
   float: left;
@@ -108,6 +112,10 @@ APPLICATION
   }
   display: inline-block;
   float: right;
+}
+
+.nav-button-profile {
+  display: none;
 }
 
 .nav-input,
@@ -127,6 +135,9 @@ input.nav-input {
 }
 
 .nav-container-logout {
+  @include media($mobile) {
+    display: none;
+  }
   float: right;
 }
 
@@ -498,6 +509,11 @@ PROBLEMS-SHOW
 --------------------------------*/
 
 .problem-info-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(5);
   @include shift(1);
   padding-left: 1em;
@@ -505,6 +521,11 @@ PROBLEMS-SHOW
 }
 
 .problem-location-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(5);
   @include omega();
   text-align: center;
@@ -592,6 +613,12 @@ progress[value]::-webkit-progress-value {
 .problem-members-list,
 .problem-volunteer {
   margin-bottom: 2em;
+}
+
+.problem-volunteer {
+  @include media($mobile) {
+    margin: 0 auto 2em auto;
+  }
 }
 
 .problem-members-list {
@@ -810,16 +837,32 @@ USERS-SHOW
 }
 
 .user-info-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(3.3333);
   padding-right: 1em;
   @include shift(1);
 }
 
 .user-skillchart-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(3.3333);
 }
 
 .user-skillpoints-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+    margin-top: -4em;
+  }
   @include span-columns(3.3333);
   @include omega();
   padding-left: 1em;
@@ -831,22 +874,40 @@ USERS-SHOW
 }
 
 .user-contributions-list {
+  @include media($mobile) {
+    @include span-columns(8 of 10);
+    @include shift(1);
+    @include omega();
+    list-style-type: none;
+  }
   @include span-columns(5 of 10);
   list-style-type: circle;
   padding: 1em;
 }
 
 .user-comments-list {
+  @include media($mobile) {
+    list-style-type: none;
+  }
   list-style-type: circle;
 }
 
 .user-contributions-map {
+  @include media($mobile) {
+    @include span-columns(8 of 10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(5 of 10);
   @include omega();
   padding: 1em;
 }
 
 .users-show-section-heading {
+  @include media($mobile) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
   margin-top: 1em;
   text-align: center;
 }
@@ -874,6 +935,12 @@ USERS-SHOW
 
 .user-email-container{
   margin-top: 1em;
+}
+
+.user-contribution {
+  @include media($mobile) {
+    text-align: center;
+  }
 }
 
 .user-email-label {
@@ -910,6 +977,9 @@ USERS-SHOW
 }
 
 #showmap {
+  @include media($mobile) {
+    height: 20em;
+  }
   height: 31em;
   margin-bottom: 1em;
   -webkit-box-shadow: 0 3px 3px #999;
