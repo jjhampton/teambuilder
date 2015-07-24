@@ -10,6 +10,18 @@
 @import "tables";
 @import "typography";
 
+/*============================
+NEAT MEDIA QUERIES
+=============================*/
+
+$mobile: new-breakpoint(min-width 375px max-width 480px);
+
+$tablet: new-breakpoint(min-width 481px max-width 992px);
+
+$large: new-breakpoint(min-width 993px);
+
+
+
 /*--------------------------------
 UNIVERSAL / BASE
 --------------------------------*/
@@ -78,23 +90,33 @@ APPLICATION
 }
 
 .nav-buttons-container {
-  display: inline-block;
-  float: left;
-}
-
-.nav-buttons-container {
+  @include media($mobile) {
+    display: block;
+    float: none;
+    text-align: center;
+  }
   display: inline-block;
   float: left;
   line-height: 0;
 }
 
 .nav-form-login {
+  @include media($mobile) {
+    float: none;
+    text-align: center;
+    display: block;
+  }
   display: inline-block;
   float: right;
 }
 
 .nav-input,
 .nav-button-login {
+  @include media($mobile) {
+    display: inline;
+    margin: 1em auto;
+    width: 18em;
+  }
   display: inline;
   margin-bottom: 0;
 }
@@ -102,20 +124,6 @@ APPLICATION
 input.nav-input {
   line-height: inherit;
   margin-bottom: 0;
-}
-
-.nav-logo-text {
-  vertical-align: -webkit-baseline-middle;
-  vertical-align:             text-bottom;
-  font-family: $days-one;
-  font-size: 1.7em;
-  padding-right: 0.5em;
-  color: $base-charcoal;
-  text-decoration: none !important;
-}
-
-.nav-logo-hidden {
-  display: none;
 }
 
 .nav-container-logout {
@@ -152,6 +160,10 @@ HEADER
 }
 
 .header-logo {
+  @include media($mobile) {
+    height: 3em;
+    padding-right: 1em;
+  }
   height: 16em;
   padding-right: 3em;
   vertical-align: bottom;
@@ -162,6 +174,9 @@ HEADER
 }
 
 .index-secondary-heading {
+  @include media($mobile) {
+    display: none;
+  }
   font-family: $magra;
   font-weight: bold;
   text-align: left;
@@ -172,6 +187,9 @@ HEADER
 }
 
 .index-primary-heading {
+  @include media($mobile) {
+    font-size: 2em;
+  }
   font-family: $days-one;
   font-size: 5em;
   font-weight: bold;
@@ -179,6 +197,7 @@ HEADER
   margin: 0;
   margin-top: 0.5em;
   color: #2F2F2B;
+
 }
 
 
@@ -198,20 +217,41 @@ MAIN-INDEX
   margin-bottom: 1em;
 }
 .index-search-radio {
+  @include media($mobile) {
+    display: block;
+  }
   margin-right: 1em;
 }
 
 .search-label {
+  @include media($mobile) {
+    display: block;
+  }
   display: inline-block;
   margin-right: 1em;
 }
 
 .index-search-input {
+  @include media($mobile) {
+    display: block;
+    margin: 0 auto;
+  }
   display: inline-block;
   width: 75%;
 }
 
+::-webkit-input-placeholder {
+  @include media($mobile) {
+    color: white;
+  }
+}
+
 .index-button-search {
+  @include media($mobile) {
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 30%;
+  }
   width: 20%;
   line-height: 0.65;
 }
@@ -329,6 +369,9 @@ MAIN-INDEX
 }
 
 .problem-index-progress-text {
+  @include media($mobile) {
+    display: block;
+  }
   text-align: center;
 }
 
@@ -348,6 +391,9 @@ PROBLEMS-INDEX
 }
 
 .problems-heading {
+  @include media($mobile) {
+    display: none;
+  }
   font-weight: bold;
   text-align: center;
 }
@@ -359,6 +405,11 @@ PROBLEMS-INDEX
 }
 
 .leaflet-index-container {
+  @include media($mobile) {
+    @include span-columns(10 of 12);
+    @include shift(1);
+    @include omega();
+    }
   @include span-columns(8 of 12);
   @include shift(2);
   @include omega();
@@ -367,6 +418,9 @@ PROBLEMS-INDEX
 }
 
 #indexmap {
+  @include media($mobile) {
+    height: 20em;
+  }
   height: 42em;
   margin-bottom: 1em;
   -webkit-box-shadow: 0 3px 3px #999;
@@ -391,6 +445,11 @@ PROBLEMS-INDEX
   margin-bottom: 1em;
 }
 
+.header-button-add {
+  @include span-columns(10 of 12);
+  @include shift(1);
+  font-size: 0.7em;
+}
 
 
 /*--------------------------------
@@ -864,11 +923,14 @@ USERS-SHOW
 FOOTER
 --------------------------------*/
 footer {
+  @include media($mobile) {
+    margin-top: 2em;
+  }
   @include span-columns(10);
   @include shift(1);
   @include omega();
   height: 2em;
-  margin-top: 6em;
+  margin-top: 3em;
   padding-top: 0.5em;
   border-top: 1px solid #999;
 }
