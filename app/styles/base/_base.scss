@@ -653,6 +653,13 @@ progress[value]::-webkit-progress-value {
   margin-bottom: 1em;
 }
 
+.problem-button-manage {
+  @include media($mobile) {
+    margin-bottom: 1em;
+  }
+  margin-bottom: 1em;
+}
+
 .problems-button-message {
   margin-bottom: 2em;
 }
@@ -688,6 +695,11 @@ LOCATION-PHOTOS
 PROBLEMS-MANAGE
 --------------------------------*/
 .manage-heading {
+  @include media($mobile) {
+    font-size: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
   text-align: center;
 }
 
@@ -729,7 +741,17 @@ PROBLEMS-MANAGE
 }
 
 .manage-text-complete {
+  @include media($mobile) {
+    display: inline-block;
+    margin-bottom: 1em;
+  }
   padding-right: 1em;
+}
+
+.manage-button-update {
+  @include media($mobile) {
+    margin-bottom: 1em;
+  }
 }
 
 .manage-button-complete {

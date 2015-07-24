@@ -24,11 +24,10 @@
   {{/if}}
   </ul>
   <div class="manage-progress">
-    <h3 class="manage-heading">Update solution progress:</h3>
     <label>
       <span class="manage-text-complete"> Update current completion percentage:</span>
       {{input class="manage-input-progress" type="number" value=model.progress}}
-      <button {{action 'updateProgress' model}}>Update!</button>
+      <button class="manage-button-update" {{action 'updateProgress' model}}>Update!</button>
     </label>
     <strong class="manage-text-complete">Press if the problem solved and ready for team review:</strong>
     <button class="manage-button-complete" {{action 'markComplete' model}}>Problem solved!</button>
