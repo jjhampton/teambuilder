@@ -50,7 +50,9 @@ p {
 }
 
 .primary-heading {
-  font-size: 1.5em;
+  @include media($mobile) {
+    font-size: 1.5em;
+  }
 }
 
 .key-title {
@@ -457,9 +459,11 @@ PROBLEMS-INDEX
 }
 
 .header-button-add {
+  @include media($mobile) {
+    font-size: 0.7em;
+  }
   @include span-columns(10 of 12);
   @include shift(1);
-  font-size: 0.7em;
 }
 
 
