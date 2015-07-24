@@ -10,6 +10,18 @@
 @import "tables";
 @import "typography";
 
+/*============================
+NEAT MEDIA QUERIES
+=============================*/
+
+$mobile: new-breakpoint(min-width 375px max-width 480px);
+
+$tablet: new-breakpoint(min-width 481px max-width 992px);
+
+$large: new-breakpoint(min-width 993px);
+
+
+
 /*--------------------------------
 UNIVERSAL / BASE
 --------------------------------*/
@@ -35,6 +47,10 @@ p {
   font-family: $magra;
   font-weight: bold;
   text-align: center;
+}
+
+.primary-heading {
+  font-size: 1.5em;
 }
 
 .key-title {
@@ -78,23 +94,37 @@ APPLICATION
 }
 
 .nav-buttons-container {
-  display: inline-block;
-  float: left;
-}
-
-.nav-buttons-container {
+  @include media($mobile) {
+    display: block;
+    float: none;
+    text-align: center;
+  }
   display: inline-block;
   float: left;
   line-height: 0;
 }
 
 .nav-form-login {
+  @include media($mobile) {
+    float: none;
+    text-align: center;
+    display: block;
+  }
   display: inline-block;
   float: right;
 }
 
+.nav-button-profile {
+  display: none;
+}
+
 .nav-input,
 .nav-button-login {
+  @include media($mobile) {
+    display: inline;
+    margin: 1em auto;
+    width: 18em;
+  }
   display: inline;
   margin-bottom: 0;
 }
@@ -104,21 +134,10 @@ input.nav-input {
   margin-bottom: 0;
 }
 
-.nav-logo-text {
-  vertical-align: -webkit-baseline-middle;
-  vertical-align:             text-bottom;
-  font-family: $days-one;
-  font-size: 1.7em;
-  padding-right: 0.5em;
-  color: $base-charcoal;
-  text-decoration: none !important;
-}
-
-.nav-logo-hidden {
-  display: none;
-}
-
 .nav-container-logout {
+  @include media($mobile) {
+    display: none;
+  }
   float: right;
 }
 
@@ -152,6 +171,10 @@ HEADER
 }
 
 .header-logo {
+  @include media($mobile) {
+    height: 3em;
+    padding-right: 1em;
+  }
   height: 16em;
   padding-right: 3em;
   vertical-align: bottom;
@@ -162,6 +185,9 @@ HEADER
 }
 
 .index-secondary-heading {
+  @include media($mobile) {
+    display: none;
+  }
   font-family: $magra;
   font-weight: bold;
   text-align: left;
@@ -172,6 +198,9 @@ HEADER
 }
 
 .index-primary-heading {
+  @include media($mobile) {
+    font-size: 2em;
+  }
   font-family: $days-one;
   font-size: 5em;
   font-weight: bold;
@@ -179,6 +208,7 @@ HEADER
   margin: 0;
   margin-top: 0.5em;
   color: #2F2F2B;
+
 }
 
 
@@ -198,20 +228,41 @@ MAIN-INDEX
   margin-bottom: 1em;
 }
 .index-search-radio {
+  @include media($mobile) {
+    display: block;
+  }
   margin-right: 1em;
 }
 
 .search-label {
+  @include media($mobile) {
+    display: block;
+  }
   display: inline-block;
   margin-right: 1em;
 }
 
 .index-search-input {
+  @include media($mobile) {
+    display: block;
+    margin: 0 auto;
+  }
   display: inline-block;
   width: 75%;
 }
 
+::-webkit-input-placeholder {
+  @include media($mobile) {
+    color: white;
+  }
+}
+
 .index-button-search {
+  @include media($mobile) {
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 30%;
+  }
   width: 20%;
   line-height: 0.65;
 }
@@ -329,6 +380,9 @@ MAIN-INDEX
 }
 
 .problem-index-progress-text {
+  @include media($mobile) {
+    display: block;
+  }
   text-align: center;
 }
 
@@ -348,6 +402,9 @@ PROBLEMS-INDEX
 }
 
 .problems-heading {
+  @include media($mobile) {
+    display: none;
+  }
   font-weight: bold;
   text-align: center;
 }
@@ -359,6 +416,11 @@ PROBLEMS-INDEX
 }
 
 .leaflet-index-container {
+  @include media($mobile) {
+    @include span-columns(10 of 12);
+    @include shift(1);
+    @include omega();
+    }
   @include span-columns(8 of 12);
   @include shift(2);
   @include omega();
@@ -367,6 +429,9 @@ PROBLEMS-INDEX
 }
 
 #indexmap {
+  @include media($mobile) {
+    height: 20em;
+  }
   height: 42em;
   margin-bottom: 1em;
   -webkit-box-shadow: 0 3px 3px #999;
@@ -391,6 +456,11 @@ PROBLEMS-INDEX
   margin-bottom: 1em;
 }
 
+.header-button-add {
+  @include span-columns(10 of 12);
+  @include shift(1);
+  font-size: 0.7em;
+}
 
 
 /*--------------------------------
@@ -439,6 +509,11 @@ PROBLEMS-SHOW
 --------------------------------*/
 
 .problem-info-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(5);
   @include shift(1);
   padding-left: 1em;
@@ -446,6 +521,11 @@ PROBLEMS-SHOW
 }
 
 .problem-location-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(5);
   @include omega();
   text-align: center;
@@ -535,6 +615,12 @@ progress[value]::-webkit-progress-value {
   margin-bottom: 2em;
 }
 
+.problem-volunteer {
+  @include media($mobile) {
+    margin: 0 auto 2em auto;
+  }
+}
+
 .problem-members-list {
   padding-left: 1em;
   list-style-type: circle;
@@ -564,6 +650,13 @@ progress[value]::-webkit-progress-value {
 }
 
 .problem-button-review {
+  margin-bottom: 1em;
+}
+
+.problem-button-manage {
+  @include media($mobile) {
+    margin-bottom: 1em;
+  }
   margin-bottom: 1em;
 }
 
@@ -602,6 +695,11 @@ LOCATION-PHOTOS
 PROBLEMS-MANAGE
 --------------------------------*/
 .manage-heading {
+  @include media($mobile) {
+    font-size: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
   text-align: center;
 }
 
@@ -643,7 +741,17 @@ PROBLEMS-MANAGE
 }
 
 .manage-text-complete {
+  @include media($mobile) {
+    display: inline-block;
+    margin-bottom: 1em;
+  }
   padding-right: 1em;
+}
+
+.manage-button-update {
+  @include media($mobile) {
+    margin-bottom: 1em;
+  }
 }
 
 .manage-button-complete {
@@ -663,6 +771,10 @@ PROBLEMS-REVIEW
 }
 
 .review-input-label {
+  @include media($mobile) {
+    @include span-columns(9 of 9);
+    @include omega();
+  }
   @include span-columns(3 of 9);
 }
 
@@ -751,16 +863,32 @@ USERS-SHOW
 }
 
 .user-info-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(3.3333);
   padding-right: 1em;
   @include shift(1);
 }
 
 .user-skillchart-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(3.3333);
 }
 
 .user-skillpoints-container {
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+    @include omega();
+    margin-top: -4em;
+  }
   @include span-columns(3.3333);
   @include omega();
   padding-left: 1em;
@@ -772,22 +900,40 @@ USERS-SHOW
 }
 
 .user-contributions-list {
+  @include media($mobile) {
+    @include span-columns(8 of 10);
+    @include shift(1);
+    @include omega();
+    list-style-type: none;
+  }
   @include span-columns(5 of 10);
   list-style-type: circle;
   padding: 1em;
 }
 
 .user-comments-list {
+  @include media($mobile) {
+    list-style-type: none;
+  }
   list-style-type: circle;
 }
 
 .user-contributions-map {
+  @include media($mobile) {
+    @include span-columns(8 of 10);
+    @include shift(1);
+    @include omega();
+  }
   @include span-columns(5 of 10);
   @include omega();
   padding: 1em;
 }
 
 .users-show-section-heading {
+  @include media($mobile) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
   margin-top: 1em;
   text-align: center;
 }
@@ -815,6 +961,12 @@ USERS-SHOW
 
 .user-email-container{
   margin-top: 1em;
+}
+
+.user-contribution {
+  @include media($mobile) {
+    text-align: center;
+  }
 }
 
 .user-email-label {
@@ -851,6 +1003,9 @@ USERS-SHOW
 }
 
 #showmap {
+  @include media($mobile) {
+    height: 20em;
+  }
   height: 31em;
   margin-bottom: 1em;
   -webkit-box-shadow: 0 3px 3px #999;
@@ -864,11 +1019,14 @@ USERS-SHOW
 FOOTER
 --------------------------------*/
 footer {
+  @include media($mobile) {
+    margin-top: 2em;
+  }
   @include span-columns(10);
   @include shift(1);
   @include omega();
   height: 2em;
-  margin-top: 6em;
+  margin-top: 3em;
   padding-top: 0.5em;
   border-top: 1px solid #999;
 }
