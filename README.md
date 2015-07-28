@@ -1,52 +1,51 @@
-# Teambuilder
+# Cross-Pollinate
 
-This README outlines the details of collaborating on this Ember app.
-A short introduction of this app could easily go here.
+An app to connect people from around the world in order to build diverse teams, exchange ideas, and communicate to solve problems.  My final project for The Iron Yard Academy.
 
-## Prerequisites
+"Three billion new minds who have never been heard from before are connecting to the global conversation." ~ Peter Diamandis, referencing the projected number of new Internet users by 2020
 
-You will need the following things properly installed on your computer.
+## Live Demo
+http://jjhampton.github.io/cross-pollinate
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+## Built With:
 
-## Installation
+* HTML5
+* CSS3
+* SASS
+* Bourbon / Neat / Bourbon Bitters
+* Javascript / ECMAScript 6
+* jQuery
+* Underscore.js
+* Handlebars.js
+* Ember.js / Ember CLI / Ember-Data
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+### Back-End
+* Parse &  Parse Cloud Code
+
+### Additional Libraries
+* Pikaday.js
+* Moment.js
+* Toastr.js
+* Fontawesome
+* Crypto.js
+* Chart.js
+* Ember-Simple-Auth
+* Browserify
+
+### APIs / SDKs
+* Mapbox.com API (via Leaflet.js)
+* Mailgun
+* Google Maps Geocoding API
+* MediaWiki web API
+* Appear.in API/SDK
+
+### Development
+
+* `git clone` this repository
 * `npm install`
 * `bower install`
-
-## Running / Development
-
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at http://localhost:4200.
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+&copy; 2015 John Hampton  w/ the MIT License
+https://github.com/jjhampton
