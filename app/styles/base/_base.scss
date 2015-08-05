@@ -14,7 +14,7 @@
 NEAT MEDIA QUERIES
 =============================*/
 
-$mobile: new-breakpoint(min-width 375px max-width 480px);
+$mobile: new-breakpoint(max-width 480px);
 
 $tablet: new-breakpoint(min-width 481px max-width 992px);
 
