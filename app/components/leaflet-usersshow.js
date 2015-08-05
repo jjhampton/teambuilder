@@ -40,7 +40,7 @@ export default Ember.Component.extend({
 
     // add markers for contribution locations
     contributions.forEach(function(contribution) {
-      var contributionMarker = L.marker(contribution.latLng,{icon: blueMarker}, {draggable: true}).addTo(map).bindPopup('<a href="problems/' + contribution.id + '">' + contribution.name + '</a>');
+      var contributionMarker = L.marker(contribution.latLng,{icon: blueMarker}, {draggable: true}).addTo(map).bindPopup('<a href="#/problems/' + contribution.id + '">' + contribution.name + '</a>');
       contributionMarker.on('mouseover', function (e) {
         this.openPopup();
       });

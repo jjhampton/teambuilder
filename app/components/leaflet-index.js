@@ -26,7 +26,7 @@ export default Ember.Component.extend({
     mapBoxBackground.addTo(map);
     //marker = L.marker(latLng,{icon: greenMarker}, {draggable: true}).addTo(map).bindPopup('<a href="problems/' + this.get('model.id') + '">' + this.get('model.name') + '</a>');
     problems.forEach(function(problem) {
-      var marker = L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map).bindPopup('<a href="problems/' + problem.get('id') + '">' + problem.get('name') + '</a>');
+      var marker = L.marker(problem.get('latLng'), {icon: redMarker}).addTo(map).bindPopup('<a href="#/problems/' + problem.get('id') + '">' + problem.get('name') + '</a>');
       marker.on('mouseover', function (e) {
         this.openPopup();
       });
