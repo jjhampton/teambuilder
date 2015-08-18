@@ -30,6 +30,14 @@
   "esnext": true,
   "unused": true,
   "globals": {
-    "$": false
+    "$": false,
+    "_": false,
+    "L": false,
+    "planetaryjs": false,
+    "moment": false,
+    "Parse": false,
+    "CryptoJS": false,
+    "Chart": false,
+    "toastr": false
   }
 }

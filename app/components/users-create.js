@@ -1,13 +1,48 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
   actions: {
     createUser: function() {
-      this.sendAction('action', this.get('model'));
+      var validationList = [this.get('model.name'), this.get('model.username'), this.get('model.password')];
+
+      function isTruthy(element) {
+        return element;
+      }
+      var isValid = validationList.every(isTruthy);
+
+      if (isValid) {
+        this.sendAction('action', this.get('model'));
+        toastr.options = {
+          "positionClass": "toast-top-center",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.success('User account created!');
+      }
+      else {
+        toastr.options = {
+          "positionClass": "toast-top-right",
+          "showDuration": "2000",
+          "hideDuration": "2000",
+          "timeOut": "3000",
+          "extendedTimeOut": "2000",
+          "showEasing": "linear",
+          "hideEasing": "swing",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"};
+        toastr.error('Please enter the required user information above to create an account.');
+      }
     },
+
     addInterestInput: function() {
-      var interestInput = '<input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">';
-      $('.button-interest-add').before(interestInput);
+      var interestInput = '<input class="users-create-optional" type="text" placeholder="Enter a personal interest of yours" name="interest">';
+      $('.users-create-button-addinterest').before(interestInput);
     }
   }
 });

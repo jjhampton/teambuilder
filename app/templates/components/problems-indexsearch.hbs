@@ -1,0 +1,23 @@
+<div class="search-sort-container">
+  <p class="search-sorttext">Sort Results By:</p>
+  <div class="search-sortpoints">
+    <button class="search-button-sort" {{action 'sortBy' 'progress'}} autofocus>Progress</button>
+    <button class="search-button-sort" {{action 'sortBy' 'deadline'}}>Deadline</button>
+    <button class="search-button-reverse" {{action 'toggleOrder' }}>Reverse Sort Order</button>
+  </div>
+</div>
+{{#each sortedList as |problem|}}
+  <li class="problems-search-list-item">
+    {{#link-to 'problems.show' problem.id}}{{problem.name}}{{/link-to}}
+    <span>in {{problem.location}}</span>
+    <span class="problem-index-deadline-text">
+      <b>Deadline:</b> {{momentDate problem.deadline}}
+    </span>
+    <div class="problem-index-progress-text">
+      <b>Progress:</b> {{problem.progress}}%
+      <progress class="problem-progress-bar" value="{{problem.progress}}" max="100"></progress>
+    </div>
+  </li>
+{{/each}}
+
+{{yield}}

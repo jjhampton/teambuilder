@@ -1,17 +1,35 @@
 <nav class="primary-nav">
   {{#if session.isAuthenticated}}
-    <span class="nav-buttons-group">
-      <span>Welcome {{session.currentUser.firstName}} {{session.currentUser.lastName}}</span>
+    <span class="nav-buttons-container">
       {{#link-to 'index'}}
-        <button class="nav-button nav-button-home">Home</button>
+        <button class="nav-button-home">Home</button>
       {{/link-to}}
-      {{#link-to 'users.show' session.currentUser}}
-        <button class="nav-button nav-button-profile">Profile</button>
+      {{#link-to 'users.show' session.currentUser.id}}
+        <button class="nav-button-profile">Profile</button>
+        {{gravatar-small email=session.currentUser.email size="40"}}
       {{/link-to}}
-      <button {{action 'invalidateSession'}}>Logout</button>
+    </span>
+    <span class="nav-container-logout">
+      {{#link-to 'index'}}
+      <button class="nav-button-logout" {{action 'invalidateSession'}}>Logout</button>
+      {{/link-to}}
     </span>
   {{else}}
     {{sessions-create}}
   {{/if}}
 </nav>
+<div class="outer-container">
 {{outlet}}
+</div>
+<footer>
+  <p class="footer-logo-text">
+    <small class="footer-copyright"><b>&copy; 2015</b></small>
+    {{#link-to 'index'}}
+      <img class="footer-logo" src='assets/images/connection27.svg'>
+      Cross-Pollinate
+    {{/link-to}}
+  </p>
+  <small class="attribution">
+    Icon made by <a href="http://www.danielbruce.se" title="Daniel Bruce">Daniel Bruce</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>.  Licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0.</a>
+  </small>
+</footer>

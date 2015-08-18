@@ -1,0 +1,30 @@
+<div class="search-sort-container">
+  <p class="search-sorttext">Sort Results By:</p>
+  <div class="search-sortpoints">
+    <button class="search-button-sort" {{action 'sortBy' 'totalPoints'}} autofocus>Total Team Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'thinking'}}>Thinking Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'action'}}>Action Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'social'}}>Social Points</button>
+    <button class="search-button-sort" {{action 'sortBy' 'thinkingRatio'}}>Thinking Ratio</button>
+    <button class="search-button-sort" {{action 'sortBy' 'actionRatio'}}>Action Ratio</button>
+    <button class="search-button-sort" {{action 'sortBy' 'socialRatio'}}>Social Ratio</button>
+  </div>
+</div>
+{{#each sortedList as |user|}}
+  <li class="users-list-item">
+    <div class="search-userinfo-container">
+      {{gravatar-small email=user.email size="80"}}
+      <div class="search-descriptor-container">
+        {{#link-to 'users.show' user.id}}{{user.name}}{{/link-to}}
+        <p class="search-descriptor"><b>Location:</b> {{user.location}}</p>
+        <p class="search-descriptor"><b>Occupation:</b> {{user.occupation}}</p>
+        <p class="search-descriptor"><b>Total Team Points: {{user.totalPoints}}</b></p>
+      </div>
+    </div>
+    <span class="search-skillschart-container">
+      {{smallskills-chart user=user}}
+      <canvas id="{{user.id}}" class="search-results-skillschart" width="150" height="150"></canvas>
+    </span>
+  </li>
+{{/each}}
+{{yield}}

@@ -1,0 +1,20 @@
+<p class="review-member-name">{{gravatar-small email=model.email size="40"}}{{model.name}}</p>
+<p class="review-instructions">You have up to 100 skill points to divide between the three categories:</p>
+<label class="review-input-label">
+  Thinking Role Score:
+  {{input class="review-input" type="number" value=thinkingReview}}
+</label>
+<label class="review-input-label">
+  Action Role Score:
+  {{input class="review-input" type="number" value=actionReview}}
+</label>
+<label class="review-input-label">
+  Social Role Score:
+  {{input class="review-input" type="number" value=socialReview}}
+</label>
+<label class="review-textarea-label">
+  Comments on Teammate's Contributions:
+  {{textarea class="review-textarea" type="text" value=commentReview}}
+</label>
+<button class="review-button-submit" {{action 'reviewTeammate' model problem}}>Submit teammate review!</button>
+{{yield}}

@@ -1,41 +1,70 @@
 <h1 class="primary-heading">{{model.name}}</h1>
-<p class="problem-owner">Owner: {{model.owner.firstName}} {{model.owner.lastName}}</p>
-<p class="problem-description">Description: {{model.description}}</p>
-<p class="problem-created">Created: {{model.createdAt}}</p>
-<p class="problem-deadline">Deadline: {{model.deadline}}</p>
-<p class="problem-tags">Tags: {{#each model.tags as |tag|}}{{tag}} {{/each}}</p>
-<p class="problem-progress">Progress: {{model.progress}}%</p>
-<div class="trello-update">Trello API Data</div>
-<span class="problem-collaborations">We collaborate via Trello at: </span>
-<p class="problem-trelloURL">{{model.trelloURL}}</p>
-<p class="problem-city">City: {{model.city}}</p>
-<p class="problem-state">State/Province: {{model.state}}</p>
-<p class="problem-country">Country: {{model.country}}</p>
-<div class="problem-show-map">Map</div>
-<p class="problem-members">Current Team Members: </p>
-<ul class="problem-members-list">
-{{#if model.member1}}
-  <li class="problem-members-list-item">{{model.member1.firstName}} {{model.member1.lastName}} </li>
-{{/if}}
-{{#if model.member2}}
-  <li class="problem-members-list-item">{{model.member2.firstName}} {{model.member2.lastName}} </li>
-{{/if}}
-{{#if model.member3}}
-  <li class="problem-members-list-item">{{model.member3.firstName}} {{model.member3.lastName}} </li>
-{{/if}}
-{{#if model.member4}}
-  <li class="problem-members-list-item">{{model.member4.firstName}} {{model.member4.lastName}} </li>
-{{/if}}
-{{#if model.member5}}
-  <li class="problem-members-list-item">{{model.member5.firstName}} {{model.member5.lastName}} </li>
-{{/if}}
-</ul>
-<button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
-<input class="problem-email" placeholder="Email the owner w/o joining"><button>Submit</button>
-<p>Team Owner:</p>
-{{#link-to 'problems.manage' model}}
-<button class="problem-button-manage">Manage Team</button>
-{{/link-to}}
+<section class="problem-info-container">
+  <p class="problem-description"><b>Description:</b> {{model.description}}</p>
+  <p class="problem-created"><b>Created:</b> {{momentDate model.createdAt}}</p>
+  <p class="problem-deadline"><b>Deadline:</b> {{momentDate model.deadline}}</p>
+  <ul class="problem-tags-list">
+    <li class="problem-tag"><b>Tags:</b></li>
+    {{#each model.tags key="@index" as |tag|}}
+      <li class="problem-tag">{{tag}}</li>
+    {{/each}}
+  </ul>
+  <p class="problem-progress-text"><b>Progress:</b> {{model.progress}}%
+    <progress class="problem-progress-bar" value="{{model.progress}}" max="100"></progress>
+  </p>
+  <p class="problem-members"><b>Current Team Members:</b></p>
+  <ul class="problem-members-list">
+    <li class="problem-members-list-item">{{#link-to 'users.show' model.owner.id}}{{gravatar-small email=model.owner.email size="40"}}{{model.owner.name}} (Owner){{/link-to}}</li>
+
+    {{#each model.members as |member|}}
+      <li class="problem-members-list-item">{{#link-to 'users.show' member.id}}{{gravatar-small email=member.email size="40"}}{{member.name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+
+  {{#unless isOwner}}
+    {{#unless isMember}}
+      {{#unless isComplete}}
+        <button class="problem-volunteer" {{action 'addUser' model}}>Volunteer - Join This Team</button>
+        <p class="problem-email-label"><b>Crowdsourced Input:</b></p>
+        <p class="problem-email-text">Don't want to join this team but still have some input to provide? Send the owner your comments and suggestions.</p>
+        {{textarea class="problem-email" value=comment placeholder="Enter your message here."}}
+        <button class="problems-button-message" {{action 'sendOwnerEmail' comment}}>Send message</button>
+      {{/unless}}
+    {{/unless}}
+  {{/unless}}
+
+  {{#if isMember}}
+  <h4 class="problem-show-review-text">Team Member Options: </h4>
+  <button class="problem-button-video"{{action 'showAppearinRoom'}}>Enter Videoconference Room</button>
+  {{/if}}
+
+  {{#if model.isComplete}}
+    {{#if isMember}}
+      {{#link-to 'problems.review' model}}
+      <button class="problem-button-review">Review Teammates</button>
+      {{/link-to}}
+    {{/if}}
+  {{/if}}
+
+  {{#if isOwner}}
+  <h4>Team Owner Options:</h4>
+    {{#link-to 'problems.manage' model}}
+    <button class="problem-button-manage">Manage Team</button>
+    {{/link-to}}
+  {{/if}}
+</section>
+<section class="problem-location-container">
+  <h3 class="problem-location-heading">Location: {{model.location}}</h3>
+  {{leaflet-problemsshow model=model}}
+  {{#if photos}}
+    <p class="problem-location-text"><b>What's near this location?</b></p>
+    {{location-photos photos=photos}}
+  {{/if}}
+</section>
+{{appearin-room problem=model isRoomTriggered=isRoomTriggered}}
+
+
+
 
 
 {{yield}}

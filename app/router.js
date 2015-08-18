@@ -14,14 +14,16 @@ Router.map(function() {
 
   this.route('users', function() {
     this.route('create');
-    this.route('show', {path: ':parse-user_id'});
+    this.route('show', {path: ':user_id'});
+    this.route('search', {path: '/search/:query'});
   });
 
   this.route('problems', function() {
     this.route('create');
     this.route('show', {path: ':problem_id'});
-    this.route('edit', {path: ':problem_id/edit'});
-    this.route('manage', {path: ':problem_id/manage'} );
+    this.route('manage', {path: '/manage/:problem_id'});
+    this.route('review', {path: '/review/:problem_id'});
+    this.route('search', {path: '/search/:query'});
   });
 });
 

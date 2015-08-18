@@ -1,53 +1,37 @@
-<h1 class="header user-create-header">New User Signup</h1>
-<form {{action 'createUser' on='submit'}}>
-  <label>
-    First Name:
-    {{input class="users-create-firstname" label="First Name" type="text" placeholder="Enter your first name here" value=model.firstName}}
-  </label>
-  <label>
-    Last Name:
-    {{input class="users-create-lastname" type="text" placeholder="Enter your last name here" value=model.lastName}}
-  </label>
-  <label>
-    Age:
-    {{input class="users-create-age" type="text" placeholder="Enter your age here" value=model.age}}
-  </label>
-  <fieldset>
-    <legend>Location</legend>
-    <label>
-      City:
-      {{input class="users-create-city" type="text" placeholder="Enter your city here" value=model.city}}
-    </label>
-    <label>
-      State/Province:
-      {{input class="users-create-state" type="text" placeholder="Enter your state/province here" value=model.state}}
-    </label>
-    <label>
-      Country:
-      {{input class="users-create-country" type="text" placeholder="Enter your country here" value=model.country}}
-    </label>
-    <span class="users-create-button-location">Use Current Location</span>
+<h1 class="primary-heading">Sign up today to begin helping others solve problems.</h1>
+<form class="users-create-form">
+  <fieldset class="users-create-fieldset users-create-fieldset-required">
+    <legend><b>Account Information</b></legend>
+
+    {{input class="users-create-info"  type="text" placeholder="Full name (required)" value=model.name}}
+
+    {{input class="users-create-info" type="email" placeholder="Email address (required)" value=model.username}}
+
+    {{input class="users-create-info users-create-password" type="password" placeholder="Password (required)" value=model.password}}
   </fieldset>
-  <label>
-    Occupation:
-    {{input class="users-create-occupation" type="text" placeholder="Enter your occupation here" value=model.occupation}}
-  </label>
-  <label>
-    Interests:
-    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
-    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
-    <input class="users-create-interest" type="text" placeholder="Enter a personal interest here" name="interest">
-    <span><button class="button-interest-add" {{action 'addInterestInput'}}>Add another interest</button></span>
-  </label>
-  <label>
-    Email:
-    {{input class="users-create-email" type="email" placeholder="Enter your email address here" value=model.username}}
-  </label>
-  <label>
-    Password:
-    {{input class="users-create-password" type="password" placeholder="Enter your password" value=model.password}}
-  </label>
-  <button class="button-user-submit">Sign Up!</button>
+
+  <fieldset class="users-create-fieldset users-create-fieldset-optional">
+    <legend><b>Optional Information</b></legend>
+
+    {{input class="users-create-optional" type="text" placeholder="Occupation" value=model.occupation}}
+
+    {{input class="users-create-info" type="number" placeholder="Age" value=model.age}}
+
+    <legend><b>Interests</b></legend>
+    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest" required=true title='Please enter an interest.'>
+    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest" required=true title='Please enter an interest.'>
+    <input class="users-create-optional" type="text" placeholder="Any personal interest of yours" name="interest" required=true title='Please enter an interest.'>
+    <button class="users-create-button-addinterest" {{action 'addInterestInput'}}>+ Add another interest</button>
+  </fieldset>
+
+  <fieldset class="users-create-fieldset">
+    <legend><b>Location</b></legend>
+    <p class="users-create-location-text">Use this location or search the map to set another.</p>
+    {{leaflet-userscreate model=model}}
+  </fieldset>
+
+  <button class="users-create-button-submit" {{action 'createUser'}}>Sign Up!</button>
+
 </form>
 
 {{yield}}
