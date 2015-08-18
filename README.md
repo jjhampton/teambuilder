@@ -1,8 +1,11 @@
 # Cross-Pollinate
 
-An app to connect people from around the world in order to build diverse teams, exchange ideas, and communicate to solve problems.
+An app to connect people from around the world in order to build diverse teams, exchange ideas, and communicate to solve problems.  My final project for The Iron Yard Academy.
 
 "Three billion new minds who have never been heard from before are connecting to the global conversation." ~ Peter Diamandis, referencing the projected number of new Internet users by 2020
+
+## Live Demo
+http://jjhampton.github.io/cross-pollinate
 
 ## Built With:
 
